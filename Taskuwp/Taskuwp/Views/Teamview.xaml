@@ -1,0 +1,90 @@
+﻿<Page
+    x:Class="Taskuwp.Views.Teamview"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Taskuwp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Data="using:Taskuwp.Models"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Teams under ZOHO" Margin="20" Foreground="DarkCyan" FontWeight="Bold" FontSize="18" Grid.Row="0"></TextBlock>
+        <StackPanel Grid.Row="1" Visibility="Collapsed" Margin="20" Orientation="Horizontal" Name="backarrow">
+            <TextBlock Text="&#xF0B0;" Foreground="DarkCyan" Name="Backarrow"  FontSize="18"   HorizontalAlignment="Center" Margin="10,4,10,0" FontFamily="Segoe MDL2 Assets"  ></TextBlock>
+
+
+            <TextBlock Name="clickedteam" FontSize="18" Foreground="DarkCyan" ></TextBlock>
+        </StackPanel>
+        <Grid Grid.Row="2" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Name="noteam" Foreground="DarkCyan" Grid.Column="0" Visibility="Collapsed" Margin="50"></TextBlock>
+
+
+            <ListView SelectionMode="Single" Name="teamview" Grid.Column="0"  IsItemClickEnabled="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="Data:Teamdetails">
+                        <ListViewItem>
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Name="teamname" Width="170" Height="19" Text="{Binding Teamname}" Margin="20,20,20,20"></TextBlock>
+
+                            </StackPanel>
+
+                        </ListViewItem>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <ListView Name="detailedteamview" Grid.Column="1" SelectionMode="Single" Margin="30,0,0,0" >
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="Data:Employee">
+                        <StackPanel Orientation="Horizontal">
+
+                            <PersonPicture CacheMode="BitmapCache" 
+                                           ProfilePicture="Assets/m.jpg" 
+                                          
+                                           Width="50" Height="50"/>
+
+                            <TextBlock Width="150" Margin="10,20,0,20" Name="empname" >
+                            <Run Text="{Binding Firstname}"></Run>
+                            <Run Text="{Binding Lastname}"></Run>
+                            </TextBlock>
+                        </StackPanel>
+
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView Name="empdetails"  Grid.Column="2"  SelectionMode="Single" Margin="0,70,0,0" Visibility="Collapsed" >
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="Data:Employee">
+                        <StackPanel BorderBrush="DarkCyan" Width="250" BorderThickness="2" Padding="20" Background="White" >
+                            <TextBlock Margin="0,0,10,0" FontWeight="Bold" >
+                                         <Run Text="{Binding Firstname}"></Run>
+                                         <Run Text="{Binding Lastname}"></Run>
+                            </TextBlock>
+                            <TextBlock Margin="0,10,10,10" Foreground="DimGray" Text="{Binding Designation}"></TextBlock>
+                            <TextBlock Margin="0,10,0,0" Foreground="DimGray" Text="{Binding Teamname}"></TextBlock>
+                            <TextBlock Margin="0,10,10,10" Foreground="CornflowerBlue" Text="{Binding Emailid}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+        </Grid>
+    </Grid>
+</Page>
