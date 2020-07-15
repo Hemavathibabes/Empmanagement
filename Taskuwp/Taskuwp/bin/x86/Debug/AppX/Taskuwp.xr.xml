@@ -7,6 +7,7 @@
     <RootPropertyPathName Name="PlaceholderForeground" />
     <RootPropertyPathName Name="DropDownContentMinWidth" />
     <RootPropertyPathName Name="Text" />
+    <RootPropertyPathName Name="teamname" />
     <RootPropertyPathName Name="Permnentaddr" />
     <RootPropertyPathName Name="Presentaddr" />
     <RootPropertyPathName Name="Bloodgroup" />
@@ -24,7 +25,10 @@
     <RootPropertyPathName Name="Teamname" />
     <RootPropertyPathName Name="Lastname" />
     <RootPropertyPathName Name="Firstname" />
-    <RootPropertyPathName Name="teamname" />
+    <RootPropertyPathName Name="teamcount" />
+    <RootPropertyPathName Name="teamhead" />
+    <RootPropertyPathName Name="teammailid" />
+    <RootPropertyPathName Name="imagesource" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -85,8 +89,9 @@
       <RootProperty Name="Padding" />
       <RootProperty Name="Name" />
       <RootProperty Name="Style" />
-      <RootProperty Name="SelectionMode" />
       <RootProperty Name="Visibility" />
+      <RootProperty Name="SelectionMode" />
+      <RootProperty Name="CornerRadius" />
       <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListViewBase">
@@ -331,6 +336,7 @@
       <RootProperty Name="Width" />
       <RootProperty Name="BackgroundSizing" />
       <RootProperty Name="Padding" />
+      <RootProperty Name="Name" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="Foreground" />
@@ -355,6 +361,8 @@
       <RootProperty Name="Visibility" />
       <RootEvent Name="Tapped" />
       <RootEvent Name="PointerPressed" />
+      <RootEvent Name="PointerEntered" />
+      <RootEvent Name="PointerExited" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.FontIcon">
       <RootProperty Name="FontFamily" />
@@ -391,6 +399,11 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Primitives.Popup">
       <RootProperty Name="Child" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="IsOpen" />
+      <RootProperty Name="IsLightDismissEnabled" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="BorderThickness" />
@@ -536,7 +549,6 @@
       <RootProperty Name="Padding" />
       <RootProperty Name="Height" />
       <RootProperty Name="Name" />
-      <RootProperty Name="Visibility" />
       <RootProperty Name="Background" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">
@@ -547,6 +559,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
       <RootProperty Name="Content" />
     </RootType>
+    <RootType FullName="Taskuwp.Views.Allteams" />
     <RootType FullName="Taskuwp.Views.editpage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Source" />
@@ -611,6 +624,9 @@
       <RootProperty Name="ProfilePicture" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Taskuwp.Views.Team" />
     <RootType FullName="Taskuwp.Views.Teamview" />

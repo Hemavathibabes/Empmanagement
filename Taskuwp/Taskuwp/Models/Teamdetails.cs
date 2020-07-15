@@ -18,5 +18,6 @@ namespace Taskuwp.Models
         public string membermanagername { get; set; }
         public string parentteamname { get; set; }
         public string teammailid { get; set; }
+        public int teamcount { get; set; }
     }
 }

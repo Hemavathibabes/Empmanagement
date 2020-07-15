@@ -160,9 +160,7 @@
                     </ListBox>
         </SplitView.Pane>
             <SplitView.Content>
-                <Frame Name="mframe">
-                   
-                </Frame>
+                    <Frame Name="mframe"></Frame>
             </SplitView.Content>
     </SplitView>
         </Grid>

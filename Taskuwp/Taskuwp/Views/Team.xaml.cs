@@ -20,6 +20,7 @@ using Org.BouncyCastle.Security;
 using Windows.Networking.NetworkOperators;
 using Org.BouncyCastle.Asn1.GM;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.UI.Input;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Taskuwp.Views
@@ -39,12 +40,11 @@ namespace Taskuwp.Views
             path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "Employeemanagement.db");
             conn = new SQLite.Net.SQLiteConnection(new
                SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+            //detailedteamview.Items.Add("Hi");
 
-
-            BitmapImage img = new BitmapImage(new Uri(this.BaseUri, "Assets/m.jpg"));
-            detailedteamview.Items.Add(img);
+            
             team = getdetails();
-            teamview.ItemsSource = team;
+            Mainteamview.ItemsSource = team;
         }
         public ObservableCollection<Teamdetails> getdetails()
         {
@@ -66,66 +66,181 @@ namespace Taskuwp.Views
             mailid = e.Parameter as string;
         }
         public Teamdetails click;
-        int count = 0;
-        private string[] clickedteamnames =new string[10];
-        private string[] clickedmanagernames = new string[10];
-        private  void teamview_ItemClick(object sender, ItemClickEventArgs e)
+        private string[] clickedteamnames = new string[10];
+        private string[] clickedmanagernames = new string[20];
+        int count=0;
+        private  void Mainteamview_ItemClick(object sender, ItemClickEventArgs e)
         {
+
+            Mainteamview.Margin = new Thickness(0, -80, 0, 0);
             var clickeditem = e.ClickedItem;
-            
+            bool ifsubteamexist = false;
             click = (Teamdetails)clickeditem;
             string tname = click.teamname;
-            string mname = click.membermanagername;
+            string mname = click.teamhead;
             clickedteamnames[count] = tname;
             clickedmanagernames[count] = mname;
             count++;
-           
-            bool ifsubteamexist = false;
-            backarrow.Visibility = Visibility.Visible;
-            clickedteam.Text = tname;
-            ObservableCollection<Employee> empl = new ObservableCollection<Employee>();
+            Backarrow.Visibility = Visibility.Collapsed;
+            centerline.Visibility = Visibility.Visible;
+            ObservableCollection<Teamdetails> subteam = new ObservableCollection<Teamdetails>();
             ObservableCollection<Teamdetails> tdeails = new ObservableCollection<Teamdetails>();
-            var selectquery = conn.Table<Employee>();
-            foreach (Employee details in selectquery)
+            ObservableCollection<Employee> empl = new ObservableCollection<Employee>();
+            ObservableCollection<Employee> thead = new ObservableCollection<Employee>();
+            int c = 0;
+            string pteam;
+           
+            var squery = conn.Table<Teamdetails>();
+            foreach (Teamdetails cdetails in squery)
             {
-                if (details.Teamname == tname || details.Firstname + " "+details.Lastname==mname)
+                if (cdetails.teamname == tname)
                 {
+                    if(cdetails.parentteamname!="None")
+                    {
+                        Backarrow.Visibility = Visibility.Visible;
+                    }
+                    c++;
+                }
+              
+            }
+            foreach (Teamdetails detail in squery)
+            {
+                if (detail.teamname == tname)
+                {
+                    if (detail.teamhead == "null")
+                    {
+                        pteam = detail.parentteamname;
+                        foreach (Teamdetails details in squery)
+                        {
+                            if (pteam == details.teamname && details.teamhead != "null")
+                            {
+                                mname = details.teamhead;
+                                detail.teamhead = details.teamhead;
+                            }
+                        }
+                    }
+                    if (tdeails.Any(p => p.teamname == detail.teamname) == false)
+                    {
+                      
+                       
+                        detail.teamcount = c;
+                        tdeails.Add(detail);
+                       
+                    }
                    
-                    empl.Add(details);
                 }
             }
-           // empl.Add(new Employee { imagesource = "Assets/f.jpg" });
-            var squery = conn.Table<Teamdetails>();
-            foreach(Teamdetails det in squery)
+            foreach (Teamdetails det in squery)
             {
-                if(click.teamname==det.parentteamname)
+                if (tname == det.parentteamname)
                 {
-                    if(tdeails.Any(p => p.teamname == det.teamname) == false)
-                     {
+                    
+                    if (subteam.Any(p => p.teamname == det.teamname) == false)
+                    {
                         ifsubteamexist = true;
-                        tdeails.Add(det);
+                        subteam.Add(det);
                     }
                 }
             }
+            var selectquery = conn.Table<Employee>();
+            foreach(Employee hdetails in selectquery)
+            {
+                if(hdetails.Firstname + " " + hdetails.Lastname == mname )
+                {
+                    hdetails.imagesource = "ms-appx:///Assets/" + hdetails.empid + ".jpg";
+                    thead.Add(hdetails);
+                }
+            }
+            foreach (Employee details in selectquery)
+            {
+                if (details.Teamname == tname && details.Designation!= "Member Leadership Staff")
+                {
+                    details.imagesource = "ms-appx:///Assets/" + details.empid + ".jpg";
+                    empl.Add(details);
+                }
+            }
+
             if (ifsubteamexist == false)
             {
                
-                teamview.Visibility = Visibility.Collapsed;
+                subteamview.Visibility = Visibility.Collapsed;
                 noteam.Visibility = Visibility.Visible;
                 noteam.Text = "No subteams yet.";
             }
             else
             {
+               
                 noteam.Visibility = Visibility.Collapsed;
-                teamview.Visibility = Visibility.Visible;
-                teamview.ItemsSource = tdeails;
-            }
-            detailedteamview.Visibility = Visibility.Visible;
+                subteamview.Visibility = Visibility.Visible;
+                subteamview.ItemsSource = subteam;
 
-            detailedteamview.ItemsSource = empl;
+            }
+            parentteamdetails.Visibility = Visibility.Visible;
+            parentteamdetails.ItemsSource = tdeails;
+            detailedteamview.Visibility = Visibility.Visible;
+            teamheadview.Visibility = Visibility.Visible;
+            teamheadview.ItemsSource = thead;
+           detailedteamview.ItemsSource = empl;
         }
 
+        
        
+    
+       private void teamname_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+
+            teamdetails.IsOpen = false;
+            var send = sender as Allteams;
+            var view = send.DataContext as Teamdetails;
+            string tname = view.teamname;
+            //TextBlock tb = (TextBlock)sender;
+            //string tname = tb.Text;
+            int c = 0;
+            string pteam;
+            ObservableCollection<Teamdetails> tdetails = new ObservableCollection<Teamdetails>();
+            var selectquery = conn.Table<Teamdetails>();
+            foreach(Teamdetails cdetails in selectquery)
+            {
+                if(cdetails.teamname==tname)
+                {
+                    c++;
+                }
+            }
+            foreach(Teamdetails detail in selectquery)
+            {
+                if (detail.teamname == tname)
+                {
+                    if (detail.teamhead=="null")
+                     {
+                    pteam = detail.parentteamname;
+                    foreach(Teamdetails details in selectquery)
+                    {
+                        if(pteam==details.teamname && details.teamhead!="null")
+                        {
+                            detail.teamhead = details.teamhead;
+                        }
+                    }
+                }
+                    detail.teamcount = c;
+                    tdetails.Add(detail);
+                    break;
+                }
+            }
+            PointerPoint point = e.GetCurrentPoint(send);
+            var x = point.Position.X.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+            var y = point.Position.Y.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+            teamdetails.HorizontalOffset = Convert.ToDouble(x);
+            teamdetails.VerticalOffset = Convert.ToDouble(y);
+
+            teamdetails.IsOpen = true;
+            teamdetailslist.ItemsSource = tdetails;
+        }
+
+        private void teamname_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+           teamdetails.IsOpen = false;
+        }
+
         private void empname_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
             TextBlock tb = (TextBlock)sender;
@@ -139,76 +254,143 @@ namespace Taskuwp.Views
                     emp.Add(details);
                 }
             }
-            empdetails.Visibility = Visibility.Visible;
-            empdetails.ItemsSource = emp;
+           PointerPoint point = e.GetCurrentPoint(tb);
+            var x = point.Position.X.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+            var y = point.Position.Y.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+            empdetails.HorizontalOffset = Convert.ToDouble(x)-40;
+            empdetails.VerticalOffset = Convert.ToDouble(y); 
+           
+                
+            empdetails.IsOpen = true;
+            empdetailslist.ItemsSource = emp;
         }
 
         private void empname_PointerExited(object sender, PointerRoutedEventArgs e)
         {
-            empdetails.Visibility = Visibility.Collapsed;
+           // empdetails.IsOpen = false;
         }
         
-        private  void Backarrow_Tapped(object sender, TappedRoutedEventArgs e)
+        private void Backarrow_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            if (count ==1 )
+            if ( count==1 )
             {
-                ObservableCollection<Teamdetails> teams = new ObservableCollection<Teamdetails>();
-                var selectquery = conn.Table<Teamdetails>();
-                foreach (Teamdetails details in selectquery)
-                {
-                    if (details.parentteamname == "None" && details.teammember == "null")
-                    {
-                        teams.Add(details);
-                    }
-                }
-                teamview.Visibility = Visibility.Visible;
-                detailedteamview.Visibility = Visibility.Collapsed;
-                backarrow.Visibility = Visibility.Collapsed;
-                teamview.ItemsSource = teams;
+                
+                Backarrow.Visibility = Visibility.Collapsed;
             }
-            else
+            
+           else
             {
                
+                bool ifsubteamexist = false;
+               
                 string tname = clickedteamnames[count - 2];
-                string mname = clickedmanagernames[count - 2];
+               string mname=clickedmanagernames[count-2];
+              
 
-                backarrow.Visibility = Visibility.Visible;
-                clickedteam.Text = tname;
-                ObservableCollection<Employee> empl = new ObservableCollection<Employee>();
+                ObservableCollection<Teamdetails> subteam = new ObservableCollection<Teamdetails>();
                 ObservableCollection<Teamdetails> tdeails = new ObservableCollection<Teamdetails>();
-                var selectquery = conn.Table<Employee>();
-                foreach (Employee details in selectquery)
+                ObservableCollection<Employee> empl = new ObservableCollection<Employee>();
+                ObservableCollection<Employee> thead = new ObservableCollection<Employee>();
+                int c = 0;
+                string pteam;
+
+                var squery = conn.Table<Teamdetails>();
+                foreach (Teamdetails cdetails in squery)
                 {
-                    if (details.Teamname == tname || details.Firstname + " " + details.Lastname == mname)
+                    if (cdetails.teamname == tname)
+                    {
+                        if (cdetails.parentteamname != "None")
+                        {
+                            Backarrow.Visibility = Visibility.Visible;
+                        }
+                        c++;
+                    }
+
+                }
+                foreach (Teamdetails detail in squery)
+                {
+                    if (detail.teamname == tname)
+                    {
+                        if (detail.teamhead == "null")
+                        {
+                            pteam = detail.parentteamname;
+                            foreach (Teamdetails details in squery)
+                            {
+                                if (pteam == details.teamname && details.teamhead != "null")
+                                {
+                                    mname = details.teamhead;
+                                    detail.teamhead = details.teamhead;
+                                }
+                            }
+                        }
+                        if (tdeails.Any(p => p.teamname == detail.teamname) == false)
+                        {
+
+
+                            detail.teamcount = c;
+                            tdeails.Add(detail);
+
+                        }
+
+                    }
+                }
+                foreach (Teamdetails det in squery)
+                {
+                    if (tname == det.parentteamname)
                     {
 
+                        if (subteam.Any(p => p.teamname == det.teamname) == false)
+                        {
+                            ifsubteamexist = true;
+                            subteam.Add(det);
+                        }
+                    }
+                }
+                var selectquery = conn.Table<Employee>();
+                foreach (Employee hdetails in selectquery)
+                {
+                    if (hdetails.Firstname + " " + hdetails.Lastname == mname)
+                    {
+                        hdetails.imagesource = "ms-appx:///Assets/" + hdetails.empid + ".jpg";
+                        thead.Add(hdetails);
+                    }
+                }
+                foreach (Employee details in selectquery)
+                {
+                    if (details.Teamname == tname && details.Designation != "Member Leadership Staff")
+                    {
+                        details.imagesource = "ms-appx:///Assets/" + details.empid + ".jpg";
                         empl.Add(details);
                     }
                 }
 
-                var squery = conn.Table<Teamdetails>();
-                foreach (Teamdetails det in squery)
+                if (ifsubteamexist == false)
                 {
-                    if (det.parentteamname == tname)
-                    {
-                        if (tdeails.Any(p => p.teamname == det.teamname) == false)
-                        {
 
-                            tdeails.Add(det);
-                        }
-                    }
+                    subteamview.Visibility = Visibility.Collapsed;
+                    noteam.Visibility = Visibility.Visible;
+                    noteam.Text = "No subteams yet.";
                 }
-                noteam.Visibility = Visibility.Collapsed;
-                teamview.Visibility = Visibility.Visible;
-                teamview.ItemsSource = tdeails;
+                else
+                {
 
+                    noteam.Visibility = Visibility.Collapsed;
+                    subteamview.Visibility = Visibility.Visible;
+                    subteamview.ItemsSource = subteam;
+
+                }
+                parentteamdetails.Visibility = Visibility.Visible;
+                parentteamdetails.ItemsSource = tdeails;
                 detailedteamview.Visibility = Visibility.Visible;
-
+                teamheadview.Visibility = Visibility.Visible;
+                teamheadview.ItemsSource = thead;
                 detailedteamview.ItemsSource = empl;
+
+             
                 count--;
             }
         }
 
-       
+        
     }
 }

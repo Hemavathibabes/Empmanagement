@@ -15,47 +15,100 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
        
-        <TextBlock Text="Teams under ZOHO" Margin="20" Foreground="DarkCyan" FontWeight="Bold" FontSize="18" Grid.Row="0"></TextBlock>
-        <StackPanel x:ConnectionId='2' Grid.Row="1" Visibility="Collapsed" Margin="20" Orientation="Horizontal" Name="backarrow">
-        <TextBlock x:ConnectionId='15' Text="&#xF0B0;" Foreground="DarkCyan" Name="Backarrow"  FontSize="18"                            HorizontalAlignment="Center" Margin="10,4,10,0" FontFamily="Segoe MDL2 Assets"  ></TextBlock>
-            
-           
-            <TextBlock x:ConnectionId='16' Name="clickedteam" FontSize="18" Foreground="DarkCyan" ></TextBlock>
+        <TextBlock Text="Teams under ZOHO" Margin="20,20,20,20" Foreground="DarkCyan" FontWeight="Bold" FontSize="18" Grid.Row="0"></TextBlock>
+        <StackPanel x:ConnectionId='2' Grid.Row="0"  Margin="80,20,20,20"   HorizontalAlignment="Center" Orientation="Horizontal" Name="backarrow">
+            <TextBlock x:ConnectionId='30' Text="&#xF0B0;" Visibility="Collapsed"  Foreground="DarkCyan" Name="Backarrow"  FontSize="20"  
+                                                                     HorizontalAlignment="Center" Margin="10,4,10,0" FontFamily="Segoe MDL2 Assets"  ></TextBlock>
+
+
         </StackPanel>
+        <ListView x:ConnectionId='3' ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}" Margin="420,20,0,0"
+                        Visibility="Collapsed" SelectionMode="None" Name="parentteamdetails" Grid.Row="0" >
+            <ListView.ItemTemplate>
+                <DataTemplate                              >
+                    <ListViewItem>
+                        <StackPanel Margin="0,0,0,25">
+
+
+                            <TextBlock Margin="5,3,3,3" FontSize="16" FontWeight="Bold" Text="{Binding teamname}"></TextBlock>
+
+                            <StackPanel Margin="5,3,3,3" Orientation="Horizontal">
+                                <TextBlock Width="110"  Foreground="DimGray" Text="Team MailId :"/>
+                                <TextBlock  Foreground="DimGray" Text="{Binding  teammailid}"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Margin="5,3,3,3" Orientation="Horizontal">
+                                <TextBlock Width="110"  Foreground="DimGray" Text="Team Head : "/>
+                                <TextBlock  Foreground="DimGray" Text="{Binding  teamhead}"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Margin="5,3,3,3" Orientation="Horizontal">
+                                <TextBlock Width="110" Foreground="DimGray"  Text="Total Members :"></TextBlock>
+                                <TextBlock Foreground="DimGray" Text="{Binding teamcount}"></TextBlock>
+                            </StackPanel>
+
+                        </StackPanel>
+
+                    </ListViewItem>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <Grid Grid.Row="2" Margin="20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250"></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+               
             </Grid.ColumnDefinitions>
-            <TextBlock x:ConnectionId='3' Name="noteam" Foreground="DarkCyan" Grid.Column="0" Visibility="Collapsed" Margin="50"></TextBlock>
+            <Border x:ConnectionId='4'  BorderBrush="Black" Grid.Column="1" Visibility="Collapsed" Name="centerline" Margin="100,-80,0,0" BorderThickness="2,0,0,0"></Border>
            
-            
-            <ListView x:ConnectionId='4' ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}" SelectionMode="Single" Name="teamview" Grid.Column="0"                                IsItemClickEnabled="True">
+           
+
+            <ListView x:ConnectionId='5' ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"  Margin="0,0,0,0" SelectionMode="Single" Name="Mainteamview" Grid.Column="0"                                    IsItemClickEnabled="True">
                 <ListView.ItemTemplate>
                     <DataTemplate                              >
-                        <ListViewItem>
-                            <StackPanel Orientation="Horizontal" >
-                                <TextBlock Name="teamname" Width="170" Height="19" Text="{Binding teamname}" Margin="20,20,20,20"></TextBlock>
-
-                            </StackPanel>
-
-                        </ListViewItem>
+                        <local:Allteams />
 
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+           
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                   
+                </Grid.RowDefinitions>
+                <TextBlock x:ConnectionId='6'  Name="noteam" Foreground="DarkCyan" Grid.Row="0" Height="60"    Grid.Column="1" Visibility="Collapsed" Margin="170,10,10,10"></TextBlock>
+               
+                <ListView x:ConnectionId='7' ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}" Margin="140,-30,0,0"
+                        Visibility="Collapsed" SelectionMode="Single" Name="subteamview" Grid.Row="0"                                    IsItemClickEnabled="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate                              >
+                            <ListViewItem>
+                                <StackPanel >
+                                    <TextBlock Margin="15" HorizontalAlignment="Center"  Text="{Binding teamname}"></TextBlock>
 
-            <ListView x:ConnectionId='5' Name="detailedteamview" Grid.Column="1" Visibility="Collapsed" SelectionMode="Single" Margin="30,0,0,0" >
+                                </StackPanel>
+                            </ListViewItem>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <ListView x:ConnectionId='8' Name="teamheadview"  ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
+                      Grid.Row="1" Visibility="Collapsed" SelectionMode="Single" Margin="150,0,0,0" >
                 <ListView.ItemTemplate>
                     <DataTemplate                           >
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
 
                             <PersonPicture CacheMode="BitmapCache" 
-                                           ProfilePicture="Assets/m.jpg" 
-                                          
-                                           Width="50" Height="50"/>
-                            <TextBlock Width="150" Margin="10,20,0,20" Name="empname" >
+                                           BorderBrush="Black"
+                                           BorderThickness="2"
+                                           HorizontalAlignment="Center"
+                                           ProfilePicture="{Binding imagesource}"
+                                           Width="30" Height="30"/>
+                            <TextBlock x:ConnectionId='23' Width="150" Margin="10,20,0,15" Name="empname" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"                                                                               >
                             <Run Text="{Binding Firstname}"></Run>
                             <Run Text="{Binding Lastname}"></Run>
                             </TextBlock>
@@ -65,8 +118,53 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            
-                <ListView x:ConnectionId='6' Name="empdetails"  Grid.Column="2"  SelectionMode="Single" Margin="0,70,0,0" Visibility="Collapsed" >
+            <ListView x:ConnectionId='9' Name="detailedteamview"  ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
+                      Grid.Row="2" Visibility="Collapsed" SelectionMode="Single" Margin="150,0,0,0" >
+                <ListView.ItemTemplate>
+                    <DataTemplate                           >
+                        <StackPanel Orientation="Horizontal">
+
+                            <PersonPicture CacheMode="BitmapCache" 
+                                           
+                                           ProfilePicture="{Binding imagesource}"
+                                           Width="30" Height="30"/>
+                            <TextBlock x:ConnectionId='20' Width="150" Margin="10,20,0,15" Name="empname"                                                                                >
+                            <Run Text="{Binding Firstname}"></Run>
+                            <Run Text="{Binding Lastname}"></Run>
+                            </TextBlock>
+                        </StackPanel>
+
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+                
+                
+                <!--popuup starts-->
+            <Popup x:ConnectionId='10' Name="teamdetails" IsOpen="False" IsLightDismissEnabled="True"  Margin="50,0,0,0" HorizontalAlignment="Right">
+                    <ListView x:ConnectionId='15'   Name="teamdetailslist" CornerRadius="2"  SelectionMode="None"   >
+                        <ListView.ItemTemplate>
+                            <DataTemplate                              >
+                                <StackPanel BorderBrush="DarkCyan" Width="300" BorderThickness="2" Padding="20" Background="White" >
+                                    <TextBlock Margin="0,0,10,0" FontWeight="Bold" Text="{Binding teamname}"></TextBlock>
+                                    <TextBlock Margin="0,10,10,10" Foreground="DimGray" Text="{Binding teammailid}"></TextBlock>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Margin="0,10,0,0" Foreground="DimGray" Text="Teamhead: "/>
+                                        <TextBlock Margin="0,10,0,0" Foreground="DimGray" Text="{Binding  teamhead}"></TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                    <TextBlock  Margin="0,10,10,10" Foreground="CornflowerBlue" Text="Total Members:"></TextBlock>
+                                    <TextBlock Margin="0,10,10,10" Foreground="CornflowerBlue" Text="{Binding teamcount}"></TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+             </Popup>
+              
+                
+                <Popup x:ConnectionId='11' Name="empdetails" IsLightDismissEnabled="True" Grid.Column="3" Margin="50,0,0,0" HorizontalAlignment="Right">
+                <ListView x:ConnectionId='12'   Name="empdetailslist" CornerRadius="2"  SelectionMode="None"   >
                     <ListView.ItemTemplate>
                         <DataTemplate                           >
                             <StackPanel BorderBrush="DarkCyan" Width="250" BorderThickness="2" Padding="20" Background="White" >
@@ -81,9 +179,9 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                
-           
-           
+            </Popup>
+
+            </Grid>
         </Grid>
         </Grid>
     

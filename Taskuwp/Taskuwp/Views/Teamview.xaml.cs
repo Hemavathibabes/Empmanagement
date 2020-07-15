@@ -32,23 +32,13 @@ namespace Taskuwp.Views
             path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "Employeemanagement.db");
             conn = new SQLite.Net.SQLiteConnection(new
                SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+           
             BitmapImage img = new BitmapImage(new Uri(this.BaseUri, "Assets/m.jpg"));
-            detailedteamview.Items.Add(img);
-            team = getdetails();
-            teamview.ItemsSource = team;
-        }
-        public ObservableCollection<Teamdetails> getdetails()
-        {
-            var selectquery = conn.Table<Teamdetails>();
-            foreach (Teamdetails details in selectquery)
-            {
-                if (details.parentteamname == "None" && details.teammember == "null")
-                {
-                    team.Add(details);
-                }
-            }
-            return team;
+            list.Items.Add(img);
 
         }
+      
+
+        
     }
 }
