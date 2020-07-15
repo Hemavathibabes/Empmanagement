@@ -30,7 +30,7 @@ namespace Taskuwp.Views
     /// </summary>
     public sealed partial class Team : Page
     {
-        string path;
+      
        
         public Team()
         {
