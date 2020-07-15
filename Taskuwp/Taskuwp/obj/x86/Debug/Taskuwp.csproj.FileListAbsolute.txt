@@ -105,11 +105,6 @@ C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Team.g.cs
 C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Team.xaml
 C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Team.xbf
 C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Team.xbf
-C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Teamview.xbf
-C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Teamview.g.i.cs
-C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Teamview.g.cs
-C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Teamview.xaml
-C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Teamview.xbf
 C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Allteams.g.i.cs
 C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Allteams.g.cs
 C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Allteams.xaml

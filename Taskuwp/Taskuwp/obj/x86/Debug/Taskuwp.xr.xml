@@ -361,8 +361,6 @@
       <RootProperty Name="Visibility" />
       <RootEvent Name="Tapped" />
       <RootEvent Name="PointerPressed" />
-      <RootEvent Name="PointerEntered" />
-      <RootEvent Name="PointerExited" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.FontIcon">
       <RootProperty Name="FontFamily" />
@@ -629,7 +627,6 @@
       <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Taskuwp.Views.Team" />
-    <RootType FullName="Taskuwp.Views.Teamview" />
     <RootType FullName="Taskuwp.Views.updatepassword" />
   </Roots.RootTypes>
 </Roots>

@@ -27,16 +27,13 @@ namespace Taskuwp.Views
   
     public sealed partial class Selfservice : Page
     {
-        string path;
-        SQLite.Net.SQLiteConnection conn;
+       
      
         ObservableCollection<Employee> Emp = new ObservableCollection<Employee>();
         public Selfservice()
         {
             this.InitializeComponent();
-            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "Employeemanagement.db");
-            conn = new SQLite.Net.SQLiteConnection(new
-               SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+
                      
         }
         string mailid;
@@ -44,23 +41,11 @@ namespace Taskuwp.Views
         {
             mailid = e.Parameter as string;
 
-            Emp = getdetails(mailid);
+            Emp = ViewModels.Selfservice.getdetails(mailid,Emp);
             ss.ItemsSource = Emp;
         }
         
-        public ObservableCollection<Employee> getdetails(string mid)
-        {
-            var selectquery = conn.Table<Employee>();
-            foreach(Employee details in selectquery)
-            {
-                if(mid==details.Emailid)
-                {
-                    Emp.Add(details);
-                    break;
-                }
-            }
-            return Emp;
-        }
+        
 
         private void edit_Click(object sender, RoutedEventArgs e)
         {

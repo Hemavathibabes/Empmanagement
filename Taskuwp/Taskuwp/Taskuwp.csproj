@@ -126,6 +126,10 @@
     <Compile Include="Models\Employeedetails.cs" />
     <Compile Include="Models\Teamdetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Adduser.cs" />
+    <Compile Include="ViewModels\DBAdapter.cs" />
+    <Compile Include="ViewModels\Selfservice.cs" />
+    <Compile Include="ViewModels\Teamview.cs" />
     <Compile Include="Views\Adduser.xaml.cs">
       <DependentUpon>Adduser.xaml</DependentUpon>
     </Compile>
@@ -152,9 +156,6 @@
     </Compile>
     <Compile Include="Views\Team.xaml.cs">
       <DependentUpon>Team.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Teamview.xaml.cs">
-      <DependentUpon>Teamview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\updatepassword.xaml.cs">
       <DependentUpon>updatepassword.xaml</DependentUpon>
@@ -183,7 +184,6 @@
     <Content Include="Assets\1014.jpg" />
     <Content Include="Assets\1015.jpg" />
     <Content Include="Assets\1016.jpg" />
-    <Content Include="Img\f.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -235,10 +235,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Team.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Teamview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -121,9 +121,6 @@
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1016.jpg">
       <PackagePath>Assets\1016.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Img\f.jpg">
-      <PackagePath>Img\f.jpg</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
@@ -189,9 +186,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Team.xbf">
       <PackagePath>Views\Team.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Teamview.xbf">
-      <PackagePath>Views\Teamview.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\updatepassword.xbf">
       <PackagePath>Views\updatepassword.xbf</PackagePath>

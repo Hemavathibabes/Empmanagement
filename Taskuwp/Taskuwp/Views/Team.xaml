@@ -108,7 +108,7 @@
                                            HorizontalAlignment="Center"
                                            ProfilePicture="{Binding imagesource}"
                                            Width="30" Height="30"/>
-                            <TextBlock Width="150" Margin="10,20,0,15" Name="empname" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" PointerEntered="empname_PointerEntered" PointerExited="empname_PointerExited" >
+                            <TextBlock Width="150" Margin="10,20,0,15" Name="empname" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"  >
                             <Run Text="{Binding Firstname}"></Run>
                             <Run Text="{Binding Lastname}"></Run>
                             </TextBlock>
@@ -128,7 +128,7 @@
                                            
                                            ProfilePicture="{Binding imagesource}"
                                            Width="30" Height="30"/>
-                            <TextBlock Width="150" Margin="10,20,0,15" Name="empname"  PointerEntered="empname_PointerEntered" PointerExited="empname_PointerExited" >
+                                <TextBlock Width="150" Margin="10,20,0,15" Name="empname" >
                             <Run Text="{Binding Firstname}"></Run>
                             <Run Text="{Binding Lastname}"></Run>
                             </TextBlock>

@@ -25,7 +25,7 @@ namespace Taskuwp.Views
     {
         string path;
         SQLite.Net.SQLiteConnection conn;
-        
+        ObservableCollection<Employee> emp = new ObservableCollection<Employee>();
         string EmailId;
         public editpage(string mid)
         {
@@ -33,51 +33,49 @@ namespace Taskuwp.Views
             path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "Employeemanagement.db");
             conn = new SQLite.Net.SQLiteConnection(new
                SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
-            getselfdata(mid);
-            EmailId = mid;
-        }
-        public void getselfdata(string mid)
-        {
-            var selectquery = conn.Table<Employee>();
-            foreach(Employee details in selectquery)
+           emp= ViewModels.Selfservice.getdetails(mid, emp);
+            foreach(Employee em in emp)
             {
-                if(mid==details.Emailid)
+                if(em.Emailid==mid)
                 {
-                    empid.Text = Convert.ToString(details.empid);
-                    fname.Text = details.Firstname;
-                    lname.Text = details.Lastname;
-                    tname.Text = details.Teamname;
-                    designation.Text = details.Designation;
-                    email.Text = details.Emailid;
-                    managername.Text = details.Managername;
-                    gender.Text = details.Gender;
-                    
-                    mno.Text=details.Phoneno;
-                    if(details.Maritialstatus=="Single")
+                    fname.Text = em.Firstname;
+                    lname.Text = em.Lastname;
+                    tname.Text = em.Teamname;
+                    empid.Text = Convert.ToString(em.empid);
+
+                    designation.Text = em.Designation;
+                    email.Text = em.Emailid;
+                    managername.Text = em.Managername;
+                    gender.Text = em.Gender;
+
+                    mno.Text = em.Phoneno;
+                    if (em.Maritialstatus == "Single")
                     {
                         mstatus.SelectedIndex = 0;
                     }
-                    if(details.Maritialstatus=="Married")
+                    if (em.Maritialstatus == "Married")
                     {
                         mstatus.SelectedIndex = 1;
                     }
-                    if(details.Maritialstatus=="Widow")
+                    if (em.Maritialstatus == "Widow")
                     {
                         mstatus.SelectedIndex = 2;
                     }
-                     
-                    faname.Text=details.Fathername;
-                     mtongue.Text=details.Mothertongue;
-                    prstaddr.Text=details.Presentaddr;
-                    emergencyno.Text=details.Emergencyno;
-                    dob.Text=details.Dob;
-                    accno.Text=details.Salaryaccno;
-                    bgroup.Text=details.Bloodgroup;
-                    permtaddr.Text=details.Permnentaddr;
+
+                    faname.Text = em.Fathername;
+                    mtongue.Text = em.Mothertongue;
+                    prstaddr.Text = em.Presentaddr;
+                    emergencyno.Text = em.Emergencyno;
+                    dob.Text = em.Dob;
+                    accno.Text = em.Salaryaccno;
+                    bgroup.Text = em.Bloodgroup;
+                    permtaddr.Text = em.Permnentaddr;
+                    EmailId = mid;
                 }
             }
-         
+          
         }
+      
         string mstatusselected;
         private void mstatus_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -93,45 +91,14 @@ namespace Taskuwp.Views
         }
 
         string mailId;
-        private async void updatebutton_Click(object sender, RoutedEventArgs e)
+        private  void updatebutton_Click(object sender, RoutedEventArgs e)
         {
             mailId = email.Text;
+            ViewModels.Selfservice.updatedetails(mailId, mno.Text, mstatusselected, faname.Text, mtongue.Text,
+                prstaddr.Text, emergencyno.Text, dob.Text, accno.Text, bgroup.Text, permtaddr.Text);
            
-            string pno = mno.Text;
-            string mstatus = mstatusselected;
-            string fathername = faname.Text;
-            string mothertongue = mtongue.Text;
-            string presentaddr = prstaddr.Text;
-            string emergency = emergencyno.Text;
-            string daob = dob.Text;
-            string Accno = accno.Text;
-            string bloodgup = bgroup.Text;
-            string permnentaddr = permtaddr.Text;
-            bool ustatus = false;
-          
-                var updatequery = conn.Table<Employee>();
-                foreach(Employee items in updatequery)
-                {
-                   if(mailId==items.Emailid)
-                    {
-                        ustatus = true;
-                        conn.Execute("UPDATE Employee SET Phoneno=?,Emergencyno=?,Maritialstatus=?," +
-                            "Dob=?,Fathername=?,Salaryaccno=?,Presentaddr=?,Permnentaddr=?,Mothertongue=?,Bloodgroup=? Where Emailid=?"
-                            ,pno,emergency,mstatus,daob,fathername,Accno,presentaddr,permnentaddr,mothertongue,bloodgup,mailId);
-                        break;
-                    }
-                }
-                if (ustatus == false)
-                {
-                    MessageDialog success = new MessageDialog("Data can't update");
-                    await success.ShowAsync();
-                }
-                else
-                {
-                    MessageDialog failure = new MessageDialog("Data updated successfully!");
-                    await failure.ShowAsync();
-                }
-            
+           
+         
            
         }
 

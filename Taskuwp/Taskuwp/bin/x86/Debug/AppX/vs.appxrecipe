@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-07-14T11:14:29.086</Modified>
+      <Modified>2020-07-15T07:24:05.189</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Taskuwp.exe">
       <PackagePath>entrypoint\Taskuwp.exe</PackagePath>
-      <Modified>2020-07-14T11:14:28.615</Modified>
+      <Modified>2020-07-15T07:24:04.715</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\.nuget\packages\easendmail\7.7.0.2\lib\uap10.0\EASendMail.winmd">
       <PackagePath>EASendMail.winmd</PackagePath>
@@ -162,10 +162,6 @@
       <PackagePath>Assets\1016.jpg</PackagePath>
       <Modified>2020-07-13T05:54:33.919</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Img\f.jpg">
-      <PackagePath>Img\f.jpg</PackagePath>
-      <Modified>2020-07-09T10:36:51.933</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2020-06-22T07:55:38.167</Modified>
@@ -206,59 +202,55 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Taskuwp.xr.xml">
       <PackagePath>Taskuwp.xr.xml</PackagePath>
-      <Modified>2020-07-14T07:54:14.085</Modified>
+      <Modified>2020-07-15T07:08:28.666</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-07-14T11:14:28.279</Modified>
+      <Modified>2020-07-15T07:16:00.766</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-07-14T11:14:28.337</Modified>
+      <Modified>2020-07-15T07:16:00.820</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Adduser.xbf">
       <PackagePath>Views\Adduser.xbf</PackagePath>
-      <Modified>2020-07-14T11:14:28.304</Modified>
+      <Modified>2020-07-15T07:16:00.788</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Allteams.xbf">
       <PackagePath>Views\Allteams.xbf</PackagePath>
-      <Modified>2020-07-14T11:14:28.337</Modified>
+      <Modified>2020-07-15T07:16:00.821</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\editpage.xbf">
       <PackagePath>Views\editpage.xbf</PackagePath>
-      <Modified>2020-07-14T11:14:28.304</Modified>
+      <Modified>2020-07-15T07:16:00.796</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Forgotpassword.xbf">
       <PackagePath>Views\Forgotpassword.xbf</PackagePath>
-      <Modified>2020-07-14T11:14:28.337</Modified>
+      <Modified>2020-07-15T07:16:00.821</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Homepage.xbf">
       <PackagePath>Views\Homepage.xbf</PackagePath>
-      <Modified>2020-07-14T11:14:28.320</Modified>
+      <Modified>2020-07-15T07:16:00.804</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Loginpage.xbf">
       <PackagePath>Views\Loginpage.xbf</PackagePath>
-      <Modified>2020-07-14T11:14:28.337</Modified>
+      <Modified>2020-07-15T07:16:00.821</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Selfservice.xbf">
       <PackagePath>Views\Selfservice.xbf</PackagePath>
-      <Modified>2020-07-14T11:14:28.320</Modified>
+      <Modified>2020-07-15T07:16:00.810</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Signuppage.xbf">
       <PackagePath>Views\Signuppage.xbf</PackagePath>
-      <Modified>2020-07-14T11:14:28.337</Modified>
+      <Modified>2020-07-15T07:16:00.821</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Team.xbf">
       <PackagePath>Views\Team.xbf</PackagePath>
-      <Modified>2020-07-14T11:14:28.337</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Teamview.xbf">
-      <PackagePath>Views\Teamview.xbf</PackagePath>
-      <Modified>2020-07-14T11:14:28.337</Modified>
+      <Modified>2020-07-15T07:16:00.818</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\updatepassword.xbf">
       <PackagePath>Views\updatepassword.xbf</PackagePath>
-      <Modified>2020-07-14T11:14:28.337</Modified>
+      <Modified>2020-07-15T07:16:00.822</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -266,11 +258,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-07-13T12:18:24.541</Modified>
+      <Modified>2020-07-15T06:38:02.442</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Core\Taskuwp.exe">
       <PackagePath>Taskuwp.exe</PackagePath>
-      <Modified>2020-07-14T11:14:29.080</Modified>
+      <Modified>2020-07-15T07:24:05.182</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
