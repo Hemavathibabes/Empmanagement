@@ -31,15 +31,10 @@ namespace Taskuwp.Views
     public sealed partial class Team : Page
     {
         string path;
-        SQLite.Net.SQLiteConnection conn;
-        ObservableCollection<Teamdetails> team = new ObservableCollection<Teamdetails>();
        
         public Team()
         {
             this.InitializeComponent();
-            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "Employeemanagement.db");
-            conn = new SQLite.Net.SQLiteConnection(new
-               SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
           
 
             
