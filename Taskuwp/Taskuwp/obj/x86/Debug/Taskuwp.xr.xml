@@ -25,10 +25,12 @@
     <RootPropertyPathName Name="Teamname" />
     <RootPropertyPathName Name="Lastname" />
     <RootPropertyPathName Name="Firstname" />
+    <RootPropertyPathName Name="Favop" />
+    <RootPropertyPathName Name="empid" />
+    <RootPropertyPathName Name="imagesource" />
     <RootPropertyPathName Name="teamcount" />
     <RootPropertyPathName Name="teamhead" />
     <RootPropertyPathName Name="teammailid" />
-    <RootPropertyPathName Name="imagesource" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -358,6 +360,7 @@
       <RootProperty Name="HorizontalTextAlignment" />
       <RootProperty Name="TextDecorations" />
       <RootProperty Name="Inlines" />
+      <RootProperty Name="Tag" />
       <RootProperty Name="Visibility" />
       <RootEvent Name="Tapped" />
       <RootEvent Name="PointerPressed" />
@@ -397,11 +400,6 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Primitives.Popup">
       <RootProperty Name="Child" />
-      <RootProperty Name="Name" />
-      <RootProperty Name="IsOpen" />
-      <RootProperty Name="IsLightDismissEnabled" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="BorderThickness" />
