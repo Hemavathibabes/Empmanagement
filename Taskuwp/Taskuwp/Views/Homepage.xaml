@@ -150,6 +150,12 @@
                                 <TextBlock Text="Add user"  HorizontalTextAlignment="Center" FontSize="13" HorizontalAlignment="Center" Width="126" />
                             </StackPanel>
                         </ListBoxItem>
+                        <ListBoxItem Style="{StaticResource ListBoxItemStyle2}"   ToolTipService.Placement="Bottom" ToolTipService.ToolTip="Employees View" Name="allempitem">
+                            <StackPanel>
+                                <TextBlock Text="&#xE136;"  FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" FontSize="25" Name="allemp"/>
+                                <TextBlock   HorizontalTextAlignment="Center" FontSize="13" HorizontalAlignment="Center" Width="126" >Employees <LineBreak/> View</TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
                         <ListBoxItem Style="{StaticResource ListBoxItemStyle2}"   ToolTipService.Placement="Bottom" ToolTipService.ToolTip="Team Hierarchy" Name="teamviewitem">
                             <StackPanel>
                                 <TextBlock Text="&#xEBDA;"  FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" FontSize="25" Name="teamview"/>

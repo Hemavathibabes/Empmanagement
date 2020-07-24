@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-07-16T10:18:24.534</Modified>
+      <Modified>2020-07-23T12:17:36.836</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Taskuwp.exe">
       <PackagePath>entrypoint\Taskuwp.exe</PackagePath>
-      <Modified>2020-07-16T10:18:23.787</Modified>
+      <Modified>2020-07-23T12:17:36.393</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\.nuget\packages\easendmail\7.7.0.2\lib\uap10.0\EASendMail.winmd">
       <PackagePath>EASendMail.winmd</PackagePath>
@@ -162,6 +162,62 @@
       <PackagePath>Assets\1016.jpg</PackagePath>
       <Modified>2020-07-13T05:54:33.919</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1017.jpg">
+      <PackagePath>Assets\1017.jpg</PackagePath>
+      <Modified>2020-07-17T03:36:02.991</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1018.jpg">
+      <PackagePath>Assets\1018.jpg</PackagePath>
+      <Modified>2020-07-17T03:36:02.989</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1019.jpg">
+      <PackagePath>Assets\1019.jpg</PackagePath>
+      <Modified>2020-07-17T03:36:02.987</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1020.jpg">
+      <PackagePath>Assets\1020.jpg</PackagePath>
+      <Modified>2020-07-17T03:38:11.936</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1021.jpg">
+      <PackagePath>Assets\1021.jpg</PackagePath>
+      <Modified>2020-07-17T03:36:02.969</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1022.jpg">
+      <PackagePath>Assets\1022.jpg</PackagePath>
+      <Modified>2020-07-17T03:36:02.983</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1023.jpg">
+      <PackagePath>Assets\1023.jpg</PackagePath>
+      <Modified>2020-07-17T03:38:11.940</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1024.jpg">
+      <PackagePath>Assets\1024.jpg</PackagePath>
+      <Modified>2020-07-17T03:36:02.971</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1025.jpg">
+      <PackagePath>Assets\1025.jpg</PackagePath>
+      <Modified>2020-07-17T03:36:02.979</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1026.jpg">
+      <PackagePath>Assets\1026.jpg</PackagePath>
+      <Modified>2020-07-17T03:36:02.977</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1027.jpg">
+      <PackagePath>Assets\1027.jpg</PackagePath>
+      <Modified>2020-07-17T03:36:02.975</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1028.jpg">
+      <PackagePath>Assets\1028.jpg</PackagePath>
+      <Modified>2020-07-17T03:36:02.973</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1029.jpg">
+      <PackagePath>Assets\1029.jpg</PackagePath>
+      <Modified>2020-07-17T03:36:02.964</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1030.jpg">
+      <PackagePath>Assets\1030.jpg</PackagePath>
+      <Modified>2020-07-17T03:36:02.993</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2020-06-22T07:55:38.167</Modified>
@@ -202,55 +258,55 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Taskuwp.xr.xml">
       <PackagePath>Taskuwp.xr.xml</PackagePath>
-      <Modified>2020-07-16T10:09:42.132</Modified>
+      <Modified>2020-07-23T12:17:36.047</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-07-16T10:18:23.510</Modified>
+      <Modified>2020-07-23T12:17:36.142</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-07-16T10:18:23.565</Modified>
+      <Modified>2020-07-23T12:08:09.276</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Adduser.xbf">
       <PackagePath>Views\Adduser.xbf</PackagePath>
-      <Modified>2020-07-16T10:18:23.531</Modified>
+      <Modified>2020-07-23T12:08:09.234</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Allteams.xbf">
       <PackagePath>Views\Allteams.xbf</PackagePath>
-      <Modified>2020-07-16T10:18:23.566</Modified>
+      <Modified>2020-07-23T12:08:09.276</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\editpage.xbf">
       <PackagePath>Views\editpage.xbf</PackagePath>
-      <Modified>2020-07-16T10:18:23.538</Modified>
+      <Modified>2020-07-23T12:08:09.242</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\AllEmployees.xbf">
+      <PackagePath>Views\AllEmployees.xbf</PackagePath>
+      <Modified>2020-07-23T12:08:09.249</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Forgotpassword.xbf">
       <PackagePath>Views\Forgotpassword.xbf</PackagePath>
-      <Modified>2020-07-16T10:18:23.566</Modified>
+      <Modified>2020-07-23T12:08:09.276</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Homepage.xbf">
       <PackagePath>Views\Homepage.xbf</PackagePath>
-      <Modified>2020-07-16T10:18:23.546</Modified>
+      <Modified>2020-07-23T12:08:09.259</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Loginpage.xbf">
       <PackagePath>Views\Loginpage.xbf</PackagePath>
-      <Modified>2020-07-16T10:18:23.566</Modified>
+      <Modified>2020-07-23T12:08:09.277</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Selfservice.xbf">
       <PackagePath>Views\Selfservice.xbf</PackagePath>
-      <Modified>2020-07-16T10:18:23.553</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Signuppage.xbf">
-      <PackagePath>Views\Signuppage.xbf</PackagePath>
-      <Modified>2020-07-16T10:18:23.566</Modified>
+      <Modified>2020-07-23T12:08:09.265</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Team.xbf">
       <PackagePath>Views\Team.xbf</PackagePath>
-      <Modified>2020-07-16T10:18:23.563</Modified>
+      <Modified>2020-07-23T12:17:36.151</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\updatepassword.xbf">
       <PackagePath>Views\updatepassword.xbf</PackagePath>
-      <Modified>2020-07-16T10:18:23.566</Modified>
+      <Modified>2020-07-23T12:08:09.277</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -258,11 +314,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-07-15T13:59:54.112</Modified>
+      <Modified>2020-07-21T06:21:38.701</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Core\Taskuwp.exe">
       <PackagePath>Taskuwp.exe</PackagePath>
-      <Modified>2020-07-16T10:18:24.519</Modified>
+      <Modified>2020-07-23T12:17:36.832</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

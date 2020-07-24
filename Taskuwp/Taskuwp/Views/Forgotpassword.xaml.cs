@@ -24,6 +24,9 @@ using Google.Apis.Auth.OAuth2;
 using SQLite.Net.Attributes;
 using Taskuwp.Models;
 using System.ServiceModel.Channels;
+using System.Security.Cryptography.X509Certificates;
+using Org.BouncyCastle.Security;
+using Taskuwp.ViewModels;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -34,61 +37,57 @@ namespace Taskuwp.Views
     /// </summary>
     public sealed partial class Forgotpassword : Page
     {
-        string path;
-        SQLite.Net.SQLiteConnection conn;
+      
         public Forgotpassword()
         {
             this.InitializeComponent();
-            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path,
-           "db.People");
-            conn = new SQLite.Net.SQLiteConnection(new
-               SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+           
         }
 
+        private readonly Random _random = new Random();
         private async void sendemail_Click(object sender, RoutedEventArgs e)
         {
+            string tomail = emailid.Text;
             try
             {
-                string tomail = emailid.Text;
-                bool ifuser = false;
-               string id = "0";
-                var getid= conn.Table<Employeedetails>();
-                foreach(var msg in getid)
+               
+              
+                int loginstatus;
+              loginstatus=ViewModels.Loginuser.checkvaliduser(tomail, " ");
+                if (loginstatus == 1)
                 {
-
-                  if(tomail==msg.Username)
+                    var message = new MimeMessage();
+                    message.From.Add(new MailboxAddress("Anandan Lingusamy", "anandanlingu@gmail.com"));
+                    message.To.Add(new MailboxAddress(" ", tomail));
+                    message.Subject = "Password update";
+                    int num = _random.Next(100000);
+                    message.Body = new TextPart("plain")
                     {
-                        ifuser = true;
-                        id = Convert.ToString(msg.userid);
-                        break;
-                       
+                        Text = "Your Temporary userid is:" + num
+                    };
+
+                    using (var client = new SmtpClient())
+                    {
+                        client.Connect("smtp.gmail.com", 587, false);
+
+
+                        client.Authenticate("anandanhemavathi@gmail.com", "aruheemavathi");
+
+                        client.Send(message);
+                        client.Disconnect(true);
+
                     }
+                    Employee emp = new Employee();
 
+
+                    emp.empid = num;
+                    emp.Emailid = tomail;
+
+
+                    this.Frame.Navigate(typeof(updatepassword), emp);
                 }
-                var message = new MimeMessage();
-                message.From.Add(new MailboxAddress("Anandan Lingusamy", "anandanlingu@gmail.com"));
-                message.To.Add(new MailboxAddress(" ", tomail));
-                message.Subject = "Password update";
 
-                message.Body = new TextPart("plain")
-                {
-                    Text = "Your userid is:" + id
-                };
-
-                using (var client = new SmtpClient())
-                {
-                    client.Connect("smtp.gmail.com", 587, false);
-
-
-                    client.Authenticate("anandanhemavathi@gmail.com", "aruheemavathi");
-
-                    client.Send(message);
-                    client.Disconnect(true);
-
-                }
-                this.Frame.Navigate(typeof(updatepassword),tomail);
-
-                if (ifuser==false)
+                if (loginstatus==0)
                 {
                     MessageDialog userstatus = new MessageDialog("There is no user registered with the mailid");
                     await userstatus.ShowAsync();
@@ -99,7 +98,7 @@ namespace Taskuwp.Views
             }
             catch
             {
-                MessageDialog errdialog = new MessageDialog("There was a problem in sending email...please create a new account");
+                MessageDialog errdialog = new MessageDialog("There was a problem in sending email...please connect a internet");
                 await errdialog.ShowAsync();
 
             }

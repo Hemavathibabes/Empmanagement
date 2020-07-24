@@ -60,6 +60,7 @@ namespace Taskuwp.Models
                 onPropertyChanged("Lastname");
             }
         }
+        public string fullname;
         private string phoneno;
         public string Phoneno
         {
@@ -252,6 +253,19 @@ namespace Taskuwp.Models
             {
                 favop = value;
                 onPropertyChanged("Favop");
+            }
+        }
+        private string isvisible;
+        public string Isvisible
+        {
+            get
+            {
+                return isvisible;
+            }
+            set
+            {
+                isvisible = value;
+                onPropertyChanged("Isvisible");
             }
         }
         private void onPropertyChanged(string property)

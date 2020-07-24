@@ -5,6 +5,7 @@
     xmlns:local="using:Taskuwp.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:Taskuwp.Models"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
@@ -183,13 +184,13 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,100,0" VerticalAlignment="Bottom">
           
-            <TextBlock x:ConnectionId='52' Height="30" Foreground="DarkCyan"  Name="adduser" Margin="20,20,20,20"  FontWeight="Bold" FontSize="25" HorizontalTextAlignment="Center" Text="Add User" Width="122"/>
+            <TextBlock x:ConnectionId='56' Height="30" Foreground="DarkCyan"  Name="adduser" Margin="20,20,20,20"  FontWeight="Bold" FontSize="25" HorizontalTextAlignment="Center" Text="Add User" Width="122"/>
 
         </StackPanel>
        
         <StackPanel  Grid.Row="1"  Orientation="Horizontal" Margin="70,0,50,0"  HorizontalAlignment="Right">
-            <RadioButton x:ConnectionId='50' Style="{StaticResource RadioButtonStyle1}" GroupName="newuser"                               IsChecked="True" Name="newuser1" Content="As a Employee" Width="120"/>
-            <RadioButton x:ConnectionId='51'  Style="{StaticResource RadioButtonStyle1}" GroupName="newuser"                               Margin="20,0,0,0" Name="newuser2"  Content="As a Human Resources Manager"></RadioButton>
+            <RadioButton x:ConnectionId='54' Style="{StaticResource RadioButtonStyle1}" GroupName="newuser"                               IsChecked="True" Name="newuser1" Content="As a Employee" Width="120"/>
+            <RadioButton x:ConnectionId='55'  Style="{StaticResource RadioButtonStyle1}" GroupName="newuser"                               Margin="20,0,0,0" Name="newuser2"  Content="As a Human Resources Manager"></RadioButton>
 
         </StackPanel>
         
@@ -216,10 +217,16 @@
                     <TextBlock Text="Teamname:" Foreground="DimGray" FontSize="15" Height="35" Width="82" HorizontalAlignment="Center" Margin="35,10,0,10"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" >
-                    <TextBox x:ConnectionId='46' Style="{StaticResource TextBoxStyle1}" BorderBrush="Black"  Margin="10" Name="empid"  Height="35" Width="200"></TextBox>
-                    <TextBox x:ConnectionId='47' Style="{StaticResource TextBoxStyle1}" Margin="10" Name="fname" BorderBrush="Black" Width="200"></TextBox>
-                    <TextBox x:ConnectionId='48' Style="{StaticResource TextBoxStyle1}" Margin="10" Name="mno" BorderBrush="Black" Width="200"></TextBox>
-                    <AutoSuggestBox x:ConnectionId='49' Style="{StaticResource AutoSuggestBoxStyle1}" Name="tname"                                           Margin="10" Width="200" ></AutoSuggestBox>
+                    <TextBox x:ConnectionId='48' Style="{StaticResource TextBoxStyle1}" BorderBrush="Black"  Margin="10" Name="empid"  Height="35" Width="200"></TextBox>
+                    <TextBox x:ConnectionId='49' Style="{StaticResource TextBoxStyle1}" Margin="10" Name="fname" BorderBrush="Black" Width="200"></TextBox>
+                    <TextBox x:ConnectionId='50' Style="{StaticResource TextBoxStyle1}" Margin="10" Name="mno" BorderBrush="Black" Width="200"></TextBox>
+                    <AutoSuggestBox x:ConnectionId='51' Style="{StaticResource AutoSuggestBoxStyle1}" TextMemberPath="Teamname"  Name="tname"                                            Margin="10" Width="200" >
+                        <AutoSuggestBox.ItemTemplate>
+                            <DataTemplate                           >
+                                <TextBlock Name="mnameselected" Text="{Binding Teamname}"></TextBlock>
+                            </DataTemplate>
+                        </AutoSuggestBox.ItemTemplate>
+                    </AutoSuggestBox>
                 </StackPanel>
                 <StackPanel Grid.Column="2" >
                     <TextBlock Text="Designation:" Foreground="DimGray" FontSize="15" Height="35" Width="90" Margin="14,10,10,10"/>
@@ -240,7 +247,22 @@
                     </ComboBox>
                     <TextBox x:ConnectionId='43' Style="{StaticResource TextBoxStyle1}" Margin="10" BorderBrush="Black" Name="lname" Width="200"></TextBox>
                     <TextBox x:ConnectionId='44'  Style="{StaticResource TextBoxStyle1}" Margin="10" BorderBrush="Black" Name="email" Width="200"></TextBox>
-                    <AutoSuggestBox x:ConnectionId='45' Style="{StaticResource AutoSuggestBoxStyle1}" Name="managername"                                        Margin="10" Width="200"></AutoSuggestBox>
+                    <AutoSuggestBox x:ConnectionId='45' Style="{StaticResource AutoSuggestBoxStyle1}" Name="managername" TextMemberPath="fullname"                                       Margin="10" Width="200">
+                        <AutoSuggestBox.ItemTemplate>
+                            <DataTemplate                           >
+                                <StackPanel Orientation="Horizontal">
+                                    <PersonPicture CacheMode="BitmapCache" 
+                                           HorizontalAlignment="Center"
+                                           ProfilePicture="{Binding imagesource}"
+                                               Margin="0,0,0,0"
+                                           Width="20" Height="20"/>
+                                    <TextBlock Margin="4,0,0,0" Text="{Binding fullname}" >
+                                    
+                                </TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </AutoSuggestBox.ItemTemplate>
+                    </AutoSuggestBox>
                 </StackPanel>
             </Grid>
         </Grid>

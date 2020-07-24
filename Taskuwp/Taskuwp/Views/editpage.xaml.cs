@@ -66,7 +66,7 @@ namespace Taskuwp.Views
                     mtongue.Text = em.Mothertongue;
                     prstaddr.Text = em.Presentaddr;
                     emergencyno.Text = em.Emergencyno;
-                    dob.Text = em.Dob;
+                    dob.Date = Convert.ToDateTime(em.Dob);
                     accno.Text = em.Salaryaccno;
                     bgroup.Text = em.Bloodgroup;
                     permtaddr.Text = em.Permnentaddr;
@@ -95,7 +95,7 @@ namespace Taskuwp.Views
         {
             mailId = email.Text;
             ViewModels.Selfservice.updatedetails(mailId, mno.Text, mstatusselected, faname.Text, mtongue.Text,
-                prstaddr.Text, emergencyno.Text, dob.Text, accno.Text, bgroup.Text, permtaddr.Text);
+                prstaddr.Text, emergencyno.Text, dob.DateFormat, accno.Text, bgroup.Text, permtaddr.Text);
            
            
          

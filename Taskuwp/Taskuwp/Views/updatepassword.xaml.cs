@@ -32,41 +32,49 @@ namespace Taskuwp.Views
         {
             this.InitializeComponent();
             path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path,
-          "db.sqlite");
+          "Employeemanagement.db");
             conn = new SQLite.Net.SQLiteConnection(new
                SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
         }
-        string param;
+        string tomail;
+        int u_id;
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            param= e.Parameter as  string;
+           var param=(Employee)e.Parameter;
+            tomail = param.Emailid;
+            u_id = param.empid;
+          
         }
 
         private async void upassword_Click(object sender, RoutedEventArgs e)
         {
-            string userid,password;
-            var checkuserid = conn.Table<Employeedetails>();
-            userid = uid.Text;
+            string password;
+            int userid;
+            bool ifupdate = false;
+            userid  =Convert.ToInt32(uid.Text);
             password = pwd.Password;
-            int usid = Convert.ToInt32(userid);
+
+            
             if (pwd.Password == reenterpwd.Password)
 
             {
-             
-              
- 
-
-                foreach (var details in checkuserid)
-
+             if(u_id==userid)
                 {
-                    if (param == details.Username && usid == details.userid)
-                    {
-                        conn.Execute("UPDATE Employeedetails SET Password = ? Where userid = ?", password, usid);
-                        break;
-                    }
+                    ifupdate=ViewModels.Loginuser.updatepassword(tomail, password);
                 }
-                MessageDialog sucessdialog = new MessageDialog("Password update successfully!");
-                await sucessdialog.ShowAsync();
+              if(ifupdate==true)
+                {
+                    MessageDialog sucessdialog = new MessageDialog("Password update successfully!");
+                    await sucessdialog.ShowAsync();
+
+                    this.Frame.Navigate(typeof(Homepage), tomail);
+                }
+                if(ifupdate==false)
+                {
+                    MessageDialog errdialog = new MessageDialog("Password update failed! ");
+                    await errdialog.ShowAsync();
+
+                }
             }
             else
             {

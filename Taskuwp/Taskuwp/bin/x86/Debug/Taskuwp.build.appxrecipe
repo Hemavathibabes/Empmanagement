@@ -121,6 +121,48 @@
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1016.jpg">
       <PackagePath>Assets\1016.jpg</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1017.jpg">
+      <PackagePath>Assets\1017.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1018.jpg">
+      <PackagePath>Assets\1018.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1019.jpg">
+      <PackagePath>Assets\1019.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1020.jpg">
+      <PackagePath>Assets\1020.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1021.jpg">
+      <PackagePath>Assets\1021.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1022.jpg">
+      <PackagePath>Assets\1022.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1023.jpg">
+      <PackagePath>Assets\1023.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1024.jpg">
+      <PackagePath>Assets\1024.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1025.jpg">
+      <PackagePath>Assets\1025.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1026.jpg">
+      <PackagePath>Assets\1026.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1027.jpg">
+      <PackagePath>Assets\1027.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1028.jpg">
+      <PackagePath>Assets\1028.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1029.jpg">
+      <PackagePath>Assets\1029.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1030.jpg">
+      <PackagePath>Assets\1030.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
@@ -169,6 +211,9 @@
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\editpage.xbf">
       <PackagePath>Views\editpage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\AllEmployees.xbf">
+      <PackagePath>Views\AllEmployees.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Forgotpassword.xbf">
       <PackagePath>Views\Forgotpassword.xbf</PackagePath>
     </AppxPackagedFile>
@@ -180,9 +225,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Selfservice.xbf">
       <PackagePath>Views\Selfservice.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Signuppage.xbf">
-      <PackagePath>Views\Signuppage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Team.xbf">
       <PackagePath>Views\Team.xbf</PackagePath>

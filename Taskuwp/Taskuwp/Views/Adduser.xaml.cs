@@ -20,6 +20,7 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.Data.Text;
 using Taskuwp.ViewModels;
 using Windows.Devices.Printers.Extensions;
+using System.Collections.ObjectModel;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Taskuwp.Views
@@ -90,31 +91,37 @@ namespace Taskuwp.Views
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
+            string date = dob.Date.ToString();
+            string formateddate=date.Split(" ")[0];
+
             ViewModels.Adduser.insertdata(empid.Text,"1234", newuserval, designationselected, fname.Text, lname.Text,
-                   mno.Text, email.Text, tname.Text, managername.Text, genderval, emergencyno.Text, mstatus.Text, dob.DateFormat,
-                   faname.Text, accno.Text, prstaddr.Text, permtaddr.Text, mtongue.Text, bgroup.Text);
+                   mno.Text, email.Text, tname.Text, managername.Text, genderval, emergencyno.Text, mstatus.Text,formateddate,
+            faname.Text, accno.Text, prstaddr.Text, permtaddr.Text, mtongue.Text, bgroup.Text);
           
         }
 
-        private string[] Autoitems = new string[20];
+       
         private  void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
-
-           Autoitems=ViewModels.Adduser.getdesignationdetails(Autoitems);
-            var Auto = (AutoSuggestBox)sender;
-          
-            Auto.ItemsSource = Autoitems;
+            ObservableCollection<Employee> emp = new ObservableCollection<Employee>();
+            emp =ViewModels.Adduser.getdesignationdetails(emp);
+            AutoSuggestBox Auto = (AutoSuggestBox)sender;
+            var filtered = emp.Where(i => i.Teamname.Contains(this.tname.Text,StringComparison.CurrentCultureIgnoreCase)).ToList();
+            
+            
+            Auto.ItemsSource = filtered;
         }
+
        
 
-        private string[] managersugg = new string[1];
-
-         private  void managername_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        private  void managername_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
-          managersugg= ViewModels.Adduser.getmanagerdetails(tname.Text, managersugg);
+            ObservableCollection<Employee> thead = new ObservableCollection<Employee>();
+             thead= ViewModels.Adduser.getmanagerdetails(tname.Text,thead );
             var Auto = (AutoSuggestBox)sender;
-            Auto.ItemsSource = managersugg;
-
+            var filtered = thead.Where(i => i.Firstname.Contains(this.managername.Text, StringComparison.CurrentCultureIgnoreCase)).ToList();
+            Auto.ItemsSource = filtered;
+          //  Auto.TextMemberPath="Firstname + Lastname";
         }
 
         private void cancel_Click(object sender, RoutedEventArgs e)
@@ -124,5 +131,7 @@ namespace Taskuwp.Views
             headgrid.Children.Add(au);
             adduser.Focus(FocusState.Keyboard);
         }
+
+       
     }
 }

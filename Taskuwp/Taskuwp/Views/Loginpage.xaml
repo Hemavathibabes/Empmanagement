@@ -36,6 +36,6 @@
 
         <Button Grid.Row="4" Name="login" Click="login_Click" Width="150" FontSize="19"  HorizontalAlignment="Center" Foreground="White" Background="DarkBlue" VerticalAlignment="Center" Content="Login"></Button>
 
-        <TextBlock Text="Didn't have an account? Sign up" PointerPressed="TextBlock_PointerPressed" Grid.Row="5" HorizontalAlignment="Center" Foreground="DarkBlue"></TextBlock>
+       
     </Grid>
 </Page>

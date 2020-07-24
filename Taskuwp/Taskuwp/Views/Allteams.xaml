@@ -8,9 +8,10 @@
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
-
-    <StackPanel Orientation="Horizontal" >
-        <TextBlock Name="teamname" Width="170" Height="19" Text="{Binding teamname}" Margin="20,20,20,20"></TextBlock>
+    <ScrollViewer>
+    <StackPanel Orientation="Horizontal"  >
+        <TextBlock Name="teamname" Width="170" Height="19"  Text="{Binding teamname}" Margin="10,20,20,20"></TextBlock>
 
     </StackPanel>
+    </ScrollViewer>
 </UserControl>

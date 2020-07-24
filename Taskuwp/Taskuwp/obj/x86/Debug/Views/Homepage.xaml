@@ -119,7 +119,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <RelativePanel Grid.Row="0" VerticalAlignment="Top">
-    <Button x:ConnectionId='26' Content="&#xEC26;" Background="Transparent" Margin="20,0,0,0" Name="hamburgerbutton" RelativePanel.AlignLeftWithPanel="True"  FontSize="36"                               FontFamily="Segoe MDL2 Assets">
+    <Button x:ConnectionId='28' Content="&#xEC26;" Background="Transparent" Margin="20,0,0,0" Name="hamburgerbutton" RelativePanel.AlignLeftWithPanel="True"  FontSize="36"                               FontFamily="Segoe MDL2 Assets">
     </Button>
             <TextBlock Text="Employee Management App" FontSize="36" Margin="80,0,0,0"  FontWeight="Bold" RelativePanel.AlignLeftWith="hamburgerbutton"></TextBlock>
 
@@ -133,26 +133,32 @@
                         <ListBoxItem x:ConnectionId='17' Style="{StaticResource ListBoxItemStyle2}"  Name="homeitem" >
                    
                     <StackPanel>
-                            <TextBlock x:ConnectionId='24' Text="&#xE80F;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" FontSize="25" Name="home"/>
+                            <TextBlock x:ConnectionId='26' Text="&#xE80F;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" FontSize="25" Name="home"/>
                             <TextBlock Text="Home" HorizontalTextAlignment="Center" FontSize="13" HorizontalAlignment="Center" Width="126" />
                         </StackPanel>
                        
                 </ListBoxItem>
                         <ListBoxItem x:ConnectionId='18' Style="{StaticResource ListBoxItemStyle2}" ToolTipService.Placement="Bottom" ToolTipService.ToolTip="Self service" Name="selfserviceitem">
                         <StackPanel>
-                            <TextBlock x:ConnectionId='23' Text="&#xE77B;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" FontSize="25" Name="selfservice"/>
+                            <TextBlock x:ConnectionId='25' Text="&#xE77B;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" FontSize="25" Name="selfservice"/>
                             <TextBlock Text="Self-service" HorizontalTextAlignment="Center" FontSize="13" HorizontalAlignment="Center" Width="126" />
                         </StackPanel>
                     </ListBoxItem>
                         <ListBoxItem x:ConnectionId='19' Style="{StaticResource ListBoxItemStyle2}"   ToolTipService.Placement="Bottom" ToolTipService.ToolTip="Adduser" Name="adduseritem">
                             <StackPanel>
-                                <TextBlock x:ConnectionId='22' Text="&#xE8FA;"  FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" FontSize="25" Name="adduser"/>
+                                <TextBlock x:ConnectionId='24' Text="&#xE8FA;"  FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" FontSize="25" Name="adduser"/>
                                 <TextBlock Text="Add user"  HorizontalTextAlignment="Center" FontSize="13" HorizontalAlignment="Center" Width="126" />
                             </StackPanel>
                         </ListBoxItem>
-                        <ListBoxItem x:ConnectionId='20' Style="{StaticResource ListBoxItemStyle2}"   ToolTipService.Placement="Bottom" ToolTipService.ToolTip="Team Hierarchy" Name="teamviewitem">
+                        <ListBoxItem x:ConnectionId='20' Style="{StaticResource ListBoxItemStyle2}"   ToolTipService.Placement="Bottom" ToolTipService.ToolTip="Employees View" Name="allempitem">
                             <StackPanel>
-                                <TextBlock x:ConnectionId='21' Text="&#xEBDA;"  FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" FontSize="25" Name="teamview"/>
+                                <TextBlock x:ConnectionId='23' Text="&#xE136;"  FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" FontSize="25" Name="allemp"/>
+                                <TextBlock   HorizontalTextAlignment="Center" FontSize="13" HorizontalAlignment="Center" Width="126" >Employees <LineBreak/> View</TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem x:ConnectionId='21' Style="{StaticResource ListBoxItemStyle2}"   ToolTipService.Placement="Bottom" ToolTipService.ToolTip="Team Hierarchy" Name="teamviewitem">
+                            <StackPanel>
+                                <TextBlock x:ConnectionId='22' Text="&#xEBDA;"  FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" FontSize="25" Name="teamview"/>
                                 <TextBlock Text="Team view"  HorizontalTextAlignment="Center" FontSize="13" HorizontalAlignment="Center" Width="126" />
                             </StackPanel>
                         </ListBoxItem>
@@ -160,7 +166,7 @@
                     </ListBox>
         </SplitView.Pane>
             <SplitView.Content>
-                    <Frame x:ConnectionId='25' Name="mframe"></Frame>
+                    <Frame x:ConnectionId='27' Name="mframe"></Frame>
             </SplitView.Content>
     </SplitView>
         </Grid>

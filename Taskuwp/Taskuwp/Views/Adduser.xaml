@@ -5,6 +5,7 @@
     xmlns:local="using:Taskuwp.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:Taskuwp.Models"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
@@ -219,7 +220,13 @@
                     <TextBox Style="{StaticResource TextBoxStyle1}" BorderBrush="Black"  Margin="10" Name="empid"  Height="35" Width="200"></TextBox>
                     <TextBox Style="{StaticResource TextBoxStyle1}" Margin="10" Name="fname" BorderBrush="Black" Width="200"></TextBox>
                     <TextBox Style="{StaticResource TextBoxStyle1}" Margin="10" Name="mno" BorderBrush="Black" Width="200"></TextBox>
-                    <AutoSuggestBox Style="{StaticResource AutoSuggestBoxStyle1}" Name="tname"  TextChanged="AutoSuggestBox_TextChanged" Margin="10" Width="200" ></AutoSuggestBox>
+                    <AutoSuggestBox Style="{StaticResource AutoSuggestBoxStyle1}" TextMemberPath="Teamname"  Name="tname"   TextChanged="AutoSuggestBox_TextChanged" Margin="10" Width="200" >
+                        <AutoSuggestBox.ItemTemplate>
+                            <DataTemplate x:DataType="data:Employee">
+                                <TextBlock Name="mnameselected" Text="{Binding Teamname}"></TextBlock>
+                            </DataTemplate>
+                        </AutoSuggestBox.ItemTemplate>
+                    </AutoSuggestBox>
                 </StackPanel>
                 <StackPanel Grid.Column="2" >
                     <TextBlock Text="Designation:" Foreground="DimGray" FontSize="15" Height="35" Width="90" Margin="14,10,10,10"/>
@@ -240,7 +247,22 @@
                     </ComboBox>
                     <TextBox Style="{StaticResource TextBoxStyle1}" Margin="10" BorderBrush="Black" Name="lname" Width="200"></TextBox>
                     <TextBox  Style="{StaticResource TextBoxStyle1}" Margin="10" BorderBrush="Black" Name="email" Width="200"></TextBox>
-                    <AutoSuggestBox Style="{StaticResource AutoSuggestBoxStyle1}" Name="managername"  TextChanged="managername_TextChanged" Margin="10" Width="200"></AutoSuggestBox>
+                    <AutoSuggestBox Style="{StaticResource AutoSuggestBoxStyle1}" Name="managername" TextMemberPath="fullname" TextChanged="managername_TextChanged" Margin="10" Width="200">
+                        <AutoSuggestBox.ItemTemplate>
+                            <DataTemplate x:DataType="data:Employee">
+                                <StackPanel Orientation="Horizontal">
+                                    <PersonPicture CacheMode="BitmapCache" 
+                                           HorizontalAlignment="Center"
+                                           ProfilePicture="{Binding imagesource}"
+                                               Margin="0,0,0,0"
+                                           Width="20" Height="20"/>
+                                    <TextBlock Margin="4,0,0,0" Text="{Binding fullname}" >
+                                    
+                                </TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </AutoSuggestBox.ItemTemplate>
+                    </AutoSuggestBox>
                 </StackPanel>
             </Grid>
         </Grid>

@@ -133,13 +133,14 @@ namespace Taskuwp.ViewModels
                 }
             }
         }
-        public static void getempdetails(string empname,ObservableCollection<Employee> emp)
+        public static void getempdetails(int empid,ObservableCollection<Employee> emp)
         {
             var selectquery = DBAdapter.conn.Table<Employee>();
             foreach (Employee details in selectquery)
             {
-                if ((details.Firstname + " " + details.Lastname) == empname)
+                if (details.empid==empid)
                 {
+                    details.imagesource = "ms-appx:///Assets/" + details.empid + ".jpg";
                     emp.Add(details);
                 }
             }

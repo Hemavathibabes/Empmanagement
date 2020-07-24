@@ -26,39 +26,21 @@ namespace Taskuwp.Views
     /// </summary>
     public sealed partial class Loginpage : Page
     {
-        string path;
-        SQLite.Net.SQLiteConnection conn;
+       
         public Loginpage()
         {
             this.InitializeComponent();
-            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path,"db.People");
-            conn = new SQLite.Net.SQLiteConnection(new
-               SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+           
         }
-        private void TextBlock_PointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Signuppage), null, new SuppressNavigationTransitionInfo());
-        }
+       
 
         private  async void login_Click(object sender, RoutedEventArgs e)
         {
            
+
            int loginstatus = 0;
-            var checkquery = conn.Table<Employee>();
-            foreach (var message in checkquery)
-            {
-                if (email.Text == message.Emailid)
-                {
-                    loginstatus = 1;
-                    if (email.Text == message.Emailid && password.Password == message.password)
-                    {
-                       
-                        loginstatus = 2;
-                        break;
-                    }
-                }
-               
-            }
+           loginstatus= ViewModels.Loginuser.checkvaliduser(email.Text, password.Password);
+           
              if(loginstatus==1)
             {
                 MessageDialog faillogin = new MessageDialog("Username and password does not match!");

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -89,7 +90,7 @@ namespace Taskuwp.ViewModels
                     Gender = gender,
                     Emergencyno = emergencyno,
                     Maritialstatus = mstatus,
-                    Dob = dob,
+                    Dob =dob,
                     Fathername = fathername,
                     Salaryaccno = accno,
                     Presentaddr = prstaddr,
@@ -135,32 +136,22 @@ namespace Taskuwp.ViewModels
 
         }
         
-        public static string[] getdesignationdetails(string[] Autoitems)
+        public static ObservableCollection<Employee> getdesignationdetails(ObservableCollection<Employee> emp)
         {
            
-            bool ifexist = false;
-            int count = 0;
+           
             var selquery = DBAdapter.conn.Table<Employee>();
             foreach (Employee det in selquery)
             {
-                ifexist = false;
-                for (int i = 0; i < count; i++)
-                {
-                    if (det.Teamname == Autoitems[i])
-                    {
-                        ifexist = true;
-                        break;
-                    }
+               if(emp.Any(p=>p.Teamname==det.Teamname)==false)
+               {
+                    emp.Add(det);
                 }
-                if (ifexist == false)
-                {
-                    Autoitems[count] = det.Teamname;
-                    count++;
-                }
+             
             }
-            return Autoitems;
+            return emp;
         }
-        public static string[] getmanagerdetails(string teamname,string[] managersugg)
+        public static ObservableCollection<Employee> getmanagerdetails(string teamname,ObservableCollection<Employee> thead)
         {
             bool pteam = false;
             string parent = "None";
@@ -207,7 +198,9 @@ namespace Taskuwp.ViewModels
             {
                 if (det.Teamname == teamname && det.Designation == "Member Leadership Staff")
                 {
-                    managersugg[count] = det.Firstname + " " + det.Lastname;
+                    det.imagesource = "ms-appx:///Assets/" + det.empid + ".jpg";
+                    det.fullname = det.Firstname + " " + det.Lastname;
+                    thead.Add(det);
                     count++;
                     break;
                 }
@@ -218,13 +211,15 @@ namespace Taskuwp.ViewModels
                 {
                     if (parent == de.Teamname)
                     {
-                        managersugg[count] = de.Firstname + " " + de.Lastname;
+                        de.imagesource = "ms-appx:///Assets/" + de.empid + ".jpg";
+                        de.fullname = de.Firstname + " " + de.Lastname;
+                        thead.Add(de);
                         count++;
                         break;
                     }
                 }
             }
-            return managersugg;
+            return thead;
         }
     }
 }

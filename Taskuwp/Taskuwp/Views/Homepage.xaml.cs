@@ -24,15 +24,11 @@ namespace Taskuwp.Views
 {
     public sealed partial class Homepage : Page
     {
-        string path;
-        SQLite.Net.SQLiteConnection conn;
+       
         public Homepage()
         {
             this.InitializeComponent();
-            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "Employeemanagement.db");
-            conn = new SQLite.Net.SQLiteConnection(new
-               SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
-            var selectquery = conn.Table<Employee>();
+            
             
             }
         string mailid;
@@ -66,11 +62,15 @@ namespace Taskuwp.Views
             }
            if(selfserviceitem.IsSelected==true)
             {
-                mframe.Navigate(typeof(Selfservice), "senthil@gmail.com", new SuppressNavigationTransitionInfo());
+                mframe.Navigate(typeof(Selfservice),"senthil@gmail.com", new SuppressNavigationTransitionInfo());
             }
            if(teamviewitem.IsSelected==true)
             {
                 mframe.Navigate(typeof(Team), "senthil@gmail.com", new SuppressNavigationTransitionInfo());
+            }
+           if(allempitem.IsSelected==true)
+            {
+                mframe.Navigate(typeof(FavEmployees), "senthil@gmail.com", new SuppressNavigationTransitionInfo());
             }
         }
     }

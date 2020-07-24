@@ -112,7 +112,8 @@
                 </StackPanel>
                 <StackPanel Grid.Column="3" >
                         <TextBox x:ConnectionId='6' Margin="10" BorderBrush="Black" Name="emergencyno" Height="35" Width="200"></TextBox>
-                        <TextBox x:ConnectionId='7' Margin="10" BorderBrush="Black" Name="dob" Width="200"></TextBox>
+                        
+                        <CalendarDatePicker x:ConnectionId='7' Name="dob"   Style="{StaticResource CalendarDatePickerStyle1}" BorderBrush="Black" Margin="50,10,10,10"></CalendarDatePicker>
                         <TextBox x:ConnectionId='8' Margin="10" BorderBrush="Black" Name="accno" Width="200"></TextBox>
                         <TextBox x:ConnectionId='9' Margin="10" BorderBrush="Black" Name="bgroup"  Width="200"></TextBox>
                         <TextBox x:ConnectionId='10' Margin="10" BorderBrush="Black" TextWrapping="Wrap" Name="permtaddr" Width="200" Height="90">
