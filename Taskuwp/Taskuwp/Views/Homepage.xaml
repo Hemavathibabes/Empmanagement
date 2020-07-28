@@ -112,32 +112,26 @@
             </Setter>
         </Style>
     </Page.Resources>
-    <ScrollViewer>
+   
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="70"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition  Height="Auto" ></RowDefinition>
+            <RowDefinition  Height="1100"></RowDefinition>
         </Grid.RowDefinitions>
         <RelativePanel Grid.Row="0" VerticalAlignment="Top">
-    <Button Content="&#xEC26;" Background="Transparent" Margin="20,0,0,0" Name="hamburgerbutton" RelativePanel.AlignLeftWithPanel="True"  FontSize="36" Click="hamburgerbutton_Click" FontFamily="Segoe MDL2 Assets">
+    <Button Content="&#xEC26;" Background="Transparent" Margin="10,10,0,0" Name="hamburgerbutton" RelativePanel.AlignLeftWithPanel="True"  FontSize="36" Click="hamburgerbutton_Click" FontFamily="Segoe MDL2 Assets">
     </Button>
-            <TextBlock Text="Employee Management App" FontSize="36" Margin="80,0,0,0"  FontWeight="Bold" RelativePanel.AlignLeftWith="hamburgerbutton"></TextBlock>
+            <TextBlock Text="Employee Management App" FontSize="32" Margin="70,10,0,0"  FontWeight="Bold" RelativePanel.AlignLeftWith="hamburgerbutton"></TextBlock>
 
         </RelativePanel>
   
-        <SplitView Grid.Row="1"  Name="mysplitview" PaneBackground="DarkBlue" DisplayMode="CompactOverlay" HorizontalAlignment="Left" CompactPaneLength="90" OpenPaneLength="90"  >
+        <SplitView Grid.Row="1" Name="mysplitview" Margin="0,0,0,0" PaneBackground="DarkBlue" DisplayMode="CompactOverlay"
+                   HorizontalAlignment="Left" CompactPaneLength="90" OpenPaneLength="90"  >
         <SplitView.Pane >
             
             <ListBox Name="listbox" SelectionChanged="listbox_SelectionChanged"   SelectionMode="Single">
 
-                        <ListBoxItem Style="{StaticResource ListBoxItemStyle2}"  Name="homeitem" >
-                   
-                    <StackPanel>
-                            <TextBlock Text="&#xE80F;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" FontSize="25" Name="home"/>
-                            <TextBlock Text="Home" HorizontalTextAlignment="Center" FontSize="13" HorizontalAlignment="Center" Width="126" />
-                        </StackPanel>
-                       
-                </ListBoxItem>
+                        
                         <ListBoxItem Style="{StaticResource ListBoxItemStyle2}" ToolTipService.Placement="Bottom" ToolTipService.ToolTip="Self service" Name="selfserviceitem">
                         <StackPanel>
                             <TextBlock Text="&#xE77B;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" FontSize="25" Name="selfservice"/>
@@ -162,7 +156,14 @@
                                 <TextBlock Text="Team view"  HorizontalTextAlignment="Center" FontSize="13" HorizontalAlignment="Center" Width="126" />
                             </StackPanel>
                         </ListBoxItem>
+                        <ListBoxItem Style="{StaticResource ListBoxItemStyle2}"  Name="logoutitem" >
 
+                            <StackPanel>
+                                <TextBlock Text="&#xE7E8;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Center" FontSize="25" Name="logout"/>
+                                <TextBlock Text="Logout" HorizontalTextAlignment="Center" FontSize="13" HorizontalAlignment="Center" Width="126" />
+                            </StackPanel>
+
+                        </ListBoxItem>
                     </ListBox>
         </SplitView.Pane>
             <SplitView.Content>
@@ -170,5 +171,5 @@
             </SplitView.Content>
     </SplitView>
         </Grid>
-    </ScrollViewer>
+   
 </Page>

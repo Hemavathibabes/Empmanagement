@@ -9,18 +9,64 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="Allemployeeadaptive">
+
+                <VisualState x:Name="minwindow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0">
+
+                        </AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                       <Setter Target="firstcol.Visibility" Value="Collapsed"></Setter>
+                        <Setter Target="empdetailslist.Visibility" Value="Collapsed"></Setter>
+                        <Setter Target="detailedemplist.Visibility" Value="Collapsed"></Setter>
+                       
+                        
+                    </VisualState.Setters>
+                </VisualState>
+                
+                <VisualState x:Name="maxwindow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="700">
+
+                        </AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="firstcol.Visibility" Value="Visible"></Setter>
+                        <Setter Target="empdetailslist.Visibility" Value="Collapsed"></Setter>
+                        <Setter Target="detailedemplist.Visibility" Value="Collapsed"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+              
+                <VisualState >
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="950">
+
+                        </AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="empdetailslist.Visibility" Value="Visible"></Setter>
+                        <Setter Target="detailedemplist.Visibility" Value="Visible"></Setter>
+
+
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
-            <TextBlock Text="Teams under ZOHO" Margin="20,0,20,20" Foreground="DarkCyan" FontWeight="Bold" FontSize="20" Grid.Row="0"></TextBlock>
-            <AutoSuggestBox  QueryIcon="Find" Name="tnamesearch" Width="250" Height="37"  BorderBrush="DimGray" HorizontalContentAlignment="Center" HorizontalAlignment="Left" PlaceholderText="Search Team" TextChanged="tnamesearch_TextChanged"></AutoSuggestBox>
+            <TextBlock Text="Teams under ZOHO" Margin="20,0,10,10" Foreground="DarkCyan" FontWeight="Bold" FontSize="20" Grid.Row="0"></TextBlock>
+            <AutoSuggestBox  QueryIcon="Find" Name="tnamesearch" Margin="10" Width="250" Height="37"  BorderBrush="DimGray" HorizontalContentAlignment="Center" HorizontalAlignment="Left" PlaceholderText="Search Team" TextChanged="tnamesearch_TextChanged"></AutoSuggestBox>
         </StackPanel>
-        <Grid Grid.Row="2" >
+        <Grid Grid.Row="1" Height="auto" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition ></ColumnDefinition>
@@ -41,7 +87,7 @@
                 </ListView.ItemTemplate>
             </ListView>
            
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" Name="firstcol" Width="auto">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
@@ -67,11 +113,11 @@
 
                                     <StackPanel Margin="5,3,3,3" Orientation="Horizontal">
                                         <TextBlock Width="110"  Foreground="DimGray" Text="Team MailId :"/>
-                                        <TextBlock  Foreground="DimGray" Text="{Binding  teammailid}"></TextBlock>
+                                        <TextBlock  Foreground="DimGray" TextWrapping="Wrap" Text="{Binding  teammailid}"></TextBlock>
                                     </StackPanel>
                                     <StackPanel Margin="5,3,3,3" Orientation="Horizontal">
                                         <TextBlock Width="110"  Foreground="DimGray" Text="Team Head : "/>
-                                        <TextBlock  Foreground="DimGray" Text="{Binding  teamhead}"></TextBlock>
+                                        <TextBlock  Foreground="DimGray"  Text="{Binding  teamhead}"></TextBlock>
                                     </StackPanel>
                                     <StackPanel Margin="5,3,3,3" Orientation="Horizontal">
                                         <TextBlock Width="110" Foreground="DimGray"  Text="Total Members :"></TextBlock>
@@ -89,9 +135,19 @@
                 <Border BorderBrush="LightGray" Grid.Row="1" BorderThickness="0,0,0,1" Visibility="Collapsed"  Name="splitline" >
                
                 </Border>
-                <StackPanel  Grid.Row="2"   Visibility="Collapsed" Name="teamdetailssp">
-                    <TextBlock Text="Subteams:" FontSize="17" FontWeight="SemiBold" Margin="10,10,0,0" Foreground="DarkCyan" ></TextBlock>
-                <ListView ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}" Margin="10,10,0,0"
+                <StackPanel  Grid.Row="2"    >
+                    <StackPanel Orientation="Horizontal" Visibility="Collapsed" Name="teamdetailssp">
+                        <StackPanel>
+                    <TextBlock Text="Subteams" FontSize="17" FontWeight="SemiBold"  Name="subteams" Margin="30,10,0,0" Tapped="subteams_Tapped" Foreground="DarkCyan" ></TextBlock>
+                        <Border BorderThickness="2" Name="steamline" Margin="40,5,10,0" CornerRadius="2" BorderBrush="DarkCyan"/>
+                        </StackPanel>
+                        <StackPanel>
+                        <TextBlock Text="Team Members" FontSize="17" Name="tmembers" Tapped="tmembers_Tapped" FontWeight="SemiBold" Margin="60,10,0,0" Foreground="DarkCyan" ></TextBlock>
+
+                            <Border BorderThickness="2" Visibility="Collapsed" Name="tmembersline" Margin="70,5,10,0" CornerRadius="2" BorderBrush="DarkCyan"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <ListView ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}" Margin="10,25,0,0"
                        SelectionMode="Single" Name="subteamview"  ItemClick="Mainteamview_ItemClick" IsItemClickEnabled="True">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="data:Teamdetails">
@@ -105,14 +161,14 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                    <TextBlock  Name="noteam" Foreground="DarkCyan" Height="60"   Visibility="Collapsed" Margin="120,30,10,10"></TextBlock>
+                    <TextBlock  Name="noteam"  Height="60"   Visibility="Collapsed" Margin="120,30,10,10"></TextBlock>
             <!-- emp view-->
                     
-                    <TextBlock Text="Team Members:" FontSize="17" FontWeight="SemiBold" Margin="10,0,0,0" Foreground="DarkCyan" ></TextBlock>
+                   
 
-                    <AutoSuggestBox Name="tmemeberssearch" QueryIcon="Find" HorizontalAlignment="Left" TextChanged="tmemeberssearch_TextChanged" PlaceholderText="Search Team Members"  Margin="10,10,0,0" Height="37" Width="250"></AutoSuggestBox>
+                    <AutoSuggestBox Name="tmemeberssearch" QueryIcon="Find" Visibility="Collapsed" HorizontalAlignment="Left" TextChanged="tmemeberssearch_TextChanged" PlaceholderText="Search Team Members"  Margin="10,20,0,0" Height="37" Width="250"></AutoSuggestBox>
                 <ListView Name="teamheadview"  ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
-                       IsItemClickEnabled="True"  ItemClick="teamheadview_ItemClick" SelectionMode="Single" Margin="10,10,0,0" >
+                       IsItemClickEnabled="True" Visibility="Collapsed" ItemClick="teamheadview_ItemClick" SelectionMode="Single" Margin="10,15,0,0" >
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="data:Employee">
                             <StackPanel Orientation="Horizontal" Margin="10,5,10,0"  Width="290" >
@@ -142,7 +198,7 @@
                    
                     
        <ListView Name="detailedteamview"  ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
-                       ItemClick="detailedteamview_ItemClick" IsItemClickEnabled="True" SelectionMode="Single" Margin="10,0,0,0" >
+                       ItemClick="detailedteamview_ItemClick" Visibility="Collapsed" IsItemClickEnabled="True" SelectionMode="Single" Margin="10,0,0,0" >
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="data:Employee">
                         <StackPanel Orientation="Horizontal" Margin="10,5,10,0" Width="290" >

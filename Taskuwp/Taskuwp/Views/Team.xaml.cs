@@ -57,6 +57,7 @@ namespace Taskuwp.Views
         int count=0;
         ObservableCollection<Employee> empl = new ObservableCollection<Employee>();
         ObservableCollection<Employee> thead = new ObservableCollection<Employee>();
+        bool minwidth = false;
         private  void Mainteamview_ItemClick(object sender, ItemClickEventArgs e)
         {
             
@@ -88,10 +89,24 @@ namespace Taskuwp.Views
                parentteamdetails.Margin = new Thickness(-10, 0, 0, 0);
 
             }
+           
+          /*  if(this.ActualWidth<=700)
+            {
+                
+                Backarrow.Visibility = Visibility.Visible;
+                
+                Grid.SetRow(firstcol, 1);
+                Grid.SetColumn(firstcol, 0);
+                firstcol.Visibility = Visibility.Visible;
+                Mainteamview.Visibility = Visibility.Collapsed;
+                tnamesearch.Visibility = Visibility.Collapsed;
+                minwidth = true;
+            }*/
 
             ifsubteamexist= ViewModels.Teamview.getsubteamdetails(tname, subteam);
-
-
+            tmembersline.Visibility = Visibility.Collapsed;
+            steamline.Visibility = Visibility.Visible;
+            tmemeberssearch.Visibility = Visibility.Collapsed;
             teamdetailssp.Visibility = Visibility.Visible;
             if (ifsubteamexist == false)
             {
@@ -115,22 +130,27 @@ namespace Taskuwp.Views
           
             parentteamdetails.Visibility = Visibility.Visible;
             parentteamdetails.ItemsSource = tdetails;
-            detailedteamview.Visibility = Visibility.Visible;
-            teamheadview.Visibility = Visibility.Visible;
+           detailedteamview.Visibility = Visibility.Collapsed;
+           teamheadview.Visibility = Visibility.Collapsed;
             teamheadview.ItemsSource = thead;
            detailedteamview.ItemsSource = empl;
+            
         }
 
       
         private  void Backarrow_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            if ( count==1 || count==0 || count<0 )
+           /* if(this.ActualWidth<=700 && minwidth==true)
             {
-                
+                tnamesearch.Visibility = Visibility.Visible;
+                Mainteamview.Visibility = Visibility.Visible;
+                firstcol.Visibility = Visibility.Collapsed;
+                Grid.SetColumn(firstcol, 1);
+                Grid.SetRow(firstcol, 1);
                 Backarrow.Visibility = Visibility.Collapsed;
-            }
-            
-           else
+                parentteamdetails.Margin = new Thickness(0, 0, 0, 0);
+            }*/
+           
             {
 
               /*  MessageDialog chuma = new MessageDialog((count).ToString());
@@ -158,7 +178,9 @@ namespace Taskuwp.Views
                 ifsubteamexist = ViewModels.Teamview.getsubteamdetails(tname, subteam);
 
                 teamdetailssp.Visibility = Visibility.Visible;
-
+                tmembersline.Visibility = Visibility.Collapsed;
+                steamline.Visibility = Visibility.Visible;
+                tmemeberssearch.Visibility = Visibility.Collapsed;
                 if (ifsubteamexist == false)
                 {
 
@@ -178,8 +200,8 @@ namespace Taskuwp.Views
                 ViewModels.Teamview.getselectedempdetails(tname, mname, thead, empl);
                 parentteamdetails.Visibility = Visibility.Visible;
                 parentteamdetails.ItemsSource = tdetails;
-                detailedteamview.Visibility = Visibility.Visible;
-                teamheadview.Visibility = Visibility.Visible;
+                detailedteamview.Visibility = Visibility.Collapsed;
+                teamheadview.Visibility = Visibility.Collapsed;
                 teamheadview.ItemsSource = thead;
                 detailedteamview.ItemsSource = empl;
 
@@ -362,6 +384,27 @@ namespace Taskuwp.Views
                 detailedteamview.ItemsSource = filtered;
                 teamheadview.ItemsSource = null;
             }
+        }
+
+        private void subteams_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            tmembersline.Visibility = Visibility.Collapsed;
+            tmemeberssearch.Visibility = Visibility.Collapsed;
+            steamline.Visibility = Visibility.Visible;
+            subteamview.Visibility = Visibility.Visible;
+            teamheadview.Visibility = Visibility.Collapsed;
+            detailedteamview.Visibility = Visibility.Collapsed;
+        }
+
+        private void tmembers_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            noteam.Visibility = Visibility.Collapsed;
+            tmembersline.Visibility = Visibility.Visible;
+            steamline.Visibility = Visibility.Collapsed;
+            tmemeberssearch.Visibility = Visibility.Visible;
+            subteamview.Visibility = Visibility.Collapsed;
+            teamheadview.Visibility = Visibility.Visible;
+            detailedteamview.Visibility = Visibility.Visible;
         }
     }
 }

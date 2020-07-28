@@ -16,6 +16,7 @@ using SQLite.Net.Attributes;
 using Taskuwp.Models;
 using Google.Apis.Discovery;
 using Windows.UI.Popups;
+using Windows.UI.Xaml.Media.Animation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,15 +27,11 @@ namespace Taskuwp.Views
     /// </summary>
     public sealed partial class updatepassword : Page
     {
-        string path;
-        SQLite.Net.SQLiteConnection conn;
+       
         public updatepassword()
         {
             this.InitializeComponent();
-            path = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path,
-          "Employeemanagement.db");
-            conn = new SQLite.Net.SQLiteConnection(new
-               SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+           
         }
         string tomail;
         int u_id;
@@ -67,7 +64,7 @@ namespace Taskuwp.Views
                     MessageDialog sucessdialog = new MessageDialog("Password update successfully!");
                     await sucessdialog.ShowAsync();
 
-                    this.Frame.Navigate(typeof(Homepage), tomail);
+                    this.Frame.Navigate(typeof(Loginpage),null, new SuppressNavigationTransitionInfo());
                 }
                 if(ifupdate==false)
                 {

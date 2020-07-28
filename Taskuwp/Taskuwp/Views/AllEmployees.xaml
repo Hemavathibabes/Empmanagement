@@ -10,15 +10,52 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="Allemployeeadaptive">
+            
+            <VisualState x:Name="minwindow">
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="0">
+
+                    </AdaptiveTrigger>
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                        <Setter Target="adaptivearrow.Visibility" Value="Collapsed"></Setter>
+                        <Setter Target="allemplist.Visibility" Value="Visible"></Setter>
+                        <Setter Target="detailedemplist.Visibility" Value="Collapsed"></Setter>
+                        
+                    </VisualState.Setters>
+            </VisualState>
+            <VisualState x:Name="maxwindow">
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="700">
+
+                    </AdaptiveTrigger>
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                        <Setter Target="adaptivearrow.Visibility" Value="Collapsed"></Setter>
+                        <Setter Target="allemplist.Visibility" Value="Visible"></Setter>
+                    <Setter Target="detailedemplist.Visibility" Value="Visible"></Setter>
+                        <Setter Target="allemplist.(Grid.Row)" Value="1"></Setter>
+                        <Setter Target="allemplist.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="detailedemplist.(Grid.Row)" Value="1">
+                        </Setter>
+                        <Setter Target="detailedemplist.(Grid.Column)" Value="1"></Setter>
+                    </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <RelativePanel Grid.Row="0">
-        <TextBlock Text="Employees view" Margin="20" Foreground="DarkCyan" Name="headtext" RelativePanel.AlignLeftWithPanel="True"  FontWeight="Bold" FontSize="25"></TextBlock>
+        <TextBlock Text="Employees view" Margin="10,5,10,10" Foreground="DarkCyan"   Name="headtext" RelativePanel.AlignLeftWithPanel="True"  FontWeight="Bold" FontSize="20"></TextBlock>
 
-        <AutoSuggestBox Name="searchbar" PlaceholderText="Search Employee" BorderBrush="DimGray"   Margin="130,20,0,0" TextMemberPath="Firstname" SuggestionChosen="searchbar_SuggestionChosen" HorizontalAlignment="Center"  HorizontalContentAlignment="Center" Width="200"
-                        Height="35" CornerRadius="2"  QueryIcon="Find" RelativePanel.RightOf="headtext" TextChanged="searchbar_TextChanged">
+        <AutoSuggestBox Name="searchbar" PlaceholderText="Search Employee" BorderBrush="DimGray"   Margin="10,10,0,10" TextMemberPath="Firstname" SuggestionChosen="searchbar_SuggestionChosen" HorizontalAlignment="Center"  HorizontalContentAlignment="Center" Width="200"
+                        Height="35" CornerRadius="2"  QueryIcon="Find"  RelativePanel.Below="headtext" TextChanged="searchbar_TextChanged">
             <AutoSuggestBox.ItemTemplate >
                 <DataTemplate x:DataType="data:Employee" >
                     <StackPanel Orientation="Horizontal"  >
@@ -36,7 +73,7 @@
             </AutoSuggestBox.ItemTemplate>
         </AutoSuggestBox>
        
-                    <Button Content="&#xE71C;" Background="White" RelativePanel.RightOf="searchbar" FontFamily="Segoe MDL2 Assets" Margin="0,20,20,30" FontWeight="Bold" Name="filter"  Foreground="DarkCyan" FontSize="22" Height="35" Grid.Row="0">
+                    <Button Content="&#xE71C;" Background="White" RelativePanel.RightOf="searchbar" FontFamily="Segoe MDL2 Assets" Margin="0,53,20,30" FontWeight="Bold" Name="filter"  Foreground="DarkCyan" FontSize="22" Height="35" Grid.Row="0">
                         <Button.Flyout >
                 
                             <MenuFlyout Placement="BottomEdgeAlignedLeft" >
@@ -56,9 +93,9 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <ListView Name="allemplist" Margin="0,0,20,20"  ScrollViewer.VerticalScrollBarVisibility="Visible"
+            <ListView Name="allemplist" Margin="0,-10,20,20"  ScrollViewer.VerticalScrollBarVisibility="Visible"
                       ScrollViewer.IsVerticalRailEnabled="True"
-                      ScrollViewer.VerticalScrollMode="Enabled" Height="600" Grid.Column="0" BorderBrush="LightGray" BorderThickness="0,0,1,0" ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}" ItemClick="favemplist_ItemClick" SelectionMode="Single" IsItemClickEnabled="True">
+                      ScrollViewer.VerticalScrollMode="Enabled" Grid.Column="0" BorderBrush="LightGray" BorderThickness="0,0,1,0" ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}" ItemClick="favemplist_ItemClick" SelectionMode="Single" IsItemClickEnabled="True">
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="data:Employee">
                     <ListViewItem>
@@ -83,7 +120,8 @@
     </ListView>
            
             <!--detailed emp view-->
-            <ListView Name="detailedemplist" Grid.Column="1"  SelectionMode="None" Margin="10,5,0,0">
+            <TextBlock Text="&#xF0B0;" FontWeight="Bold" FontSize="17" Margin="30,0,0,0" Foreground="DarkCyan" Visibility="Collapsed" Name="adaptivearrow" Tapped="adaptivearrow_Tapped" FontFamily="Segoe MDL2 Assets" ></TextBlock>
+            <ListView Name="detailedemplist" Grid.Column="1"  SelectionMode="None" Margin="60,5,0,0">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="data:Employee">
                     <ListViewItem >
@@ -101,30 +139,30 @@
                                     </TextBlock>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <StackPanel Orientation="Vertical" BorderThickness="2" Padding="10"  Height="auto" Margin="0,20,0,0" CornerRadius="5" >
+                                    <StackPanel Orientation="Vertical" BorderThickness="2" Name="innersp" Padding="15"  Height="auto" Margin="0,20,0,0" CornerRadius="5" >
                                         <TextBlock Text="About Me" Foreground="DarkCyan"  TextDecorations="Underline" FontSize="17" Margin="10,10,10,10"></TextBlock>
                                     <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="&#xE13D;" Margin="20,10,10,10" FontFamily="Segoe MDL2 Assets"></TextBlock>
-                                <TextBlock  Margin="2,10,10,10">
+                                    <TextBlock Text="&#xE13D;" Margin="10,11,10,10" FontFamily="Segoe MDL2 Assets"></TextBlock>
+                                <TextBlock  Margin="0,10,10,10">
                     <Run  Text="{Binding Firstname}"></Run>
                     <Run Text="{Binding Lastname}"></Run>
                                 </TextBlock>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock   Margin="20,12,10,10" Text="&#xE715;" FontFamily="Segoe MDL2 Assets"></TextBlock>
-                                    <TextBlock Margin="2,8,10,10" Text="{Binding Emailid}"></TextBlock>
+                                    <TextBlock   Margin="10,11,10,10" Text="&#xE715;" FontFamily="Segoe MDL2 Assets"></TextBlock>
+                                    <TextBlock Margin="0,8,10,10" Text="{Binding Emailid}"></TextBlock>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="&#xF003;" Margin="20,10,10,10" FontFamily="Segoe MDL2 Assets"></TextBlock>
-                                    <TextBlock Margin="2,8,10,10"  Text="{Binding Teamname}"></TextBlock>
+                                    <TextBlock Text="&#xF003;" Margin="10,10,10,10" FontFamily="Segoe MDL2 Assets"></TextBlock>
+                                    <TextBlock Margin="0,8,10,10"  Text="{Binding Teamname}"></TextBlock>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="&#xE716;" Margin="20,7,10,10" FontFamily="Segoe MDL2 Assets"></TextBlock>
-                                    <TextBlock Margin="2,5,10,10" Text="{Binding Designation}"></TextBlock>
+                                    <TextBlock Text="&#xE716;"  Margin="10,7,10,10" FontFamily="Segoe MDL2 Assets"></TextBlock>
+                                    <TextBlock Margin="0,5,10,10"  TextWrapping="Wrap"  Text="{Binding Designation}"></TextBlock>
                                 </StackPanel>
                                         <StackPanel  Orientation="Horizontal">
-                                            <TextBlock  Margin="20,7,10,10" Text="&#xEE64;" FontFamily="Segoe MDL2 Assets"></TextBlock>
-                                            <TextBlock Margin="2,5,10,10" Text="{Binding Phoneno}"></TextBlock>
+                                            <TextBlock  Margin="10,7,10,10" Text="&#xEE64;" FontFamily="Segoe MDL2 Assets"></TextBlock>
+                                            <TextBlock Margin="0,5,10,10" Text="{Binding Phoneno}"></TextBlock>
                                         </StackPanel>
                                     </StackPanel>
                                 
@@ -133,12 +171,12 @@
                                     <TextBlock Text="Reporting To" Foreground="DarkCyan" TextDecorations="Underline"  FontSize="17">
                                     </TextBlock>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="&#xEA8C;" FontSize="16" Margin="6,18,0,0" FontFamily="Segoe MDL2 Assets" ></TextBlock>
+                                        <TextBlock Text="&#xEA8C;" FontSize="16" Margin="10,18,0,0" FontFamily="Segoe MDL2 Assets" ></TextBlock>
                                         <TextBlock Text="{Binding Managername}" Margin="6,18,10,10"></TextBlock>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" >
-                                        <TextBlock Text="&#xEB4E;" FontFamily="Segoe MDL2 Assets" FontSize="16" Margin="6,7,0,0" ></TextBlock>
+                                        <TextBlock Text="&#xEB4E;" FontFamily="Segoe MDL2 Assets" FontSize="16" Margin="10,7,0,0" ></TextBlock>
 
 
                                         <TextBlock Text="Member Leadership Staff" Margin="6,5,10,10"></TextBlock>

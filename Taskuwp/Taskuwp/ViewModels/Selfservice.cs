@@ -19,6 +19,7 @@ namespace Taskuwp.ViewModels
             {
                 if (mid == details.Emailid)
                 {
+                    details.Dob = Convert.ToString(details.Dob);
                     Emp.Add(details);
                     break;
                 }

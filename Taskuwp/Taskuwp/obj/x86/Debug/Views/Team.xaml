@@ -9,18 +9,64 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='2' x:Name="Allemployeeadaptive">
+
+                <VisualState x:ConnectionId='3' x:Name="minwindow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0">
+
+                        </AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                       <Setter Target="firstcol.Visibility" Value="Collapsed"></Setter>
+                        <Setter Target="empdetailslist.Visibility" Value="Collapsed"></Setter>
+                        <Setter Target="detailedemplist.Visibility" Value="Collapsed"></Setter>
+                       
+                        
+                    </VisualState.Setters>
+                </VisualState>
+                
+                <VisualState x:ConnectionId='4' x:Name="maxwindow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="700">
+
+                        </AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="firstcol.Visibility" Value="Visible"></Setter>
+                        <Setter Target="empdetailslist.Visibility" Value="Collapsed"></Setter>
+                        <Setter Target="detailedemplist.Visibility" Value="Collapsed"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+              
+                <VisualState >
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="950">
+
+                        </AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="empdetailslist.Visibility" Value="Visible"></Setter>
+                        <Setter Target="detailedemplist.Visibility" Value="Visible"></Setter>
+
+
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
-            <TextBlock Text="Teams under ZOHO" Margin="20,0,20,20" Foreground="DarkCyan" FontWeight="Bold" FontSize="20" Grid.Row="0"></TextBlock>
-            <AutoSuggestBox x:ConnectionId='35'  QueryIcon="Find" Name="tnamesearch" Width="250" Height="37"  BorderBrush="DimGray" HorizontalContentAlignment="Center" HorizontalAlignment="Left" PlaceholderText="Search Team"                                      ></AutoSuggestBox>
+            <TextBlock Text="Teams under ZOHO" Margin="20,0,10,10" Foreground="DarkCyan" FontWeight="Bold" FontSize="20" Grid.Row="0"></TextBlock>
+            <AutoSuggestBox x:ConnectionId='43'  QueryIcon="Find" Name="tnamesearch" Margin="10" Width="250" Height="37"  BorderBrush="DimGray" HorizontalContentAlignment="Center" HorizontalAlignment="Left" PlaceholderText="Search Team"                                      ></AutoSuggestBox>
         </StackPanel>
-        <Grid Grid.Row="2" >
+        <Grid Grid.Row="1" Height="auto" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition ></ColumnDefinition>
@@ -30,7 +76,7 @@
 
 
 
-            <ListView x:ConnectionId='2' ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"  ScrollViewer.VerticalScrollBarVisibility="Visible"
+            <ListView x:ConnectionId='5' ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"  ScrollViewer.VerticalScrollBarVisibility="Visible"
                       ScrollViewer.IsVerticalRailEnabled="True"
                       ScrollViewer.VerticalScrollMode="Enabled" Height="600" BorderBrush="LightGray" BorderThickness="0,0,1,0"   Margin="0,0,0,0" SelectionMode="Single" Name="Mainteamview" Grid.Column="0"                                    IsItemClickEnabled="True">
                 <ListView.ItemTemplate>
@@ -41,7 +87,7 @@
                 </ListView.ItemTemplate>
             </ListView>
            
-            <Grid Grid.Column="1">
+            <Grid x:ConnectionId='6' Grid.Column="1" Name="firstcol" Width="auto">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
@@ -50,12 +96,12 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock x:ConnectionId='29' Text="&#xF0B0;" Visibility="Collapsed"  Foreground="DarkCyan" Name="Backarrow"  FontSize="20"  
+                    <TextBlock x:ConnectionId='37' Text="&#xF0B0;" Visibility="Collapsed"  Foreground="DarkCyan" Name="Backarrow"  FontSize="20"  
                                                                      HorizontalAlignment="Center"  Margin="10,5,0,0" FontFamily="Segoe MDL2 Assets"  ></TextBlock>
 
                    
                
-                <ListView x:ConnectionId='30' ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}" Margin="0,0,0,0"
+                <ListView x:ConnectionId='38' ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}" Margin="0,0,0,0"
                         Visibility="Collapsed" SelectionMode="None" Name="parentteamdetails"  Grid.Row="0" >
                     <ListView.ItemTemplate>
                         <DataTemplate                              >
@@ -67,11 +113,11 @@
 
                                     <StackPanel Margin="5,3,3,3" Orientation="Horizontal">
                                         <TextBlock Width="110"  Foreground="DimGray" Text="Team MailId :"/>
-                                        <TextBlock  Foreground="DimGray" Text="{Binding  teammailid}"></TextBlock>
+                                        <TextBlock  Foreground="DimGray" TextWrapping="Wrap" Text="{Binding  teammailid}"></TextBlock>
                                     </StackPanel>
                                     <StackPanel Margin="5,3,3,3" Orientation="Horizontal">
                                         <TextBlock Width="110"  Foreground="DimGray" Text="Team Head : "/>
-                                        <TextBlock  Foreground="DimGray" Text="{Binding  teamhead}"></TextBlock>
+                                        <TextBlock  Foreground="DimGray"  Text="{Binding  teamhead}"></TextBlock>
                                     </StackPanel>
                                     <StackPanel Margin="5,3,3,3" Orientation="Horizontal">
                                         <TextBlock Width="110" Foreground="DimGray"  Text="Total Members :"></TextBlock>
@@ -86,12 +132,22 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 </StackPanel>
-                <Border x:ConnectionId='12' BorderBrush="LightGray" Grid.Row="1" BorderThickness="0,0,0,1" Visibility="Collapsed"  Name="splitline" >
+                <Border x:ConnectionId='16' BorderBrush="LightGray" Grid.Row="1" BorderThickness="0,0,0,1" Visibility="Collapsed"  Name="splitline" >
                
                 </Border>
-                <StackPanel x:ConnectionId='13'  Grid.Row="2"   Visibility="Collapsed" Name="teamdetailssp">
-                    <TextBlock Text="Subteams:" FontSize="17" FontWeight="SemiBold" Margin="10,10,0,0" Foreground="DarkCyan" ></TextBlock>
-                <ListView x:ConnectionId='14' ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}" Margin="10,10,0,0"
+                <StackPanel  Grid.Row="2"    >
+                    <StackPanel x:ConnectionId='17' Orientation="Horizontal" Visibility="Collapsed" Name="teamdetailssp">
+                        <StackPanel>
+                    <TextBlock x:ConnectionId='35' Text="Subteams" FontSize="17" FontWeight="SemiBold"  Name="subteams" Margin="30,10,0,0"                          Foreground="DarkCyan" ></TextBlock>
+                        <Border x:ConnectionId='36' BorderThickness="2" Name="steamline" Margin="40,5,10,0" CornerRadius="2" BorderBrush="DarkCyan"/>
+                        </StackPanel>
+                        <StackPanel>
+                        <TextBlock x:ConnectionId='33' Text="Team Members" FontSize="17" Name="tmembers"                          FontWeight="SemiBold" Margin="60,10,0,0" Foreground="DarkCyan" ></TextBlock>
+
+                            <Border x:ConnectionId='34' BorderThickness="2" Visibility="Collapsed" Name="tmembersline" Margin="70,5,10,0" CornerRadius="2" BorderBrush="DarkCyan"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <ListView x:ConnectionId='18' ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}" Margin="10,25,0,0"
                        SelectionMode="Single" Name="subteamview"                                     IsItemClickEnabled="True">
                     <ListView.ItemTemplate>
                         <DataTemplate                              >
@@ -105,14 +161,14 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                    <TextBlock x:ConnectionId='15'  Name="noteam" Foreground="DarkCyan" Height="60"   Visibility="Collapsed" Margin="120,30,10,10"></TextBlock>
+                    <TextBlock x:ConnectionId='19'  Name="noteam"  Height="60"   Visibility="Collapsed" Margin="120,30,10,10"></TextBlock>
             <!-- emp view-->
                     
-                    <TextBlock Text="Team Members:" FontSize="17" FontWeight="SemiBold" Margin="10,0,0,0" Foreground="DarkCyan" ></TextBlock>
+                   
 
-                    <AutoSuggestBox x:ConnectionId='16' Name="tmemeberssearch" QueryIcon="Find" HorizontalAlignment="Left"                                           PlaceholderText="Search Team Members"  Margin="10,10,0,0" Height="37" Width="250"></AutoSuggestBox>
-                <ListView x:ConnectionId='17' Name="teamheadview"  ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
-                       IsItemClickEnabled="True"                                     SelectionMode="Single" Margin="10,10,0,0" >
+                    <AutoSuggestBox x:ConnectionId='20' Name="tmemeberssearch" QueryIcon="Find" Visibility="Collapsed" HorizontalAlignment="Left"                                           PlaceholderText="Search Team Members"  Margin="10,20,0,0" Height="37" Width="250"></AutoSuggestBox>
+                <ListView x:ConnectionId='21' Name="teamheadview"  ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
+                       IsItemClickEnabled="True" Visibility="Collapsed"                                    SelectionMode="Single" Margin="10,15,0,0" >
                 <ListView.ItemTemplate>
                     <DataTemplate                           >
                             <StackPanel Orientation="Horizontal" Margin="10,5,10,0"  Width="290" >
@@ -128,7 +184,7 @@
                             <Run Text="{Binding Lastname}"></Run>
                                 </TextBlock>
 
-                                <TextBlock x:ConnectionId='26' Text="{Binding Favop,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="auto"  FontFamily="Segoe MDL2 Assets" Foreground="Red" Margin="15,10,0,15" Name="starbtn" Tag="{Binding empid}"                         FontSize="19">
+                                <TextBlock x:ConnectionId='30' Text="{Binding Favop,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="auto"  FontFamily="Segoe MDL2 Assets" Foreground="Red" Margin="15,10,0,15" Name="starbtn" Tag="{Binding empid}"                         FontSize="19">
                                 </TextBlock>
                                    
                                 </StackPanel>
@@ -141,8 +197,8 @@
        
                    
                     
-       <ListView x:ConnectionId='18' Name="detailedteamview"  ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
-                                                              IsItemClickEnabled="True" SelectionMode="Single" Margin="10,0,0,0" >
+       <ListView x:ConnectionId='22' Name="detailedteamview"  ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}"
+                                                              Visibility="Collapsed" IsItemClickEnabled="True" SelectionMode="Single" Margin="10,0,0,0" >
                 <ListView.ItemTemplate>
                     <DataTemplate                           >
                         <StackPanel Orientation="Horizontal" Margin="10,5,10,0" Width="290" >
@@ -155,7 +211,7 @@
                             <Run Text="{Binding Firstname}"></Run>
                             <Run Text="{Binding Lastname}"></Run>
                             </TextBlock>
-                                <TextBlock x:ConnectionId='22' Text="{Binding Favop,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  FontFamily="Segoe MDL2 Assets" Foreground="Red" Margin="15,10,0,15" Name="starbtn" Tag="{Binding empid}"                         FontSize="19">
+                                <TextBlock x:ConnectionId='26' Text="{Binding Favop,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  FontFamily="Segoe MDL2 Assets" Foreground="Red" Margin="15,10,0,15" Name="starbtn" Tag="{Binding empid}"                         FontSize="19">
                                 </TextBlock>
                             </StackPanel>
 
@@ -171,7 +227,7 @@
             </Grid>
           
 
-                    <ListView x:ConnectionId='3'  Name="empdetailslist" Grid.Column="3"  Margin="70,50,0,0"  SelectionMode="None"   >
+                    <ListView x:ConnectionId='7'  Name="empdetailslist" Grid.Column="3"  Margin="70,50,0,0"  SelectionMode="None"   >
                     <ListView.ItemTemplate>
                         <DataTemplate                           >
                         <StackPanel BorderBrush="DarkCyan" Width="250" BorderThickness="2" Height="440" CornerRadius="2" Padding="10" Background="White" >
@@ -183,7 +239,7 @@
                                            ProfilePicture="{Binding imagesource}"
                                                Margin="0,0,0,0"
                                            Width="130" Height="130"/>
-                                <TextBlock x:ConnectionId='11' Text="{Binding Favop,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  FontFamily="Segoe MDL2 Assets" Foreground="Red" HorizontalAlignment="Center" Margin="130,-130,0,15"
+                                <TextBlock x:ConnectionId='15' Text="{Binding Favop,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  FontFamily="Segoe MDL2 Assets" Foreground="Red" HorizontalAlignment="Center" Margin="130,-130,0,15"
                                                                    Name="starbtn" Tag="{Binding empid}"  FontSize="19">
                                 </TextBlock>
                             </StackPanel>
@@ -214,14 +270,14 @@
                                         </StackPanel>
                                     </StackPanel>
                            
-                            <Button x:ConnectionId='10' Content="View Profile" Name="viewprofile" Tag="{Binding empid}"                           Background="DarkCyan" Foreground="White" HorizontalAlignment="Center" CornerRadius="2"> </Button>
+                            <Button x:ConnectionId='14' Content="View Profile" Name="viewprofile" Tag="{Binding empid}"                           Background="DarkCyan" Foreground="White" HorizontalAlignment="Center" CornerRadius="2"> </Button>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
           
             <!--new popup-->
-            <ListView x:ConnectionId='4' Name="detailedemplist" Visibility="Collapsed"  Grid.Column="3" Margin="40,50,0,0"  SelectionMode="None" >
+            <ListView x:ConnectionId='8' Name="detailedemplist" Visibility="Collapsed"  Grid.Column="3" Margin="40,50,0,0"  SelectionMode="None" >
                 <ListView.ItemTemplate>
                     <DataTemplate                           >
                         <ListViewItem >
@@ -234,7 +290,7 @@
                                            ProfilePicture="{Binding imagesource}"
                                                Margin="0,20,0,0"
                                            Width="90" Height="90"/>
-                                    <TextBlock x:ConnectionId='7' Text="{Binding Favop,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  FontFamily="Segoe MDL2 Assets" Foreground="Red" HorizontalAlignment="Center" Margin="110,-100,0,15"
+                                    <TextBlock x:ConnectionId='11' Text="{Binding Favop,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  FontFamily="Segoe MDL2 Assets" Foreground="Red" HorizontalAlignment="Center" Margin="110,-100,0,15"
                                                                    Name="starbtn" Tag="{Binding empid}"  FontSize="19">
                                     </TextBlock>
                                     <TextBlock  Margin="10,10,10,10" HorizontalAlignment="Center" FontWeight="Bold" FontSize="17">

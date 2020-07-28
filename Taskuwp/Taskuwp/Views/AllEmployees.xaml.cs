@@ -130,7 +130,7 @@ namespace Taskuwp.Views
            
         }
         public Employee click;
-        private void favemplist_ItemClick(object sender, ItemClickEventArgs e)
+        private async void favemplist_ItemClick(object sender, ItemClickEventArgs e)
         {
             cemp.Clear();
             var clickeditem = e.ClickedItem;
@@ -142,8 +142,31 @@ namespace Taskuwp.Views
             ViewModels.Favemps.getclickedempdetails(empid, ename,cemp);
           
             detailedemplist.ItemsSource = cemp;
+            double actualwidth = this.ActualWidth;
+            /*  if(actualwidth==300)
+               {
+                  // detailedemplist.Margin=new padding;
+                   adaptivearrow.Visibility = Visibility.Visible;
+                   allemplist.Visibility = Visibility.Collapsed;
+                   detailedemplist.Visibility = Visibility.Visible;
+                   Grid.SetRow(detailedemplist, 1);
+                   Grid.SetColumn(detailedemplist, 0);
+
+               }
+              if(actualwidth==360)
+               {
+                  // MessageDialog chuma = new MessageDialog(actualwidth.ToString());
+                  // await chuma.ShowAsync();
+                   adaptivearrow.Visibility = Visibility.Collapsed;
+                   allemplist.Visibility = Visibility.Visible;
+                   detailedemplist.Visibility = Visibility.Visible;
+                   Grid.SetRow(allemplist, 1);
+                   Grid.SetColumn(allemplist, 0);
+                   Grid.SetRow(detailedemplist, 1);
+                   Grid.SetColumn(detailedemplist, 1);
+               }*/
         }
-       
+
         private void searchbar_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
             ObservableCollection<Employee> semp = new ObservableCollection<Employee>();
@@ -156,11 +179,11 @@ namespace Taskuwp.Views
                 semp.Clear();
                 var Emp = new Employee { Firstname = "No Employees Found" };
                 semp.Add(Emp);
-                Auto.ItemsSource = semp;
+                allemplist.ItemsSource = semp;
             }
             else
             {
-                Auto.ItemsSource = filtered;
+                allemplist.ItemsSource = filtered;
             }
         }
         private void searchbar_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
@@ -254,6 +277,14 @@ namespace Taskuwp.Views
             var tag = (sender as TextBlock).Tag;
             int empid = (int)tag;
             starpointerexited(empid);
+        }
+
+        private void adaptivearrow_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            adaptivearrow.Visibility = Visibility.Collapsed;
+            detailedemplist.Visibility = Visibility.Collapsed;
+            allemplist.Visibility = Visibility.Visible;
+
         }
     }
     }

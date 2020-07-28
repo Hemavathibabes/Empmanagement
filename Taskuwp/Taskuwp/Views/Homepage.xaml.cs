@@ -62,15 +62,19 @@ namespace Taskuwp.Views
             }
            if(selfserviceitem.IsSelected==true)
             {
-                mframe.Navigate(typeof(Selfservice),"senthil@gmail.com", new SuppressNavigationTransitionInfo());
+                mframe.Navigate(typeof(Selfservice),"hemavathibabes@gmail.com", new SuppressNavigationTransitionInfo());
             }
            if(teamviewitem.IsSelected==true)
             {
-                mframe.Navigate(typeof(Team), "senthil@gmail.com", new SuppressNavigationTransitionInfo());
+                mframe.Navigate(typeof(Team), "hemavathibabes@gmail.com", new SuppressNavigationTransitionInfo());
             }
            if(allempitem.IsSelected==true)
             {
-                mframe.Navigate(typeof(FavEmployees), "senthil@gmail.com", new SuppressNavigationTransitionInfo());
+                mframe.Navigate(typeof(FavEmployees), "hemavathibabes@gmail.com", new SuppressNavigationTransitionInfo());
+            }
+           if(logoutitem.IsSelected==true)
+            {
+               Frame.Navigate(typeof(Loginpage), null, new SuppressNavigationTransitionInfo());
             }
         }
     }

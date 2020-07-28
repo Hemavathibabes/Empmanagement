@@ -156,6 +156,9 @@
     <Compile Include="Views\Selfservice.xaml.cs">
       <DependentUpon>Selfservice.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Selfservicecontrol.xaml.cs">
+      <DependentUpon>Selfservicecontrol.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Team.xaml.cs">
       <DependentUpon>Team.xaml</DependentUpon>
     </Compile>
@@ -247,6 +250,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Selfservice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Selfservicecontrol.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

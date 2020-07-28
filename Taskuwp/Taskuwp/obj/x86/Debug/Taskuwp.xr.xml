@@ -7,7 +7,8 @@
     <RootPropertyPathName Name="PlaceholderForeground" />
     <RootPropertyPathName Name="DropDownContentMinWidth" />
     <RootPropertyPathName Name="Text" />
-    <RootPropertyPathName Name="fullname" />
+    <RootPropertyPathName Name="Lastname" />
+    <RootPropertyPathName Name="Firstname" />
     <RootPropertyPathName Name="imagesource" />
     <RootPropertyPathName Name="Teamname" />
     <RootPropertyPathName Name="teamname" />
@@ -18,8 +19,6 @@
     <RootPropertyPathName Name="Phoneno" />
     <RootPropertyPathName Name="Designation" />
     <RootPropertyPathName Name="Emailid" />
-    <RootPropertyPathName Name="Lastname" />
-    <RootPropertyPathName Name="Firstname" />
     <RootPropertyPathName Name="Favop" />
     <RootPropertyPathName Name="empid" />
     <RootPropertyPathName Name="Isvisible" />
@@ -61,8 +60,8 @@
       <RootProperty Name="Visibility" />
       <RootProperty Name="SelectionFlyout" />
       <RootProperty Name="Name" />
-      <RootProperty Name="Height" />
       <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Height" />
       <RootProperty Name="Background" />
       <RootProperty Name="IsEnabled" />
       <RootProperty Name="FontSize" />
@@ -113,6 +112,8 @@
       <RootProperty Name="IsVerticalScrollChainingEnabled" />
       <RootProperty Name="IsHorizontalScrollChainingEnabled" />
       <RootProperty Name="TabNavigation" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="Height" />
       <RootMethod Name="GetHorizontalScrollMode" />
       <RootMethod Name="SetHorizontalScrollMode" />
       <RootMethod Name="GetVerticalScrollMode" />
@@ -158,9 +159,9 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Padding" />
       <RootProperty Name="Name" />
-      <RootProperty Name="Height" />
       <RootProperty Name="SelectionMode" />
       <RootProperty Name="Style" />
+      <RootProperty Name="Height" />
       <RootProperty Name="Visibility" />
       <RootEvent Name="ItemClick" />
     </RootType>
@@ -186,10 +187,11 @@
       <RootProperty Name="TextBoxStyle" />
       <RootProperty Name="Name" />
       <RootProperty Name="Style" />
-      <RootProperty Name="TextMemberPath" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Background" />
       <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="TextMemberPath" />
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="HorizontalAlignment" />
@@ -197,6 +199,7 @@
       <RootProperty Name="Height" />
       <RootProperty Name="CornerRadius" />
       <RootProperty Name="QueryIcon" />
+      <RootProperty Name="Visibility" />
       <RootEvent Name="TextChanged" />
       <RootEvent Name="SuggestionChosen" />
     </RootType>
@@ -237,10 +240,9 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Resources" />
       <RootProperty Name="Name" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Padding" />
       <RootProperty Name="Width" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
       <RootMethod Name="GetColumnSpan" />
       <RootMethod Name="SetColumnSpan" />
       <RootMethod Name="GetColumn" />
@@ -317,6 +319,7 @@
     <RootType FullName="Windows.UI.Xaml.VisualState">
       <RootProperty Name="Setters" />
       <RootProperty Name="Storyboard" />
+      <RootProperty Name="StateTriggers" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.Storyboard">
@@ -369,11 +372,11 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="Name" />
-      <RootProperty Name="HorizontalTextAlignment" />
-      <RootProperty Name="TextDecorations" />
       <RootProperty Name="Inlines" />
-      <RootProperty Name="Tag" />
+      <RootProperty Name="HorizontalTextAlignment" />
       <RootProperty Name="Visibility" />
+      <RootProperty Name="TextDecorations" />
+      <RootProperty Name="Tag" />
       <RootEvent Name="Tapped" />
       <RootEvent Name="PointerEntered" />
       <RootEvent Name="PointerExited" />
@@ -430,13 +433,12 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="Background" />
       <RootProperty Name="CornerRadius" />
-      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="FontFamily" />
       <RootProperty Name="FontWeight" />
       <RootProperty Name="Height" />
       <RootProperty Name="Flyout" />
-      <RootProperty Name="HorizontalContentAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Tag" />
       <RootEvent Name="Click" />
     </RootType>
@@ -549,27 +551,29 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Taskuwp.MainPage" />
+    <RootType FullName="Windows.UI.Xaml.AdaptiveTrigger">
+      <RootProperty Name="MinWindowWidth" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Orientation" />
       <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Name" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Width" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="Padding" />
+      <RootProperty Name="Width" />
       <RootProperty Name="CornerRadius" />
       <RootProperty Name="Background" />
       <RootProperty Name="Height" />
       <RootProperty Name="Tag" />
-      <RootProperty Name="Name" />
       <RootProperty Name="Visibility" />
       <RootEvent Name="PointerEntered" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">
       <RootProperty Name="Content" />
-      <RootProperty Name="Name" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
@@ -584,6 +588,9 @@
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Documents.Run">
+      <RootProperty Name="Text" />
+    </RootType>
     <RootType FullName="Taskuwp.Views.Adduser" />
     <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
       <RootProperty Name="Content" />
@@ -595,13 +602,12 @@
       <RootProperty Name="VerticalAlignment" />
       <RootMethod Name="GetAlignLeftWithPanel" />
       <RootMethod Name="SetAlignLeftWithPanel" />
+      <RootMethod Name="GetBelow" />
+      <RootMethod Name="SetBelow" />
       <RootMethod Name="GetRightOf" />
       <RootMethod Name="SetRightOf" />
       <RootMethod Name="GetAlignLeftWith" />
       <RootMethod Name="SetAlignLeftWith" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Documents.Run">
-      <RootProperty Name="Text" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.MenuFlyout">
       <RootProperty Name="Placement" />
@@ -627,6 +633,7 @@
     <RootType FullName="Taskuwp.Views.Forgotpassword" />
     <RootType FullName="Windows.UI.Xaml.Controls.SplitView">
       <RootProperty Name="Name" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="PaneBackground" />
       <RootProperty Name="DisplayMode" />
       <RootProperty Name="HorizontalAlignment" />
@@ -652,6 +659,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Name" />
       <RootProperty Name="Width" />
+      <RootProperty Name="BorderBrush" />
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="BorderThickness" />
@@ -660,6 +668,7 @@
       <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Taskuwp.Views.Loginpage" />
+    <RootType FullName="Taskuwp.Views.Selfservicecontrol" />
     <RootType FullName="Taskuwp.Views.Selfservice" />
     <RootType FullName="Taskuwp.Views.Team" />
     <RootType FullName="Taskuwp.Views.updatepassword" />

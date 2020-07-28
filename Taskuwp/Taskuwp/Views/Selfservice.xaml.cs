@@ -44,20 +44,20 @@ namespace Taskuwp.Views
             Emp = ViewModels.Selfservice.getdetails(mailid,Emp);
             ss.ItemsSource = Emp;
         }
-        
-        
+
+
 
         private void edit_Click(object sender, RoutedEventArgs e)
         {
             editpage ep = new editpage(mailid);
 
-              grid1.Children.Clear();
-              grid1.Children.Add(ep);
-           
+            grid1.Children.Clear();
+            grid1.Children.Add(ep);
+
         }
 
-       
 
-      
+
+
     }
 }

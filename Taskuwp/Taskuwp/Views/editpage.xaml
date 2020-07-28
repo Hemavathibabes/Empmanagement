@@ -11,121 +11,479 @@
     d:DesignWidth="1000">
 
 
-    <Frame  Name="editframe"> 
-    <Grid Name="headgrid" >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto">
+    <Frame  Name="editframe">
+       
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState>
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="0">
 
-            </RowDefinition>
-            <RowDefinition Height="auto">
-            </RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock Text="&#xE26C;" HorizontalAlignment="Left" Margin="45,10,0,0" Name="backarrow" Tapped="backarrow_Tapped" FontSize="25"  FontFamily="Segoe MDL2 Assets" Foreground="DarkCyan"></TextBlock>
+                            </AdaptiveTrigger>
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Target="first.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="second.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="third.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="four.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="five.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="six.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="sevan.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="eight.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="nine.Orientation" Value="Vertical"></Setter>
+                           
+                          
+                            <Setter Target="firstin.Margin" Value="32,0,0,0"></Setter>
+                            <Setter Target="secondin.Margin" Value="32,0,0,0"></Setter>
+                            <Setter Target="thirdin.Margin" Value="32,0,0,0"></Setter>
+                            <Setter Target="fourin.Margin" Value="32,0,0,0"></Setter>
+
+                            <Setter Target="fivein.Margin" Value="67,0,0,0"></Setter>
+                            <Setter Target="sixin.Margin" Value="-2,0,0,0"></Setter>
+                            <Setter Target="sevanin.Margin" Value="75,0,0,0"></Setter>
+                            <Setter Target="eightin.Margin" Value="77,0,0,0"></Setter>
+                            <Setter Target="ninein.Margin" Value="77,0,0,0"></Setter>
+                            <Setter Target="emergency_no.Width" Value="120"></Setter>
+                            <Setter Target="emergency_no.Margin" Value="10,0,0,0"></Setter>
+                            <Setter Target="s_accno.Width" Value="100" ></Setter>
+
+                            <Setter Target="accno.Margin" Value="58,10,10,10"></Setter>
+                            <Setter Target="dob.Margin" Value="-22,10,10,10"></Setter>
+                            <Setter Target="bgroup.Margin" Value="-23,10,10,10"></Setter>
+                            <Setter Target="permtaddr.Margin" Value="-23,10,10,10"></Setter>
+                            <Setter Target="firstbox.Margin" Value="2,0,0,0"></Setter>
+                            <Setter Target="secondbox.Margin" Value="2,20,0,0"></Setter>
+                           
+                            <Setter Target="update.Margin" Value="200,0,0,0"></Setter>
+                            <Setter Target="scroll.Height" Value="420"></Setter>
+
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState>
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="800">
+
+                            </AdaptiveTrigger>
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Target="first.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="second.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="third.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="four.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="five.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="six.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="sevan.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="eight.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="nine.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="emergency_no.Width" Value="200"></Setter>
+                            <Setter Target="s_accno.Width" Value="180" ></Setter>
+                          
+                           
+                            <Setter Target="accno.Margin" Value="70,10,10,10"></Setter>
+                            <Setter Target="dob.Margin" Value="70,10,10,10"></Setter>
+                            <Setter Target="bgroup.Margin" Value="70,10,10,10"></Setter>
+                            <Setter Target="permtaddr.Margin" Value="70,10,10,10"></Setter>
+                            <Setter Target="firstbox.Margin" Value="30,0,0,0"></Setter>
+                            <Setter Target="secondbox.Margin" Value="30,20,0,0"></Setter>
+                           
+                            <Setter Target="update.Margin" Value="800,0,0,0"></Setter>
+                            <Setter Target="scroll.Height" Value="460"></Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        <Grid Name="headgrid" Height="auto" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto" ></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="-10,15,15,15">
+                <TextBlock Text="&#xE26C;" HorizontalAlignment="Left" Margin="45,10,0,0" Name="backarrow" Tapped="backarrow_Tapped" FontSize="25"  FontFamily="Segoe MDL2 Assets" Foreground="DarkCyan"></TextBlock>
                 <TextBlock Text="Edit Employee" Foreground="DarkCyan" Margin="20,7,0,0" FontSize="20"></TextBlock>
-           
-        </StackPanel>
-        <Grid  Grid.Row="1"  BorderBrush="LightGray" BorderThickness="2" Margin="50,30,0,0" Padding="-60,10,10,50">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="Basic Info" FontSize="25"  FontWeight="Bold" Margin="70,2,12,10"  />
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="210"></ColumnDefinition>
-                    <ColumnDefinition Width="230"></ColumnDefinition>
-                    <ColumnDefinition Width="190"></ColumnDefinition>
-                    <ColumnDefinition Width="230"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0" >
-
-                    <TextBlock Text="Employee Id:" FontSize="15" Foreground="DimGray" Height="35" Width="82" Margin="50,10,10,10"/>
-                        <TextBlock Text="Firstname:" FontSize="15" Foreground="DimGray"  Height="35" Width="82" HorizontalAlignment="Center" Margin="45,10,0,10" />
-                        <TextBlock Text="Mobileno:" FontSize="15" Foreground="DimGray" Height="35" Width="82" HorizontalAlignment="Center" Margin="45,10,0,10"/>
-                        <TextBlock Text="Teamname:" FontSize="15" Foreground="DimGray" Height="35" Width="82" HorizontalAlignment="Center" Margin="45,10,0,10"/>
-                </StackPanel>
-                <StackPanel Grid.Column="1" >
-
-                        <TextBox Margin="10" Name="empid" IsEnabled="False"    Background="LightGray" Foreground="LightGray" Height="35" Width="200"></TextBox>
-                        <TextBox Margin="10" Name="fname"  Width="200"  Background="LightGray" IsEnabled="False" Foreground="LightGray" ></TextBox>
-                        <TextBox Margin="10" Name="mno" Width="200" BorderBrush="Black"></TextBox>
-                        <TextBox Margin="10" Name="tname" IsEnabled="False" Background="LightGray"   Width="200"  Foreground="LightGray" ></TextBox>
-                </StackPanel>
-                <StackPanel Grid.Column="2" >
-                        <TextBlock Text="Designation:" FontSize="15" Foreground="DimGray" Height="35" Width="90" Margin="14,10,10,10"/>
-                        <TextBlock Text="Lastname:" FontSize="15" Foreground="DimGray" Height="35" Width="90" HorizontalAlignment="Center" Margin="6,10,0,10" />
-                        <TextBlock Text="EmailId:" FontSize="15" Foreground="DimGray" Height="35" Width="90" HorizontalAlignment="Center" Margin="7,10,0,10"></TextBlock>
-                        <TextBlock Text="Reporting To:" FontSize="15" Foreground="DimGray" Height="35" Width="90" HorizontalAlignment="Center" Margin="7,10,0,10"></TextBlock>
-                </StackPanel>
-                <StackPanel Grid.Column="3" >
-                        <TextBox Margin="10" Name="designation" Width="200"  IsEnabled="False"  Background="LightGray" Foreground="LightGray" ></TextBox>
-                        <TextBox Margin="10" Name="lname" Width="200" IsEnabled="False"  Background="LightGray"  Foreground="LightGray" ></TextBox>
-                        <TextBox Margin="10" Name="email" Width="200" IsEnabled="False"  Background="LightGray"  Foreground="LightGray" ></TextBox>
-                        <TextBox Margin="10" Name="managername" Width="200" IsEnabled="False"  Background="LightGray"  Foreground="LightGray" ></TextBox>
-                </StackPanel>
-            </Grid>
-        </Grid>
-        <Grid Grid.Row="2" BorderBrush="LightGray" BorderThickness="2" Margin="50,10,0,0" Padding="-60,10,10,50">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="Personal Details" FontSize="25"  FontWeight="Bold" Margin="70,2,12,10"  />
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"></ColumnDefinition>
-                    <ColumnDefinition Width="300"></ColumnDefinition>
-                    <ColumnDefinition Width="230"></ColumnDefinition>
-                    <ColumnDefinition Width="300"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0" >
-
-                        <TextBlock Text="Gender:" FontSize="15" Foreground="DimGray" Height="35" Width="110" Margin="85,10,10,10"/>
-                        <TextBlock Text="Maritial Status:" FontSize="15" Foreground="DimGray" Height="35" Width="110" HorizontalAlignment="Center" Margin="81,10,0,10" />
-                        <TextBlock Text="Father Name:" FontSize="15" Foreground="DimGray" Height="35" Width="110" HorizontalAlignment="Center" Margin="81,10,0,10"/>
-                        <TextBlock Text="Mother Tongue:" FontSize="15" Foreground="DimGray" Height="35" Width="110" HorizontalAlignment="Center" Margin="81,10,0,10"/>
-                        <TextBlock Text="Present Address:" FontSize="15" Foreground="DimGray" Height="35" Width="110" HorizontalAlignment="Center" Margin="81,10,0,10">
-                    </TextBlock>
-                </StackPanel>
-                <StackPanel Grid.Column="1" >
-
-                        <TextBox Name="gender" Margin="10,10,10,10"  Background="LightGray" Width="200" IsEnabled="False" Foreground="LightGray"></TextBox>
-                        <ComboBox  Margin="50,10,10,10" BorderBrush="Black" Width="120" Name="mstatus"  SelectionChanged="mstatus_SelectionChanged" >
-                        <ComboBoxItem Name="item1"  Content="Single"/>
-                        <ComboBoxItem Content="Married"/>
-                        <ComboBoxItem Content="Widow"/>
-                    </ComboBox>
-
-                        <TextBox Margin="10" BorderBrush="Black" Name="faname" Width="200"/>
-                        <TextBox Margin="10" BorderBrush="Black" Name="mtongue" Width="200"/>
-                        <TextBox Margin="10" BorderBrush="Black" Name="prstaddr" TextWrapping="Wrap" Height="90" Width="200"/>
-                </StackPanel>
-                <StackPanel Grid.Column="2" >
-                        <TextBlock Text="Emergency Contact Number:" FontSize="15" Foreground="DimGray" Height="35" Width="180" Margin="40,10,10,10"/>
-                        <TextBlock Text="Date of Birth:" FontSize="15" Foreground="DimGray" Height="35" Width="180" HorizontalAlignment="Center" Margin="32,10,0,10" />
-                        <TextBlock Text="Salary Account Number:" FontSize="15" Foreground="DimGray" Height="35" Width="180" HorizontalAlignment="Center" Margin="32,10,0,10"></TextBlock>
-                        <TextBlock Text="Blood Group:" Height="35" FontSize="15" Foreground="DimGray" Width="180" HorizontalAlignment="Center" Margin="32,10,0,10"></TextBlock>
-                        <TextBlock Text="Permanent Address:" Height="35"  FontSize="15" Foreground="DimGray" Width="180" HorizontalAlignment="Center" Margin="32,10,0,10"></TextBlock>
-                </StackPanel>
-                <StackPanel Grid.Column="3" >
-                        <TextBox Margin="10" BorderBrush="Black" Name="emergencyno" Height="35" Width="200"></TextBox>
-                        
-                        <CalendarDatePicker Name="dob"   Style="{StaticResource CalendarDatePickerStyle1}" BorderBrush="Black" Margin="50,10,10,10"></CalendarDatePicker>
-                        <TextBox Margin="10" BorderBrush="Black" Name="accno" Width="200"></TextBox>
-                        <TextBox Margin="10" BorderBrush="Black" Name="bgroup"  Width="200"></TextBox>
-                        <TextBox Margin="10" BorderBrush="Black" TextWrapping="Wrap" Name="permtaddr" Width="200" Height="90">
-                    </TextBox>
-                </StackPanel>
-            </Grid>
-        </Grid>
-        <StackPanel Grid.Row="3" Orientation="Horizontal">
-                <Button  Content="Submit" Name="add" Click="updatebutton_Click" Foreground="White" Background="DarkCyan" Width="70" CornerRadius="2" HorizontalAlignment="Right" Margin="800,20,0,0"></Button>
-                <Button  Content="Cancel"  Width="90" Background="Transparent" Click="cancelbutton_Click" BorderBrush="DimGray" BorderThickness="1" HorizontalAlignment="Right" Margin="20,20,0,0" CornerRadius="2" ></Button>
 
             </StackPanel>
-    </Grid>
+
+
+            <ScrollViewer Name="scroll" Grid.Row="1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,80" Height="460">
+                <StackPanel  >
+                    <StackPanel   BorderBrush="LightGray" Name="firstbox" BorderThickness="2" Margin="30,0,0,0" Padding="-60,10,10,30">
+
+
+                        <TextBlock  Text="Basic Info" FontSize="27" FontWeight="Bold" Margin="70,2,12,10"  />
+                        <StackPanel   Orientation="Vertical" Margin="40,0,0,0" Name="basicinfo">
+
+                            <StackPanel Orientation="Horizontal"  Name="first">
+                                <StackPanel Orientation="Horizontal" >
+                                    <TextBlock Text="Employee Id:" Foreground="DimGray" FontSize="15" Height="35" Width="82" Margin="40,10,10,10"/>
+                                    <TextBox  BorderBrush="Black"  Margin="50,10,10,10" Name="empid"  Height="35" Width="200"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="60,0,0,0" Name="firstin" >
+                                    <TextBlock Text="Designation:" Foreground="DimGray" FontSize="15" Height="35" Width="90" Margin="10,10,10,10"/>
+                                    <TextBox Margin="40,10,10,10" Name="designation" Width="200"  IsEnabled="False"  Background="LightGray" Foreground="LightGray" ></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Name="second">
+                                <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
+                                    <TextBlock Text="Firstname:" Foreground="DimGray" FontSize="15" Height="35" Width="82" HorizontalAlignment="Center" Margin="35,10,0,10" />
+                                    <TextBox  Margin="60,10,10,10" Name="fname" BorderBrush="Black" Width="200"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="60,0,0,0" Name="secondin">
+                                    <TextBlock Text="Lastname:" Foreground="DimGray" FontSize="15" Height="35" Width="90" HorizontalAlignment="Center" Margin="10,10,0,10" />
+                                    <TextBox Margin="50,10,10,10" BorderBrush="Black" Name="lname" Width="200"></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Name="third">
+                                <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
+                                    <TextBlock Text="Mobileno:" Foreground="DimGray" FontSize="15" Height="35" Width="82" HorizontalAlignment="Center" Margin="35,10,0,10"/>
+                                    <TextBox  Margin="60,10,10,10" Name="mno" BorderBrush="Black" Width="200"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="60,0,0,0" Name="thirdin">
+                                    <TextBlock Text="EmailId:" Foreground="DimGray" FontSize="15" Height="35" Width="90" HorizontalAlignment="Center" Margin="10,10,0,10"></TextBlock>
+                                    <TextBox   Margin="50,10,10,10" BorderBrush="Black" Name="email" Width="200"></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Name="four">
+                                <StackPanel Orientation="Horizontal"  Margin="5,0,0,0">
+                                    <TextBlock Text="Teamname:" Foreground="DimGray" FontSize="15" Height="35" Width="82" HorizontalAlignment="Center" Margin="35,10,0,10"/>
+                                    <TextBox Margin="60,10,10,10" Name="tname" IsEnabled="False" Background="LightGray"   Width="200"  Foreground="LightGray" ></TextBox>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="60,0,0,0" Name="fourin">
+                                    <TextBlock Text="Reporting To:" Foreground="DimGray" FontSize="15" Height="35" Width="90" HorizontalAlignment="Center" Margin="10,10,0,10"></TextBlock>
+                                    <TextBox Margin="50,10,10,10" Name="managername" Width="200" IsEnabled="False"  Background="LightGray"  Foreground="LightGray" ></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+
+
+
+
+
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel  BorderBrush="LightGray" Name="secondbox" BorderThickness="2" Margin="30,20,0,0" Padding="-60,10,10,30">
+
+                        <TextBlock  Text="Personal Details" FontSize="27"  FontWeight="Bold" Margin="70,2,12,10"  />
+                        <StackPanel Orientation="Vertical"  Name="personaldetails">
+
+                            <StackPanel Orientation="Horizontal" Name="five" >
+                                <StackPanel Orientation="Horizontal" Margin="12,0,0,0">
+                                    <TextBlock Text="Gender:" Foreground="DimGray" FontSize="15" Height="35" Width="110" Margin="65,14,10,10"/>
+                                    <TextBox Name="gender" Margin="40,10,10,10"  Background="LightGray" Width="200" IsEnabled="False" Foreground="LightGray"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="70,0,0,0" Name="fivein">
+                                    <TextBlock Text="Emergency Contact Number:" Name="emergency_no" TextWrapping="Wrap" Foreground="DimGray" FontSize="15" Height="auto" HorizontalAlignment="Center" Width="200" Margin="10,15,10,10"/>
+
+                                    <TextBox Margin="40,10,10,10"  BorderBrush="Black" Name="emergencyno" Height="35" Width="200"></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Name="six">
+                                <StackPanel Orientation="Horizontal"  Margin="20,0,0,0">
+                                    <TextBlock Text="Maritial Status:" Foreground="DimGray" FontSize="15"  Height="35" Width="110" HorizontalAlignment="Center" Margin="58,10,0,10" />
+                                    <ComboBox  Margin="49,10,10,10" Width="120" Name="mstatus" BorderBrush="Black" SelectionChanged="mstatus_SelectionChanged">
+                                        <ComboBoxItem Content="Single"/>
+                                        <ComboBoxItem Content="Married"/>
+                                        <ComboBoxItem Content="Widow"/>
+                                    </ComboBox>
+
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="70,0,0,0" Name="sixin">
+                                    <TextBlock Text="Date of Birth:" Foreground="DimGray" FontSize="15" Height="35" Width="180" HorizontalAlignment="Center" Margin="82,10,0,10" />
+                                    <CalendarDatePicker Name="dob"  Style="{StaticResource CalendarDatePickerStyle1}" BorderBrush="Black" Margin="70,10,10,10"></CalendarDatePicker>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Name="sevan">
+                                <StackPanel Orientation="Horizontal"  Margin="20,0,0,0">
+                                    <TextBlock Text="Father Name:" Foreground="DimGray" FontSize="15" Height="35" Width="110" HorizontalAlignment="Center" Margin="60,10,0,10"/>
+                                    <TextBox Margin="47,10,10,10"  BorderBrush="Black" Name="faname" Width="200"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="70,0,0,0" Name="sevanin">
+                                    <TextBlock Text="Salary Account Number:" TextWrapping="Wrap" Name="s_accno" Foreground="DimGray" FontSize="15" Height="auto" Width="180" HorizontalAlignment="Center" Margin="4,10,0,10"></TextBlock>
+                                    <TextBox Margin="70,10,10,10"  BorderBrush="Black" Name="accno" Width="200"></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Name="eight">
+                                <StackPanel Orientation="Horizontal"  Margin="20,0,0,0">
+                                    <TextBlock Text="Mother Tongue:" Foreground="DimGray" FontSize="15" Height="35" Width="110" HorizontalAlignment="Center" Margin="60,10,0,10"/>
+                                    <AutoSuggestBox Background="White" Name="mtongue" TextChanged="mtongue_TextChanged" Style="{StaticResource AutoSuggestBoxStyle1}" Margin="47,10,10,10" Width="200" ></AutoSuggestBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="70,0,0,0" Name="eightin">
+                                    <TextBlock Text="Blood Group:" Foreground="DimGray" FontSize="15" Height="35" Width="180" HorizontalAlignment="Center" Margin="4,10,0,10"></TextBlock>
+                                    <AutoSuggestBox Name="bgroup" Style="{StaticResource AutoSuggestBoxStyle1}"  Width="200" Margin="70,10,10,10" TextChanged="bgroup_TextChanged"></AutoSuggestBox>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Name="nine">
+                                <StackPanel Orientation="Horizontal"  Margin="20,0,0,0">
+                                    <TextBlock Text="Present Address:" Foreground="DimGray" FontSize="15" Height="35" Width="110" HorizontalAlignment="Center" Margin="60,10,0,10">
+                                    </TextBlock>
+                                    <TextBox  BorderBrush="Black" Name="prstaddr" Margin="47,10,10,10" TextWrapping="Wrap" Height="90" Width="200"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="70,0,0,0" Name="ninein">
+                                    <TextBlock Text="Permanent Address:" Foreground="DimGray" FontSize="15" Height="35" Width="180" HorizontalAlignment="Center" Margin="4,10,0,10"></TextBlock>
+                                    <TextBox Margin="70,10,10,10"  BorderBrush="Black" TextWrapping="Wrap" Name="permtaddr" Width="200" Height="90">
+                                    </TextBox>
+                                </StackPanel>
+                            </StackPanel>
+
+
+                        </StackPanel>
+
+
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Name="finalsubmit" VerticalAlignment="Top" Margin="30,-70,0,0" >
+                <Button  Content="Update" Name="update" Click="updatebutton_Click" Foreground="White" Background="DarkCyan" Width="70" CornerRadius="2"  VerticalAlignment="Top" Margin="800,0,0,0"></Button>
+                <Button  Content="Cancel" Name="cancel" Click="cancelbutton_Click" Width="90" Background="Transparent" BorderBrush="DimGray" BorderThickness="1"  Margin="10,0,0,0" CornerRadius="2" ></Button>
+
+            </StackPanel>
+        </Grid>
     </Frame>
 </UserControl>
+<!--  <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState>
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="0">
+
+                            </AdaptiveTrigger>
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Target="first.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="second.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="third.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="four.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="five.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="six.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="sevan.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="eight.Orientation" Value="Vertical"></Setter>
+                            <Setter Target="nine.Orientation" Value="Vertical"></Setter>
+                           
+                            
+                            <Setter Target="firstin.Margin" Value="32,0,0,0"></Setter>
+                            <Setter Target="secondin.Margin" Value="32,0,0,0"></Setter>
+                            <Setter Target="thirdin.Margin" Value="32,0,0,0"></Setter>
+                            <Setter Target="fourin.Margin" Value="32,0,0,0"></Setter>
+
+                            <Setter Target="fivein.Margin" Value="67,0,0,0"></Setter>
+                            <Setter Target="sixin.Margin" Value="-2,0,0,0"></Setter>
+                            <Setter Target="sevanin.Margin" Value="75,0,0,0"></Setter>
+                            <Setter Target="eightin.Margin" Value="77,0,0,0"></Setter>
+                            <Setter Target="ninein.Margin" Value="77,0,0,0"></Setter>
+                            <Setter Target="emergency_no.Width" Value="120"></Setter>
+                            <Setter Target="emergency_no.Margin" Value="10,0,0,0"></Setter>
+                            <Setter Target="s_accno.Width" Value="100" ></Setter>
+
+                            <Setter Target="accno.Margin" Value="58,10,10,10"></Setter>
+                            <Setter Target="dob.Margin" Value="-22,10,10,10"></Setter>
+                            <Setter Target="bgroup.Margin" Value="-23,10,10,10"></Setter>
+                            <Setter Target="permtaddr.Margin" Value="-23,10,10,10"></Setter>
+                        <Setter Target="firstbox.Margin" Value="1,0,0,0"></Setter>
+                       
+                        <Setter Target="secondbox.Margin" Value="1,10,0,0"></Setter>
+                        
+                        <Setter Target="scroll.Height" Value="420"></Setter>
+                        <Setter Target="update.Margin" Value="200,0,0,0"></Setter>
+                    </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState>
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="800">
+
+                            </AdaptiveTrigger>
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Target="first.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="second.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="third.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="four.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="five.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="six.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="sevan.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="eight.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="nine.Orientation" Value="Horizontal"></Setter>
+                            <Setter Target="emergency_no.Width" Value="200"></Setter>
+                            <Setter Target="s_accno.Width" Value="180" ></Setter>
+                          
+                           
+                            <Setter Target="accno.Margin" Value="70,10,10,10"></Setter>
+                            <Setter Target="dob.Margin" Value="70,10,10,10"></Setter>
+                            <Setter Target="bgroup.Margin" Value="70,10,10,10"></Setter>
+                            <Setter Target="permtaddr.Margin" Value="70,10,10,10"></Setter>
+
+                        <Setter Target="firstbox.Margin" Value="30,0,0,0"></Setter>
+                        <Setter Target="secondbox.Margin" Value="30,10,0,0"></Setter>
+                        <Setter Target="update.Margin" Value="800,0,0,0"></Setter>
+                        <Setter Target="scroll.Height" Value="460"></Setter>
+                    </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        <Grid Name="headgrid" MinWidth="650" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+           
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="-10,15,15,15">
+                <TextBlock Text="&#xE26C;" HorizontalAlignment="Left" Margin="45,10,0,0" Name="backarrow" Tapped="backarrow_Tapped" FontSize="25"  FontFamily="Segoe MDL2 Assets" Foreground="DarkCyan"></TextBlock>
+                <TextBlock Text="Edit Employee" Foreground="DarkCyan" Margin="20,7,0,0" FontSize="20"></TextBlock>
+
+            </StackPanel>
+            <ScrollViewer Name="scroll" Grid.Row="2" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,0" Height="460">
+                <StackPanel  >
+                    <StackPanel  BorderBrush="LightGray" BorderThickness="2" Name="firstbox" Margin="30,0,0,0" Padding="-60,10,10,30">
+
+
+                        <TextBlock  Text="Basic Info" FontSize="27" FontWeight="Bold" Margin="70,2,12,10"  />
+                        <StackPanel   Orientation="Vertical" Margin="40,0,0,0" Name="basicinfo">
+
+                            <StackPanel Orientation="Horizontal"  Name="first">
+                                <StackPanel Orientation="Horizontal" >
+                                    <TextBlock Text="Employee Id:" Foreground="DimGray" FontSize="15" Height="35" Width="82" Margin="40,10,10,10"/>
+                                    <TextBox BorderBrush="Black" IsEnabled="False" Background="LightGray" Foreground="LightGray"   Margin="50,10,10,10" Name="empid"  Height="35" Width="200"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="60,0,0,0" Name="firstin" >
+                                    <TextBlock Text="Designation:" Foreground="DimGray" FontSize="15" Height="35" Width="90" Margin="10,10,10,10"/>
+                                    <TextBox Margin="40,10,10,10" Name="designation" Width="200"  IsEnabled="False"  Background="LightGray" Foreground="LightGray" ></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Name="second">
+                                <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
+                                    <TextBlock Text="Firstname:" Foreground="DimGray" FontSize="15" Height="35" Width="82" HorizontalAlignment="Center" Margin="35,10,0,10" />
+                                    <TextBox  Margin="60,10,10,10" Name="fname"  IsEnabled="False" Background="LightGray" Foreground="LightGray" BorderBrush="Black" Width="200"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="60,0,0,0" Name="secondin">
+                                    <TextBlock Text="Lastname:" Foreground="DimGray" FontSize="15" Height="35" Width="90" HorizontalAlignment="Center" Margin="10,10,0,10" />
+                                    <TextBox  Margin="50,10,10,10"  IsEnabled="False" Background="LightGray" Foreground="LightGray" BorderBrush="Black" Name="lname" Width="200"></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Name="third">
+                                <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
+                                    <TextBlock Text="Mobileno:" Foreground="DimGray" FontSize="15" Height="35" Width="82" HorizontalAlignment="Center" Margin="35,10,0,10"/>
+                                    <TextBox  Margin="60,10,10,10" Name="mno" BorderBrush="Black" Width="200"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="60,0,0,0" Name="thirdin">
+                                    <TextBlock Text="EmailId:" Foreground="DimGray" FontSize="15" Height="35" Width="90" HorizontalAlignment="Center" Margin="10,10,0,10"></TextBlock>
+                                    <TextBox   Margin="50,10,10,10"  IsEnabled="False" Background="LightGray" Foreground="LightGray" BorderBrush="Black" Name="email" Width="200"></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Name="four">
+                                <StackPanel Orientation="Horizontal"  Margin="5,0,0,0">
+                                    <TextBlock Text="Teamname:" Foreground="DimGray" FontSize="15" Height="35" Width="82" HorizontalAlignment="Center" Margin="35,10,0,10"/>
+                                    <TextBox Margin="60,10,10,10" Name="tname" IsEnabled="False" Background="LightGray"   Width="200"  Foreground="LightGray" ></TextBox>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="60,0,0,0" Name="fourin">
+                                    <TextBlock Text="Reporting To:" Foreground="DimGray" FontSize="15" Height="35" Width="90" HorizontalAlignment="Center" Margin="10,10,0,10"></TextBlock>
+                                    <TextBox Margin="50,10,10,10" Name="managername" Width="200" IsEnabled="False"  Background="LightGray"  Foreground="LightGray" ></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+
+
+
+
+
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel BorderBrush="LightGray" BorderThickness="2" Name="secondbox" Margin="30,10,0,0" Padding="-60,10,10,0">
+
+                        <TextBlock  Text="Personal Details" FontSize="27"  FontWeight="Bold" Margin="70,2,12,10"  />
+                        <StackPanel Orientation="Vertical"  Name="personaldetails">
+
+                            <StackPanel Orientation="Horizontal" Name="five" >
+                                <StackPanel Orientation="Horizontal" Margin="12,0,0,0">
+                                    <TextBlock Text="Gender:" Foreground="DimGray" FontSize="15" Height="35" Width="110" Margin="65,14,10,10"/>
+                                    <TextBox Name="gender" Margin="40,10,10,10"  Background="LightGray" Width="200" IsEnabled="False" Foreground="LightGray"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="70,0,0,0" Name="fivein">
+                                    <TextBlock Text="Emergency Contact Number:" Name="emergency_no" TextWrapping="Wrap" Foreground="DimGray" FontSize="15" Height="auto" HorizontalAlignment="Center" Width="200" Margin="0,15,10,10"/>
+
+                                    <TextBox Margin="40,10,10,10"  BorderBrush="Black" Name="emergencyno" Height="35" Width="200"></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Name="six">
+                                <StackPanel Orientation="Horizontal"  Margin="20,0,0,0">
+                                    <TextBlock Text="Maritial Status:" Foreground="DimGray" FontSize="15"  Height="35" Width="110" HorizontalAlignment="Center" Margin="58,10,0,10" />
+                                    <ComboBox  Margin="49,10,10,10" Width="120" Name="mstatus" BorderBrush="Black" SelectionChanged="mstatus_SelectionChanged">
+                                        <ComboBoxItem Content="Single"/>
+                                        <ComboBoxItem Content="Married"/>
+                                        <ComboBoxItem Content="Widow"/>
+                                    </ComboBox>
+
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="70,0,0,0" Name="sixin">
+                                    <TextBlock Text="Date of Birth:" Foreground="DimGray" FontSize="15" Height="35" Width="180" HorizontalAlignment="Center" Margin="82,10,0,10" />
+                                    <CalendarDatePicker Name="dob"  Style="{StaticResource CalendarDatePickerStyle1}" BorderBrush="Black" Margin="70,10,10,10"></CalendarDatePicker>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Name="sevan">
+                                <StackPanel Orientation="Horizontal"  Margin="20,0,0,0">
+                                    <TextBlock Text="Father Name:" Foreground="DimGray" FontSize="15" Height="35" Width="110" HorizontalAlignment="Center" Margin="60,10,0,10"/>
+                                    <TextBox Margin="47,10,10,10"  BorderBrush="Black" Name="faname" Width="200"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="70,0,0,0" Name="sevanin">
+                                    <TextBlock Text="Salary Account Number:" TextWrapping="Wrap" Name="s_accno" Foreground="DimGray" FontSize="15" Height="auto" Width="180" HorizontalAlignment="Center" Margin="4,10,0,10"></TextBlock>
+                                    <TextBox Margin="70,10,10,10"  BorderBrush="Black" Name="accno" Width="200"></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Name="eight">
+                                <StackPanel Orientation="Horizontal"  Margin="20,0,0,0">
+                                    <TextBlock Text="Mother Tongue:" Foreground="DimGray" FontSize="15" Height="35" Width="110" HorizontalAlignment="Center" Margin="60,10,0,10"/>
+                                    <AutoSuggestBox Background="White" Name="mtongue" TextChanged="mtongue_TextChanged" Style="{StaticResource AutoSuggestBoxStyle1}" Margin="47,10,10,10" Width="200" ></AutoSuggestBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="70,0,0,0" Name="eightin">
+                                    <TextBlock Text="Blood Group:" Foreground="DimGray" FontSize="15" Height="35" Width="180" HorizontalAlignment="Center" Margin="4,10,0,10"></TextBlock>
+                                    <AutoSuggestBox Name="bgroup" Style="{StaticResource AutoSuggestBoxStyle1}"  Width="200" Margin="70,10,10,10" TextChanged="bgroup_TextChanged"></AutoSuggestBox>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Name="nine">
+                                <StackPanel Orientation="Horizontal"  Margin="20,0,0,0">
+                                    <TextBlock Text="Present Address:" Foreground="DimGray" FontSize="15" Height="35" Width="110" HorizontalAlignment="Center" Margin="60,10,0,10">
+                                    </TextBlock>
+                                    <TextBox   BorderBrush="Black" Name="prstaddr" Margin="47,10,10,10" TextWrapping="Wrap" Height="90" Width="200"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="70,0,0,0" Name="ninein">
+                                    <TextBlock Text="Permanent Address:" Foreground="DimGray" FontSize="15" Height="35" Width="180" HorizontalAlignment="Center" Margin="4,10,0,10"></TextBlock>
+                                    <TextBox Margin="70,10,10,10"  BorderBrush="Black" TextWrapping="Wrap" Name="permtaddr" Width="200" Height="90">
+                                    </TextBox>
+                                </StackPanel>
+                            </StackPanel>
+
+
+                        </StackPanel>
+
+
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+            <StackPanel Grid.Row="4" Orientation="Horizontal" Name="finalsubmit" Margin="30,60,0,0">
+                <Button  Content="Submit" Name="update" Click="updatebutton_Click" Foreground="White" Background="DarkCyan" Width="70" CornerRadius="2"  Margin="800,10,0,0"></Button>
+                <Button  Content="Cancel" Name="cancel" Click="cancelbutton_Click" Width="90" Background="Transparent" BorderBrush="DimGray" BorderThickness="1"  Margin="10,0,0,0" CornerRadius="2" ></Button>
+
+            </StackPanel>
+        </Grid>-->
+   

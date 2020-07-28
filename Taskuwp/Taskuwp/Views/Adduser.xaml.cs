@@ -21,6 +21,7 @@ using Windows.Data.Text;
 using Taskuwp.ViewModels;
 using Windows.Devices.Printers.Extensions;
 using System.Collections.ObjectModel;
+using Windows.UI.ViewManagement;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Taskuwp.Views
@@ -33,7 +34,11 @@ namespace Taskuwp.Views
         public Adduser()
         {
             this.InitializeComponent();
+            ApplicationView.PreferredLaunchViewSize = new Size { Height = 720, Width = 1200 };
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size { Width = 700, Height = 500 });
             
+            Window.Current.Activate();
             if (newuser1.IsChecked == true)
             {
                 newuserval = Convert.ToString(newuser1.Content);
@@ -121,9 +126,20 @@ namespace Taskuwp.Views
             var Auto = (AutoSuggestBox)sender;
             var filtered = thead.Where(i => i.Firstname.Contains(this.managername.Text, StringComparison.CurrentCultureIgnoreCase)).ToList();
             Auto.ItemsSource = filtered;
-          //  Auto.TextMemberPath="Firstname + Lastname";
+         
         }
 
+        private void managername_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+            string ename = null;
+            
+            if (args.SelectedItem is Employee item)
+            {
+                ename = item.Firstname + " " + item.Lastname;
+                
+            }
+            managername.Text = ename;
+        }
         private void cancel_Click(object sender, RoutedEventArgs e)
         {
             Adduser au = new Adduser();
@@ -131,7 +147,23 @@ namespace Taskuwp.Views
             headgrid.Children.Add(au);
             adduser.Focus(FocusState.Keyboard);
         }
+        private string[] motongue = new string[] {"Assamese","Bengali","Bodo","Dogri","English","Gujarati","Hindi","Kannada",
+        "Kashmiri","Konkani","Maithili","Malayalam","Manipuri","Marathi","Nepali","Odia","Punjabi","Sanskrit","Santhali","Sindhi",
+        "Sourashtra","Tamil","Telugu","Urdu"};
+        private void mtongue_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+          
+            var Suggestion = motongue.Where(p => p.StartsWith(this.mtongue.Text, StringComparison.OrdinalIgnoreCase)).ToArray();
+            mtongue.ItemsSource = Suggestion;
+        }
 
-       
+        private string[] blgroup = new string[] {"A2-ve","AB-ve","A1B-ve","A1-ve","B-ve","O-ve","A-ve","A1+ve","O+ve","A+ve",
+        "B+ve","AB+ve","A1B+ve","A2+ve","A2B+ve","A3+ve","A1+ve","A1","O+ve","A1B+ve","O+ve","B+ve","A+ve","A1B+",
+        "B+","O+","A+","O-","A1B+","A1+","B+ve","A+ve","AB+ve","A1-ve","O-ve","A-ve","AB-ve","A2+ve","A2B+ve","A1B-ve"};
+        private void bgroup_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            var Suggestion = blgroup.Where(p => p.StartsWith(this.bgroup.Text, StringComparison.OrdinalIgnoreCase)).ToArray();
+             bgroup.ItemsSource = Suggestion;
+        }
     }
 }

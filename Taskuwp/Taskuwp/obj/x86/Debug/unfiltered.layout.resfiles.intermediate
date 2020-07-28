@@ -48,6 +48,7 @@ Views\Forgotpassword.xbf
 Views\Homepage.xbf
 Views\Loginpage.xbf
 Views\Selfservice.xbf
+Views\Selfservicecontrol.xbf
 Views\Team.xbf
 Views\updatepassword.xbf
 Properties\Default.rd.xml
