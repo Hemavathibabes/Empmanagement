@@ -18,6 +18,7 @@ using System.Collections.ObjectModel;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Media.Animation;
 using System.Globalization;
+using Windows.UI.Xaml.Documents;
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
 namespace Taskuwp.Views
@@ -78,7 +79,8 @@ namespace Taskuwp.Views
             }
           
         }
-      
+       
+       
         string mstatusselected;
         private void mstatus_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -88,21 +90,27 @@ namespace Taskuwp.Views
 
         private void cancelbutton_Click(object sender, RoutedEventArgs e)
         {
-            Selfservice ss = new Selfservice();
-            headgrid.Children.Clear();
-            headgrid.Children.Add(ss);
+            editframe.Navigate(typeof(Selfservice), mailId, new SuppressNavigationTransitionInfo());
         }
 
         string mailId;
-        private  void updatebutton_Click(object sender, RoutedEventArgs e)
+        private async void updatebutton_Click(object sender, RoutedEventArgs e)
         {
+            bool updatestatus = false;
             mailId = email.Text;
             string date = dob.Date.ToString();
             string formateddate = date.Split(" ")[0];
-            ViewModels.Selfservice.updatedetails(mailId, mno.Text, mstatusselected, faname.Text, mtongue.Text,
+           updatestatus= ViewModels.Selfservice.updatedetails(mailId, mno.Text, mstatusselected, faname.Text, mtongue.Text,
                 prstaddr.Text, emergencyno.Text, formateddate, accno.Text, bgroup.Text, permtaddr.Text);
-           
-                     
+            if (updatestatus == true)
+            {
+                editframe.Navigate(typeof(Selfservice), mailId, new SuppressNavigationTransitionInfo());
+            }
+            else
+            {
+                MessageDialog success = new MessageDialog("Data can't update");
+                await success.ShowAsync();
+            }
         }
         private string[] motongue = new string[] {"Assamese","Bengali","Bodo","Dogri","English","Gujarati","Hindi","Kannada",
         "Kashmiri","Konkani","Maithili","Malayalam","Manipuri","Marathi","Nepali","Odia","Punjabi","Sanskrit","Santhali","Sindhi",

@@ -26,7 +26,7 @@ namespace Taskuwp.ViewModels
             }
             return Emp;
         }
-        public async static void updatedetails(string mailId,string pno,string mstatus,string fathername,string mothertongue,
+        public  static bool updatedetails(string mailId,string pno,string mstatus,string fathername,string mothertongue,
             string presentaddr,string emergency,string daob,string Accno,string bloodgup,string permnentaddr)
         {
            
@@ -46,13 +46,13 @@ namespace Taskuwp.ViewModels
             }
             if (ustatus == false)
             {
-                MessageDialog success = new MessageDialog("Data can't update");
-                await success.ShowAsync();
+              
+                return ustatus;
             }
             else
             {
-                MessageDialog failure = new MessageDialog("Data updated successfully!");
-                await failure.ShowAsync();
+               
+                return ustatus;
             }
 
         }

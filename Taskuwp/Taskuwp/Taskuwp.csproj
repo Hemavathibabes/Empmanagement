@@ -138,6 +138,9 @@
     <Compile Include="Views\Allteams.xaml.cs">
       <DependentUpon>Allteams.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Detailedview.xaml.cs">
+      <DependentUpon>Detailedview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\editpage.xaml.cs">
       <DependentUpon>editpage.xaml</DependentUpon>
     </Compile>
@@ -203,6 +206,19 @@
     <Content Include="Assets\1028.jpg" />
     <Content Include="Assets\1029.jpg" />
     <Content Include="Assets\1030.jpg" />
+    <Content Include="Assets\backgroundimg.jpg" />
+    <Content Include="Assets\choice1.jpg" />
+    <Content Include="Assets\choice10.jpg" />
+    <Content Include="Assets\choice11.jpg" />
+    <Content Include="Assets\choice12.jpg" />
+    <Content Include="Assets\choice13.jpg" />
+    <Content Include="Assets\choice2.jpg" />
+    <Content Include="Assets\choice3.jpg" />
+    <Content Include="Assets\choice4.jpg" />
+    <Content Include="Assets\choice5.jpg" />
+    <Content Include="Assets\choice7.jpg" />
+    <Content Include="Assets\choice8.jpg" />
+    <Content Include="Assets\choice9.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -226,6 +242,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Allteams.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Detailedview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

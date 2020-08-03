@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:data="using:Taskuwp.Models"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+   >
     <Page.Resources>
         <Style x:Key="TextBoxStyle1" TargetType="TextBox">
             <Setter Property="Foreground" Value="{ThemeResource TextControlForeground}"/>
@@ -173,8 +173,8 @@
             </Setter>
         </Style>
     </Page.Resources>
-   
-    <Grid x:ConnectionId='27' Name="headgrid" Height="auto" >
+    <Frame x:ConnectionId='27' Name="newuserframe">
+        
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState>
@@ -193,31 +193,34 @@
                         <Setter Target="sevan.Orientation" Value="Vertical"></Setter>
                         <Setter Target="eight.Orientation" Value="Vertical"></Setter>
                         <Setter Target="nine.Orientation" Value="Vertical"></Setter>
-                        <Setter Target="usertype.Orientation" Value="Vertical"></Setter>
-                        <Setter Target="newuser2.Margin" Value="0,0,0,0"></Setter>
+                      
                         <Setter Target="firstin.Margin" Value="32,0,0,0"></Setter>
                         <Setter Target="secondin.Margin" Value="32,0,0,0"></Setter>
                         <Setter Target="thirdin.Margin" Value="32,0,0,0"></Setter>
                         <Setter Target="fourin.Margin" Value="32,0,0,0"></Setter>
 
                         <Setter Target="fivein.Margin" Value="67,0,0,0"></Setter>
-                        <Setter Target="sixin.Margin" Value="-2,0,0,0"></Setter>
+                        <Setter Target="sixin.Margin" Value="75,0,0,0"></Setter>
                         <Setter Target="sevanin.Margin" Value="75,0,0,0"></Setter>
                         <Setter Target="eightin.Margin" Value="77,0,0,0"></Setter>
                         <Setter Target="ninein.Margin" Value="77,0,0,0"></Setter>
                         <Setter Target="emergency_no.Width" Value="120"></Setter>
                         <Setter Target="emergency_no.Margin" Value="10,0,0,0"></Setter>
                         <Setter Target="s_accno.Width" Value="100" ></Setter>
-                        
+                        <Setter Target="usertype.Margin" Value="150,15,0,8"></Setter>
+                        <Setter Target="usertype.HorizontalAlignment" Value="Left"></Setter>
+                        <Setter Target="adduser.Margin" Value="10,12,20,10"></Setter>
                         <Setter Target="accno.Margin" Value="58,10,10,10"></Setter>
                         <Setter Target="dob.Margin" Value="-22,10,10,10"></Setter>
                         <Setter Target="bgroup.Margin" Value="-23,10,10,10"></Setter>
                         <Setter Target="permtaddr.Margin" Value="-23,10,10,10"></Setter>
-                        <Setter Target="firstbox.Margin" Value="2,0,0,0"></Setter>
-                        <Setter Target="secondbox.Margin" Value="2,20,0,0"></Setter>
-                        <Setter Target="usertype.HorizontalAlignment" Value="Left"></Setter>
+                        <Setter Target="firstbox.Margin" Value="3,0,0,0"></Setter>
+                        <Setter Target="firstbox.HorizontalAlignment" Value="Left"></Setter>
+                        <Setter Target="secondbox.HorizontalAlignment" Value="Left"></Setter>
+                        <Setter Target="secondbox.Margin" Value="3,20,0,0"></Setter>
+                        <Setter Target="headgrid.Width" Value="410"/>
                         <Setter Target="add.Margin" Value="200,0,0,0"></Setter>
-                        <Setter Target="scroll.Height" Value="420"></Setter>
+                        <Setter Target="scroll.Height" Value="510"></Setter>
                        
                     </VisualState.Setters>
                 </VisualState>
@@ -240,21 +243,25 @@
                         <Setter Target="nine.Orientation" Value="Horizontal"></Setter>
                         <Setter Target="emergency_no.Width" Value="200"></Setter>
                         <Setter Target="s_accno.Width" Value="180" ></Setter>
-                        <Setter Target="usertype.Orientation" Value="Horizontal"></Setter>
-                        <Setter Target="newuser2.Margin" Value="20,0,0,0"></Setter>
+                        <Setter Target="usertype.Margin" Value="0,15,100,8"></Setter>
+                        <Setter Target="usertype.HorizontalAlignment" Value="Right"></Setter>
+                        <Setter Target="adduser.Margin" Value="25,12,20,10"></Setter>
                         <Setter Target="accno.Margin" Value="70,10,10,10"></Setter>
                         <Setter Target="dob.Margin" Value="70,10,10,10"></Setter>
                         <Setter Target="bgroup.Margin" Value="70,10,10,10"></Setter>
                         <Setter Target="permtaddr.Margin" Value="70,10,10,10"></Setter>
                         <Setter Target="firstbox.Margin" Value="30,0,0,0"></Setter>
                         <Setter Target="secondbox.Margin" Value="30,20,0,0"></Setter>
-                        <Setter Target="usertype.HorizontalAlignment" Value="Right"></Setter>
+                        <Setter Target="firstbox.HorizontalAlignment" Value="Center"></Setter>
+                        <Setter Target="secondbox.HorizontalAlignment" Value="Center"></Setter>
                         <Setter Target="add.Margin" Value="800,0,0,0"></Setter>
-                        <Setter Target="scroll.Height" Value="460"></Setter>
+                        <Setter Target="headgrid.Width" Value="1190"/>
+                        <Setter Target="scroll.Height" Value="510"></Setter>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
+        <Grid x:ConnectionId='28' Name="headgrid"  Width="1190" Height="auto">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
@@ -262,38 +269,41 @@
             <RowDefinition Height="auto" ></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,100,0" VerticalAlignment="Bottom">
+            <Grid.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/choice13.jpg" Stretch="UniformToFill" Opacity="0.8" ></ImageBrush>
+            </Grid.Background>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,100,0" VerticalAlignment="Bottom">
           
-            <TextBlock x:ConnectionId='83'  Foreground="DarkCyan"  Name="adduser" Margin="20,10,20,0"  FontWeight="Bold" FontSize="25" HorizontalTextAlignment="Center" Text="Add User" Width="122"/>
+            <TextBlock x:ConnectionId='82'  Foreground="DarkCyan"  Name="adduser" Margin="25,12,20,10"  FontWeight="Bold" FontSize="25" HorizontalTextAlignment="Center" Text="Add User" Width="122"/>
 
         </StackPanel>
+
+            <ComboBox x:ConnectionId='29'  Grid.Row="0" Name="usertype" CornerRadius="2" Background="{ThemeResource SystemControlBaseLowAcrylicElementBrush}" Margin="0,15,100,8" Width="250"  HorizontalAlignment="Right"                                             >
+                <ComboBoxItem IsSelected="True" Content="As a Employee"></ComboBoxItem>                                                        
+                <ComboBoxItem  Content="As a Human Resources Manager"></ComboBoxItem>
+            </ComboBox>
        
-        <StackPanel x:ConnectionId='28'  Grid.Row="1" Name="usertype"  Orientation="Horizontal" Margin="70,0,50,10"  HorizontalAlignment="Right">
-            <RadioButton x:ConnectionId='81' Style="{StaticResource RadioButtonStyle1}" GroupName="newuser"                               IsChecked="True" Name="newuser1" Content="As a Employee" Width="120"/>
-            <RadioButton x:ConnectionId='82'  Style="{StaticResource RadioButtonStyle1}" GroupName="newuser"                               Margin="20,0,0,0" Name="newuser2"  Content="As a Human Resources Manager"></RadioButton>
-
-        </StackPanel>
-        <ScrollViewer x:ConnectionId='29' Name="scroll" Grid.Row="2" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,80" Height="460">
+        <ScrollViewer x:ConnectionId='30' Name="scroll" Grid.Row="2" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,80" Height="510">
             <StackPanel  >
-        <StackPanel x:ConnectionId='33'   BorderBrush="LightGray" Name="firstbox" BorderThickness="2" Margin="30,0,0,0" Padding="-60,10,10,30">
+                    <StackPanel x:ConnectionId='34' Width="1000" Background="{ThemeResource SystemControlBaseLowAcrylicElementBrush}" HorizontalAlignment="Center" CornerRadius="2"  BorderBrush="LightGray" Name="firstbox" BorderThickness="2" Margin="0,0,0,0" Padding="-60,10,10,30">
             
 
-            <TextBlock  Text="Basic Info" FontSize="27" FontWeight="Bold" Margin="70,2,12,10"  />
-            <StackPanel x:ConnectionId='59'   Orientation="Vertical" Margin="40,0,0,0" Name="basicinfo">
+            <TextBlock  Text="Basic Info" FontSize="27" FontWeight="Bold"  Margin="70,2,12,10"  />
+            <StackPanel x:ConnectionId='60'   Orientation="Vertical" Margin="40,0,0,0" Name="basicinfo">
                 
-                    <StackPanel x:ConnectionId='60' Orientation="Horizontal"  Name="first">
+                    <StackPanel x:ConnectionId='61' Orientation="Horizontal"  Name="first">
                     <StackPanel Orientation="Horizontal" >
                         <TextBlock Text="Employee Id:" Foreground="DimGray" FontSize="15" Height="35" Width="82" Margin="40,10,10,10"/>
-                        <TextBox x:ConnectionId='80' Style="{StaticResource TextBoxStyle1}" BorderBrush="Black"  Margin="50,10,10,10" Name="empid"  Height="35" Width="200"></TextBox>
+                                    <TextBox x:ConnectionId='81' Style="{StaticResource TextBoxStyle1}"  CornerRadius="2" BorderBrush="Black"  Margin="50,10,10,10" Name="empid"  Height="35" Width="200"></TextBox>
                     </StackPanel>
-                    <StackPanel x:ConnectionId='77' Orientation="Horizontal" Margin="60,0,0,0" Name="firstin" >
+                    <StackPanel x:ConnectionId='78' Orientation="Horizontal" Margin="60,0,0,0" Name="firstin" >
                         <TextBlock Text="Designation:" Foreground="DimGray" FontSize="15" Height="35" Width="90" Margin="10,10,10,10"/>
-                        <ComboBox x:ConnectionId='78'  Margin="40,10,10,10" Width="159" BorderBrush="Black" Name="designationemp"                                                >
+                                    <ComboBox x:ConnectionId='79'  Margin="40,10,10,10" Width="200" BorderBrush="Black"   CornerRadius="2" Name="designationemp"                                                >
                             <ComboBoxItem Content="Project Trainee"></ComboBoxItem>
                             <ComboBoxItem Content="Member Technical Staff"></ComboBoxItem>
                             <ComboBoxItem Content="Member Leadership Staff"></ComboBoxItem>
                         </ComboBox>
-                        <ComboBox x:ConnectionId='79'  Margin="40,10,10,10" Width="159" BorderBrush="Black" Visibility="Collapsed" Name="designationHR"                                                >
+                                    <ComboBox x:ConnectionId='80'  Margin="40,10,10,10" Width="200" CornerRadius="2" BorderBrush="Black" Visibility="Collapsed" Name="designationHR"                                                >
                             <ComboBoxItem Content="Associate-Human Resources"></ComboBoxItem>
                             <ComboBoxItem Content="Senior Associate-HR Operations"></ComboBoxItem>
                             <ComboBoxItem Content="Senior Manager-HR Operations"></ComboBoxItem>
@@ -301,42 +311,42 @@
                     </StackPanel>
                     </StackPanel>
 
-                    <StackPanel x:ConnectionId='61' Orientation="Horizontal" Name="second">
+                    <StackPanel x:ConnectionId='62' Orientation="Horizontal" Name="second">
                     <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
                         <TextBlock Text="Firstname:" Foreground="DimGray" FontSize="15" Height="35" Width="82" HorizontalAlignment="Center" Margin="35,10,0,10" />
-                        <TextBox x:ConnectionId='76' Style="{StaticResource TextBoxStyle1}" Margin="60,10,10,10" Name="fname" BorderBrush="Black" Width="200"></TextBox>
+                                    <TextBox x:ConnectionId='77' Style="{StaticResource TextBoxStyle1}" CornerRadius="2" Margin="60,10,10,10" Name="fname" BorderBrush="Black" Width="200"></TextBox>
                     </StackPanel>
-                    <StackPanel x:ConnectionId='74' Orientation="Horizontal" Margin="60,0,0,0" Name="secondin">
+                    <StackPanel x:ConnectionId='75' Orientation="Horizontal" Margin="60,0,0,0" Name="secondin">
                         <TextBlock Text="Lastname:" Foreground="DimGray" FontSize="15" Height="35" Width="90" HorizontalAlignment="Center" Margin="10,10,0,10" />
-                        <TextBox x:ConnectionId='75' Style="{StaticResource TextBoxStyle1}" Margin="50,10,10,10" BorderBrush="Black" Name="lname" Width="200"></TextBox>
+                                    <TextBox x:ConnectionId='76' Style="{StaticResource TextBoxStyle1}" CornerRadius="2" Margin="50,10,10,10" BorderBrush="Black" Name="lname" Width="200"></TextBox>
                     </StackPanel>
                     </StackPanel>
 
-                    <StackPanel x:ConnectionId='62' Orientation="Horizontal" Name="third">
+                    <StackPanel x:ConnectionId='63' Orientation="Horizontal" Name="third">
                     <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
                         <TextBlock Text="Mobileno:" Foreground="DimGray" FontSize="15" Height="35" Width="82" HorizontalAlignment="Center" Margin="35,10,0,10"/>
-                        <TextBox x:ConnectionId='73' Style="{StaticResource TextBoxStyle1}" Margin="60,10,10,10" Name="mno" BorderBrush="Black" Width="200"></TextBox>
+                                    <TextBox x:ConnectionId='74' Style="{StaticResource TextBoxStyle1}" CornerRadius="2" Margin="60,10,10,10" Name="mno" BorderBrush="Black" Width="200"></TextBox>
                     </StackPanel>
-                    <StackPanel x:ConnectionId='71' Orientation="Horizontal" Margin="60,0,0,0" Name="thirdin">
+                    <StackPanel x:ConnectionId='72' Orientation="Horizontal" Margin="60,0,0,0" Name="thirdin">
                         <TextBlock Text="EmailId:" Foreground="DimGray" FontSize="15" Height="35" Width="90" HorizontalAlignment="Center" Margin="10,10,0,10"></TextBlock>
-                        <TextBox x:ConnectionId='72'  Style="{StaticResource TextBoxStyle1}" Margin="50,10,10,10" BorderBrush="Black" Name="email" Width="200"></TextBox>
+                                    <TextBox x:ConnectionId='73'  Style="{StaticResource TextBoxStyle1}" CornerRadius="2" Margin="50,10,10,10" BorderBrush="Black" Name="email" Width="200"></TextBox>
                     </StackPanel>
                     </StackPanel>
-                    <StackPanel x:ConnectionId='63' Orientation="Horizontal" Name="four">
+                    <StackPanel x:ConnectionId='64' Orientation="Horizontal" Name="four">
                     <StackPanel Orientation="Horizontal"  Margin="5,0,0,0">
                         <TextBlock Text="Teamname:" Foreground="DimGray" FontSize="15" Height="35" Width="82" HorizontalAlignment="Center" Margin="35,10,0,10"/>
-                        <AutoSuggestBox x:ConnectionId='68' Style="{StaticResource AutoSuggestBoxStyle1}" TextMemberPath="Teamname"  Name="tname"                                            Margin="60,10,10,10" Width="200" >
+                                    <AutoSuggestBox x:ConnectionId='69'  CornerRadius="2" Style="{ThemeResource AutoSuggestBoxStyle1}"  TextMemberPath="Teamname"  Name="tname"                                            Margin="60,10,10,10" Width="200" >
                             <AutoSuggestBox.ItemTemplate>
                                 <DataTemplate                           >
-                                    <TextBlock Name="mnameselected" Text="{Binding Teamname}"></TextBlock>
+                                    <TextBlock Name="mnameselected"  Text="{Binding Teamname}"></TextBlock>
                                 </DataTemplate>
                             </AutoSuggestBox.ItemTemplate>
                         </AutoSuggestBox>
                     </StackPanel>
 
-                    <StackPanel x:ConnectionId='64' Orientation="Horizontal" Margin="60,0,0,0" Name="fourin">
+                    <StackPanel x:ConnectionId='65' Orientation="Horizontal" Margin="60,0,0,0" Name="fourin">
                         <TextBlock Text="Reporting To:" Foreground="DimGray" FontSize="15" Height="35" Width="90" HorizontalAlignment="Center" Margin="10,10,0,10"></TextBlock>
-                        <AutoSuggestBox x:ConnectionId='65' Style="{StaticResource AutoSuggestBoxStyle1}" Name="managername"                                                                                       Margin="50,10,10,10" Width="200">
+                                    <AutoSuggestBox x:ConnectionId='66' Style="{StaticResource AutoSuggestBoxStyle1}" CornerRadius="2" Name="managername"                                                                                       Margin="50,10,10,10" Width="200">
                             <AutoSuggestBox.ItemTemplate>
                                 <DataTemplate                           >
                                     <StackPanel Orientation="Horizontal">
@@ -362,74 +372,74 @@
                 
             </StackPanel>
         </StackPanel>
-       
-        <StackPanel x:ConnectionId='34'  BorderBrush="LightGray" Name="secondbox" BorderThickness="2" Margin="30,20,0,0" Padding="-60,10,10,30">
+
+                    <StackPanel x:ConnectionId='35'  BorderBrush="LightGray"  Name="secondbox" CornerRadius="2" Background="{ThemeResource SystemControlBaseLowAcrylicElementBrush}" Width="1000" HorizontalAlignment="Center" BorderThickness="2" Margin="0,20,0,0" Padding="-60,10,10,30">
            
             <TextBlock  Text="Personal Details" FontSize="27"  FontWeight="Bold" Margin="70,2,12,10"  />
-            <StackPanel x:ConnectionId='35' Orientation="Vertical"  Name="personaldetails">
+            <StackPanel x:ConnectionId='36' Orientation="Vertical"  Name="personaldetails">
               
-                    <StackPanel x:ConnectionId='36' Orientation="Horizontal" Name="five" >
+                    <StackPanel x:ConnectionId='37' Orientation="Horizontal" Name="five" >
                         <StackPanel Orientation="Horizontal" Margin="12,0,0,0">
                             <TextBlock Text="Gender:" Foreground="DimGray" FontSize="15" Height="35" Width="110" Margin="65,14,10,10"/>
                             <StackPanel Orientation="Horizontal" Width="192" Margin="40,10,10,10">
-                                <RadioButton x:ConnectionId='57'  Style="{StaticResource RadioButtonStyle1}" GroupName="gender" Name="gender"                          Content="Male" Width="79"/>
-                                <RadioButton x:ConnectionId='58'  Style="{StaticResource RadioButtonStyle1}" Content="Female" GroupName="gender" Name="gender2"                         />
+                                <RadioButton x:ConnectionId='58'  Style="{StaticResource RadioButtonStyle1}" GroupName="gender" Name="gender"                          Content="Male" Width="79"/>
+                                <RadioButton x:ConnectionId='59'  Style="{StaticResource RadioButtonStyle1}" Content="Female" GroupName="gender" Name="gender2"                         />
                             </StackPanel>
                         </StackPanel>
-                        <StackPanel x:ConnectionId='54' Orientation="Horizontal" Margin="70,0,0,0" Name="fivein">
-                            <TextBlock x:ConnectionId='55' Text="Emergency Contact Number:" Name="emergency_no" TextWrapping="Wrap" Foreground="DimGray" FontSize="15" Height="auto" HorizontalAlignment="Center" Width="200" Margin="10,15,10,10"/>
-                            
-                            <TextBox x:ConnectionId='56' Margin="40,10,10,10" Style="{StaticResource TextBoxStyle1}" BorderBrush="Black" Name="emergencyno" Height="35" Width="200"></TextBox>
+                        <StackPanel x:ConnectionId='55' Orientation="Horizontal" Margin="70,0,0,0" Name="fivein">
+                            <TextBlock x:ConnectionId='56' Text="Emergency Contact Number:" Name="emergency_no" TextWrapping="Wrap" Foreground="DimGray" FontSize="15" Height="auto" HorizontalAlignment="Center" Width="200" Margin="10,15,10,10"/>
+
+                                    <TextBox x:ConnectionId='57' Margin="40,10,10,10" CornerRadius="2" Style="{StaticResource TextBoxStyle1}" BorderBrush="Black" Name="emergencyno" Height="35" Width="200"></TextBox>
                         </StackPanel>
                     </StackPanel>
 
-                    <StackPanel x:ConnectionId='37' Orientation="Horizontal" Name="six">
+                    <StackPanel x:ConnectionId='38' Orientation="Horizontal" Name="six">
                     <StackPanel Orientation="Horizontal"  Margin="20,0,0,0">
                             <TextBlock Text="Maritial Status:" Foreground="DimGray" FontSize="15"  Height="35" Width="110" HorizontalAlignment="Center" Margin="58,10,0,10" />
-                            <ComboBox x:ConnectionId='53'  Margin="49,10,10,10" Width="120" Name="mstatus" BorderBrush="Black"                                            >
+                                    <ComboBox x:ConnectionId='54'  Margin="49,10,10,10" CornerRadius="2" Width="200" Name="mstatus" BorderBrush="Black"                                            >
                                 <ComboBoxItem Content="Single"/>
                                 <ComboBoxItem Content="Married"/>
                                 <ComboBoxItem Content="Widow"/>
                             </ComboBox>
 
                         </StackPanel>
-                        <StackPanel x:ConnectionId='51' Orientation="Horizontal" Margin="70,0,0,0" Name="sixin">
-                            <TextBlock Text="Date of Birth:" Foreground="DimGray" FontSize="15" Height="35" Width="180" HorizontalAlignment="Center" Margin="82,10,0,10" />
-                            <CalendarDatePicker x:ConnectionId='52' Name="dob"  Style="{StaticResource CalendarDatePickerStyle1}" BorderBrush="Black" Margin="70,10,10,10"></CalendarDatePicker>
+                        <StackPanel x:ConnectionId='52' Orientation="Horizontal" Margin="70,0,0,0" Name="sixin">
+                            <TextBlock Text="Date of Birth:" Foreground="DimGray" FontSize="15" Height="35" Width="180" HorizontalAlignment="Center" Margin="3,10,0,10" />
+                                    <CalendarDatePicker x:ConnectionId='53' Name="dob" CornerRadius="2" Width="200"  Style="{StaticResource CalendarDatePickerStyle1}" BorderBrush="Black" Margin="70,10,10,10"></CalendarDatePicker>
                         </StackPanel>
                     </StackPanel>
 
-                    <StackPanel x:ConnectionId='38' Orientation="Horizontal" Name="sevan">
+                    <StackPanel x:ConnectionId='39' Orientation="Horizontal" Name="sevan">
                     <StackPanel Orientation="Horizontal"  Margin="20,0,0,0">
                             <TextBlock Text="Father Name:" Foreground="DimGray" FontSize="15" Height="35" Width="110" HorizontalAlignment="Center" Margin="60,10,0,10"/>
-                            <TextBox x:ConnectionId='50' Margin="47,10,10,10" Style="{StaticResource TextBoxStyle1}" BorderBrush="Black" Name="faname" Width="200"/>
+                                    <TextBox x:ConnectionId='51' Margin="47,10,10,10" CornerRadius="2" Style="{StaticResource TextBoxStyle1}" BorderBrush="Black" Name="faname" Width="200"/>
                         </StackPanel>
-                        <StackPanel x:ConnectionId='47' Orientation="Horizontal" Margin="70,0,0,0" Name="sevanin">
-                            <TextBlock x:ConnectionId='48' Text="Salary Account Number:" TextWrapping="Wrap" Name="s_accno" Foreground="DimGray" FontSize="15" Height="auto" Width="180" HorizontalAlignment="Center" Margin="4,10,0,10"></TextBlock>
-                        <TextBox x:ConnectionId='49' Margin="70,10,10,10" Style="{StaticResource TextBoxStyle1}" BorderBrush="Black" Name="accno" Width="200"></TextBox>
+                        <StackPanel x:ConnectionId='48' Orientation="Horizontal" Margin="70,0,0,0" Name="sevanin">
+                            <TextBlock x:ConnectionId='49' Text="Salary Account Number:" TextWrapping="Wrap" Name="s_accno" Foreground="DimGray" FontSize="15" Height="auto" Width="180" HorizontalAlignment="Center" Margin="4,10,0,10"></TextBlock>
+                                    <TextBox x:ConnectionId='50' Margin="70,10,10,10" CornerRadius="2" Style="{StaticResource TextBoxStyle1}" BorderBrush="Black" Name="accno" Width="200"></TextBox>
                         </StackPanel>
                     </StackPanel>
 
-                    <StackPanel x:ConnectionId='39' Orientation="Horizontal" Name="eight">
+                    <StackPanel x:ConnectionId='40' Orientation="Horizontal" Name="eight">
                     <StackPanel Orientation="Horizontal"  Margin="20,0,0,0">
                             <TextBlock Text="Mother Tongue:" Foreground="DimGray" FontSize="15" Height="35" Width="110" HorizontalAlignment="Center" Margin="60,10,0,10"/>
-                            <AutoSuggestBox x:ConnectionId='46' Background="White" Name="mtongue"                                   Style="{StaticResource AutoSuggestBoxStyle1}" Margin="47,10,10,10" Width="200" ></AutoSuggestBox>
+                                    <AutoSuggestBox x:ConnectionId='47' Background="White" CornerRadius="2" Name="mtongue"                                   Style="{StaticResource AutoSuggestBoxStyle1}" Margin="47,10,10,10" Width="200" ></AutoSuggestBox>
                         </StackPanel>
-                        <StackPanel x:ConnectionId='44' Orientation="Horizontal" Margin="70,0,0,0" Name="eightin">
+                        <StackPanel x:ConnectionId='45' Orientation="Horizontal" Margin="70,0,0,0" Name="eightin">
                             <TextBlock Text="Blood Group:" Foreground="DimGray" FontSize="15" Height="35" Width="180" HorizontalAlignment="Center" Margin="4,10,0,10"></TextBlock>
-                        <AutoSuggestBox x:ConnectionId='45' Name="bgroup" Style="{StaticResource AutoSuggestBoxStyle1}"  Width="200" Margin="70,10,10,10"                                 ></AutoSuggestBox>
+                                    <AutoSuggestBox x:ConnectionId='46' Name="bgroup" CornerRadius="2" Style="{StaticResource AutoSuggestBoxStyle1}"  Width="200" Margin="70,10,10,10"                                 ></AutoSuggestBox>
                         </StackPanel>
                     </StackPanel>
 
-                    <StackPanel x:ConnectionId='40' Orientation="Horizontal" Name="nine">
+                    <StackPanel x:ConnectionId='41' Orientation="Horizontal" Name="nine">
                     <StackPanel Orientation="Horizontal"  Margin="20,0,0,0">
                             <TextBlock Text="Present Address:" Foreground="DimGray" FontSize="15" Height="35" Width="110" HorizontalAlignment="Center" Margin="60,10,0,10">
                             </TextBlock>
-                            <TextBox x:ConnectionId='43'  Style="{StaticResource TextBoxStyle1}" BorderBrush="Black" Name="prstaddr" Margin="47,10,10,10" TextWrapping="Wrap" Height="90" Width="200"/>
+                                    <TextBox x:ConnectionId='44'  Style="{StaticResource TextBoxStyle1}" CornerRadius="2" BorderBrush="Black" Name="prstaddr" Margin="47,10,10,10" TextWrapping="Wrap" Height="90" Width="200"/>
                         </StackPanel>
-                        <StackPanel x:ConnectionId='41' Orientation="Horizontal" Margin="70,0,0,0" Name="ninein">
+                        <StackPanel x:ConnectionId='42' Orientation="Horizontal" Margin="70,0,0,0" Name="ninein">
                             <TextBlock Text="Permanent Address:" Foreground="DimGray" FontSize="15" Height="35" Width="180" HorizontalAlignment="Center" Margin="4,10,0,10"></TextBlock>
-                        <TextBox x:ConnectionId='42' Margin="70,10,10,10" Style="{StaticResource TextBoxStyle1}" BorderBrush="Black" TextWrapping="Wrap" Name="permtaddr" Width="200" Height="90">
+                                    <TextBox x:ConnectionId='43' Margin="70,10,10,10" CornerRadius="2" Style="{StaticResource TextBoxStyle1}" BorderBrush="Black" TextWrapping="Wrap" Name="permtaddr" Width="200" Height="90">
                             </TextBox>
                         </StackPanel>
                     </StackPanel>
@@ -441,12 +451,14 @@
     </StackPanel>
             </StackPanel>
         </ScrollViewer>
-        
-        <StackPanel x:ConnectionId='30' Grid.Row="3" Orientation="Horizontal" Name="finalsubmit" VerticalAlignment="Top" Margin="30,-70,0,0" >
-            <Button x:ConnectionId='31'  Content="Submit" Name="add"                   Foreground="White" Background="DarkCyan" Width="70" CornerRadius="2"  VerticalAlignment="Top" Margin="800,0,0,0"></Button>
-            <Button x:ConnectionId='32'  Content="Cancel" Name="cancel"                      Width="90" Background="Transparent" BorderBrush="DimGray" BorderThickness="1"  Margin="10,0,0,0" CornerRadius="2" ></Button>
+
+            <StackPanel x:ConnectionId='31'  Grid.Row="3" Orientation="Horizontal"   Name="finalsubmit" VerticalAlignment="Top" Margin="30,-70,0,0" >
+                
+            <Button x:ConnectionId='32'  Content="Submit" Name="add"                   Foreground="White" Background="DarkCyan" Width="70" CornerRadius="2"  VerticalAlignment="Top" Margin="800,0,0,0"></Button>
+                <Button x:ConnectionId='33'  Content="Cancel" Name="cancel"                       Width="90" Background="{ThemeResource SystemControlBaseLowAcrylicElementBrush}" BorderBrush="DimGray" BorderThickness="1"  Margin="10,0,0,0" CornerRadius="2" ></Button>
 
         </StackPanel>
     </Grid>
+    </Frame>
 </Page>
 

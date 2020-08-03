@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource SystemControlAcrylicElementBrush}">
     <Page.Resources>
         <Style x:Key="ListBoxItemStyle1" TargetType="ListBoxItem">
             <Setter Property="Background" Value="Transparent"/>
@@ -112,20 +112,23 @@
             </Setter>
         </Style>
     </Page.Resources>
-   
-    <Grid>
+
+    <Grid  >
         <Grid.RowDefinitions>
             <RowDefinition  Height="Auto" ></RowDefinition>
             <RowDefinition  Height="1100"></RowDefinition>
         </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Assets/choice11.jpg" Opacity="0.6" Stretch="Uniform" AlignmentX="Center" AlignmentY="Top" ></ImageBrush>
+        </Grid.Background>
         <RelativePanel Grid.Row="0" VerticalAlignment="Top">
     <Button Content="&#xEC26;" Background="Transparent" Margin="10,10,0,0" Name="hamburgerbutton" RelativePanel.AlignLeftWithPanel="True"  FontSize="36" Click="hamburgerbutton_Click" FontFamily="Segoe MDL2 Assets">
     </Button>
             <TextBlock Text="Employee Management App" FontSize="32" Margin="70,10,0,0"  FontWeight="Bold" RelativePanel.AlignLeftWith="hamburgerbutton"></TextBlock>
 
         </RelativePanel>
-  
-        <SplitView Grid.Row="1" Name="mysplitview" Margin="0,0,0,0" PaneBackground="DarkBlue" DisplayMode="CompactOverlay"
+
+        <SplitView Grid.Row="1" Background="{StaticResource SystemControlBaseMediumLowAcrylicElementMediumBrush}"  Name="mysplitview" Margin="0,0,0,0"   DisplayMode="CompactOverlay"
                    HorizontalAlignment="Left" CompactPaneLength="90" OpenPaneLength="90"  >
         <SplitView.Pane >
             

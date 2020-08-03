@@ -54,7 +54,8 @@ namespace Taskuwp.Views
             }
             if (loginstatus == 2)
             {
-                this.Frame.Navigate(typeof(Homepage), email.Text,new SuppressNavigationTransitionInfo());
+                App.CurrentUser = email.Text;
+               this.Frame.Navigate(typeof(Homepage), email.Text,new SuppressNavigationTransitionInfo());
             }
         }
 

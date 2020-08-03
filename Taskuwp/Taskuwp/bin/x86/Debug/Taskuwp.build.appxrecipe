@@ -163,6 +163,45 @@
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\1030.jpg">
       <PackagePath>Assets\1030.jpg</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\backgroundimg.jpg">
+      <PackagePath>Assets\backgroundimg.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\choice1.jpg">
+      <PackagePath>Assets\choice1.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\choice10.jpg">
+      <PackagePath>Assets\choice10.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\choice11.jpg">
+      <PackagePath>Assets\choice11.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\choice12.jpg">
+      <PackagePath>Assets\choice12.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\choice13.jpg">
+      <PackagePath>Assets\choice13.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\choice2.jpg">
+      <PackagePath>Assets\choice2.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\choice3.jpg">
+      <PackagePath>Assets\choice3.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\choice4.jpg">
+      <PackagePath>Assets\choice4.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\choice5.jpg">
+      <PackagePath>Assets\choice5.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\choice7.jpg">
+      <PackagePath>Assets\choice7.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\choice8.jpg">
+      <PackagePath>Assets\choice8.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Assets\choice9.jpg">
+      <PackagePath>Assets\choice9.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
@@ -207,6 +246,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Allteams.xbf">
       <PackagePath>Views\Allteams.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Detailedview.xbf">
+      <PackagePath>Views\Detailedview.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\editpage.xbf">
       <PackagePath>Views\editpage.xbf</PackagePath>

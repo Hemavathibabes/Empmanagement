@@ -30,6 +30,19 @@ Assets\1027.jpg
 Assets\1028.jpg
 Assets\1029.jpg
 Assets\1030.jpg
+Assets\backgroundimg.jpg
+Assets\choice1.jpg
+Assets\choice10.jpg
+Assets\choice11.jpg
+Assets\choice12.jpg
+Assets\choice13.jpg
+Assets\choice2.jpg
+Assets\choice3.jpg
+Assets\choice4.jpg
+Assets\choice5.jpg
+Assets\choice7.jpg
+Assets\choice8.jpg
+Assets\choice9.jpg
 Assets\LockScreenLogo.scale-200.png
 Assets\SplashScreen.scale-200.png
 Assets\Square150x150Logo.scale-200.png
@@ -43,6 +56,7 @@ Taskuwp.xr.xml
 Views\Adduser.xbf
 Views\AllEmployees.xbf
 Views\Allteams.xbf
+Views\Detailedview.xbf
 Views\editpage.xbf
 Views\Forgotpassword.xbf
 Views\Homepage.xbf

@@ -12,6 +12,7 @@
     <RootPropertyPathName Name="imagesource" />
     <RootPropertyPathName Name="Teamname" />
     <RootPropertyPathName Name="teamname" />
+    <RootPropertyPathName Name="empid" />
     <RootPropertyPathName Name="Dob" />
     <RootPropertyPathName Name="Bloodgroup" />
     <RootPropertyPathName Name="Gender" />
@@ -20,7 +21,6 @@
     <RootPropertyPathName Name="Designation" />
     <RootPropertyPathName Name="Emailid" />
     <RootPropertyPathName Name="Favop" />
-    <RootPropertyPathName Name="empid" />
     <RootPropertyPathName Name="Isvisible" />
     <RootPropertyPathName Name="Permnentaddr" />
     <RootPropertyPathName Name="Presentaddr" />
@@ -40,7 +40,17 @@
     <RootType FullName="Windows.UI.Xaml.ResourceDictionary">
       <RootProperty Name="ThemeDictionaries" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Media.SolidColorBrush" />
+    <RootType FullName="Windows.UI.Xaml.Media.AcrylicBrush">
+      <RootProperty Name="BackgroundSource" />
+      <RootProperty Name="TintColor" />
+      <RootProperty Name="TintOpacity" />
+      <RootProperty Name="TintLuminosityOpacity" />
+      <RootProperty Name="FallbackColor" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.SolidColorBrush">
+      <RootProperty Name="Color" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="SelectionHighlightColor" />
       <RootProperty Name="Description" />
@@ -60,6 +70,7 @@
       <RootProperty Name="Visibility" />
       <RootProperty Name="SelectionFlyout" />
       <RootProperty Name="Name" />
+      <RootProperty Name="CornerRadius" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="Height" />
       <RootProperty Name="Background" />
@@ -81,6 +92,7 @@
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="FontFamily" />
       <RootProperty Name="FontSize" />
+      <RootProperty Name="CornerRadius" />
       <RootProperty Name="Padding" />
       <RootProperty Name="Template" />
       <RootProperty Name="TabNavigation" />
@@ -176,16 +188,20 @@
       <RootProperty Name="MaxDropDownHeight" />
       <RootProperty Name="TextBoxStyle" />
       <RootProperty Name="Name" />
+      <RootProperty Name="CornerRadius" />
+      <RootProperty Name="Background" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
-      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Items" />
+      <RootProperty Name="BorderBrush" />
       <RootProperty Name="Visibility" />
       <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AutoSuggestBox">
       <RootProperty Name="TextBoxStyle" />
       <RootProperty Name="Name" />
+      <RootProperty Name="CornerRadius" />
       <RootProperty Name="Style" />
       <RootProperty Name="Width" />
       <RootProperty Name="Margin" />
@@ -197,7 +213,6 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="HorizontalContentAlignment" />
       <RootProperty Name="Height" />
-      <RootProperty Name="CornerRadius" />
       <RootProperty Name="QueryIcon" />
       <RootProperty Name="Visibility" />
       <RootEvent Name="TextChanged" />
@@ -209,12 +224,12 @@
       <RootProperty Name="GroupName" />
       <RootProperty Name="Content" />
       <RootProperty Name="Width" />
-      <RootProperty Name="IsChecked" />
-      <RootProperty Name="Margin" />
       <RootEvent Name="Checked" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker">
       <RootProperty Name="Name" />
+      <RootProperty Name="CornerRadius" />
+      <RootProperty Name="Width" />
       <RootProperty Name="Style" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="Margin" />
@@ -337,7 +352,6 @@
       <RootProperty Name="KeyTime" />
       <RootProperty Name="Value" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="Background" />
       <RootProperty Name="BorderThickness" />
@@ -427,12 +441,12 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Visibility" />
       <RootProperty Name="Width" />
+      <RootProperty Name="CornerRadius" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Name" />
       <RootProperty Name="Content" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="Background" />
-      <RootProperty Name="CornerRadius" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="FontFamily" />
       <RootProperty Name="FontWeight" />
@@ -554,19 +568,26 @@
     <RootType FullName="Windows.UI.Xaml.AdaptiveTrigger">
       <RootProperty Name="MinWindowWidth" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
+      <RootProperty Name="ImageSource" />
+      <RootProperty Name="Stretch" />
+      <RootProperty Name="Opacity" />
+      <RootProperty Name="AlignmentX" />
+      <RootProperty Name="AlignmentY" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Orientation" />
       <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Children" />
       <RootProperty Name="Name" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Background" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="CornerRadius" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="Padding" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="CornerRadius" />
-      <RootProperty Name="Background" />
       <RootProperty Name="Height" />
       <RootProperty Name="Tag" />
       <RootProperty Name="Visibility" />
@@ -574,6 +595,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">
       <RootProperty Name="Content" />
+      <RootProperty Name="IsSelected" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
@@ -596,6 +618,7 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Taskuwp.Views.Allteams" />
+    <RootType FullName="Taskuwp.Views.Detailedview" />
     <RootType FullName="Taskuwp.Views.editpage" />
     <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
       <RootProperty Name="Children" />
@@ -633,8 +656,8 @@
     <RootType FullName="Taskuwp.Views.Forgotpassword" />
     <RootType FullName="Windows.UI.Xaml.Controls.SplitView">
       <RootProperty Name="Name" />
+      <RootProperty Name="Background" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="PaneBackground" />
       <RootProperty Name="DisplayMode" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="CompactPaneLength" />

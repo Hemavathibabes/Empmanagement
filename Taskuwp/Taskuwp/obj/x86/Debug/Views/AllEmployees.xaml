@@ -51,6 +51,9 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Assets/choice13.jpg" Stretch="UniformToFill" Opacity="0.8" ></ImageBrush>
+        </Grid.Background>
         <RelativePanel Grid.Row="0">
         <TextBlock x:ConnectionId='17' Text="Employees view" Margin="10,5,10,10" Foreground="DarkCyan"   Name="headtext" RelativePanel.AlignLeftWithPanel="True"  FontWeight="Bold" FontSize="20"></TextBlock>
 
@@ -99,8 +102,8 @@
         <ListView.ItemTemplate>
             <DataTemplate                           >
                     <ListViewItem>
-                            
-                                <StackPanel x:ConnectionId='14' Orientation="Horizontal" Margin="0,2,2,0" Tag="{Binding empid}"                                        >
+
+                            <StackPanel x:ConnectionId='14' Orientation="Horizontal" Background="{ThemeResource SystemControlBaseLowAcrylicElementBrush}" Margin="0,2,2,0" Tag="{Binding empid}"                                        >
                         <PersonPicture CacheMode="BitmapCache" 
                                            
                                            ProfilePicture="{Binding imagesource}"
@@ -121,7 +124,7 @@
            
             <!--detailed emp view-->
             <TextBlock x:ConnectionId='6' Text="&#xF0B0;" FontWeight="Bold" FontSize="17" Margin="30,0,0,0" Foreground="DarkCyan" Visibility="Collapsed" Name="adaptivearrow"                               FontFamily="Segoe MDL2 Assets" ></TextBlock>
-            <ListView x:ConnectionId='7' Name="detailedemplist" Grid.Column="1"  SelectionMode="None" Margin="60,5,0,0">
+            <ListView x:ConnectionId='7' Name="detailedemplist" Grid.Column="1"  SelectionMode="None" Margin="10,5,0,0">
             <ListView.ItemTemplate>
                 <DataTemplate                           >
                     <ListViewItem >

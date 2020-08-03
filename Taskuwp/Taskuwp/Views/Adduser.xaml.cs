@@ -22,6 +22,7 @@ using Taskuwp.ViewModels;
 using Windows.Devices.Printers.Extensions;
 using System.Collections.ObjectModel;
 using Windows.UI.ViewManagement;
+using Windows.System;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Taskuwp.Views
@@ -34,33 +35,30 @@ namespace Taskuwp.Views
         public Adduser()
         {
             this.InitializeComponent();
-            ApplicationView.PreferredLaunchViewSize = new Size { Height = 720, Width = 1200 };
+            ApplicationView.PreferredLaunchViewSize = new Size { Height = 720, Width = 1000 };
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
             ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size { Width = 700, Height = 500 });
             
             Window.Current.Activate();
-            if (newuser1.IsChecked == true)
-            {
-                newuserval = Convert.ToString(newuser1.Content);
-            }
+            
+            newuserval = Convert.ToString(usertype.SelectedItem);
+            
            
             empid.Text = ViewModels.Adduser.getempid();
         }
-
-      
-        private  void RadioButton_Checked(object sender, RoutedEventArgs e)
+       
+        private void usertype_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (newuser1.IsChecked == true)
+           
+            ComboBox combobox = sender as ComboBox;
+            newuserval = (combobox.SelectedItem as ComboBoxItem).Content.ToString();
+            if(newuserval== "As a Human Resources Manager")
             {
-                newuserval = Convert.ToString(newuser1.Content);
-            }
-            else
-            {
-                newuserval = Convert.ToString(newuser2.Content);
                 designationHR.Visibility = Visibility.Visible;
                 designationemp.Visibility = Visibility.Collapsed;
             }
         }
+       
 
       
         string designationselected;
@@ -99,10 +97,14 @@ namespace Taskuwp.Views
             string date = dob.Date.ToString();
             string formateddate=date.Split(" ")[0];
 
-            ViewModels.Adduser.insertdata(empid.Text,"1234", newuserval, designationselected, fname.Text, lname.Text,
-                   mno.Text, email.Text, tname.Text, managername.Text, genderval, emergencyno.Text, mstatus.Text,formateddate,
-            faname.Text, accno.Text, prstaddr.Text, permtaddr.Text, mtongue.Text, bgroup.Text);
-          
+            //  ViewModels.Adduser.insertdata(empid.Text,"1234", newuserval, designationselected, fname.Text, lname.Text,
+            //  mno.Text, email.Text, tname.Text, managername.Text, genderval, emergencyno.Text, mstatus.Text,formateddate,
+            //  faname.Text, accno.Text, prstaddr.Text, permtaddr.Text, mtongue.Text, bgroup.Text);
+           
+            newuserframe.Navigate(typeof(Selfservice), email.Text, new SuppressNavigationTransitionInfo());
+           /* Selfservicecontrol dv = new Selfservicecontrol(email.Text);
+            headgrid.Children.Clear();
+            headgrid.Children.Add(dv);*/
         }
 
        
@@ -165,5 +167,7 @@ namespace Taskuwp.Views
             var Suggestion = blgroup.Where(p => p.StartsWith(this.bgroup.Text, StringComparison.OrdinalIgnoreCase)).ToArray();
              bgroup.ItemsSource = Suggestion;
         }
+
+       
     }
 }

@@ -28,10 +28,15 @@ namespace Taskuwp.Views
     {
         ObservableCollection<Employee> emp = new ObservableCollection<Employee>();
         ObservableCollection<Employee> cemp = new ObservableCollection<Employee>();
-        public  FavEmployees()
+       
+        string mailid;
+
+        public FavEmployees()
         {
             this.InitializeComponent();
             setitemsource(emp);
+           
+           
         }
         public  void setitemsource(ObservableCollection<Employee> emp)
         {
@@ -45,13 +50,14 @@ namespace Taskuwp.Views
             }
             allemplist.ItemsSource = emp;
         }
-        string mailid;
+       
         protected  override void OnNavigatedTo(NavigationEventArgs e)
         {
             mailid = e.Parameter as string;
             ObservableCollection<Employee> tdetails = new ObservableCollection<Employee>();
             tdetails = ViewModels.Adduser.getdesignationdetails(tdetails);
             createmenuflyout(tdetails);
+            
         }
         private   void empname_PointerEntered(object sender, PointerRoutedEventArgs e)
         {

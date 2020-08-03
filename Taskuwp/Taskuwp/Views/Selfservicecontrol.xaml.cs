@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Taskuwp.Models;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -17,12 +19,16 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Taskuwp.Views
 {
+      
     public sealed partial class Selfservicecontrol : UserControl
     {
+        ObservableCollection<Employee> Emp = new ObservableCollection<Employee>();
         public Selfservicecontrol()
         {
             this.InitializeComponent();
+            
         }
        
-    }
+   
+        }
 }

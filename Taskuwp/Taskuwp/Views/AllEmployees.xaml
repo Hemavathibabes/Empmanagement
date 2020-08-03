@@ -20,7 +20,7 @@
                     </AdaptiveTrigger>
                 </VisualState.StateTriggers>
                 <VisualState.Setters>
-                        <Setter Target="adaptivearrow.Visibility" Value="Collapsed"></Setter>
+                       
                         <Setter Target="allemplist.Visibility" Value="Visible"></Setter>
                         <Setter Target="detailedemplist.Visibility" Value="Collapsed"></Setter>
                         
@@ -33,7 +33,7 @@
                     </AdaptiveTrigger>
                 </VisualState.StateTriggers>
                 <VisualState.Setters>
-                        <Setter Target="adaptivearrow.Visibility" Value="Collapsed"></Setter>
+                        
                         <Setter Target="allemplist.Visibility" Value="Visible"></Setter>
                     <Setter Target="detailedemplist.Visibility" Value="Visible"></Setter>
                         <Setter Target="allemplist.(Grid.Row)" Value="1"></Setter>
@@ -51,10 +51,13 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Assets/choice13.jpg" Stretch="UniformToFill" Opacity="0.8" ></ImageBrush>
+        </Grid.Background>
         <RelativePanel Grid.Row="0">
         <TextBlock Text="Employees view" Margin="10,5,10,10" Foreground="DarkCyan"   Name="headtext" RelativePanel.AlignLeftWithPanel="True"  FontWeight="Bold" FontSize="20"></TextBlock>
 
-        <AutoSuggestBox Name="searchbar" PlaceholderText="Search Employee" BorderBrush="DimGray"   Margin="10,10,0,10" TextMemberPath="Firstname" SuggestionChosen="searchbar_SuggestionChosen" HorizontalAlignment="Center"  HorizontalContentAlignment="Center" Width="200"
+            <AutoSuggestBox Name="searchbar" PlaceholderText="Search Employee" Background="{ThemeResource SystemControlBaseLowAcrylicElementBrush}" BorderBrush="DimGray"   Margin="10,10,0,10" TextMemberPath="Firstname" SuggestionChosen="searchbar_SuggestionChosen" HorizontalAlignment="Center"  HorizontalContentAlignment="Center" Width="200"
                         Height="35" CornerRadius="2"  QueryIcon="Find"  RelativePanel.Below="headtext" TextChanged="searchbar_TextChanged">
             <AutoSuggestBox.ItemTemplate >
                 <DataTemplate x:DataType="data:Employee" >
@@ -72,8 +75,8 @@
                 </DataTemplate>
             </AutoSuggestBox.ItemTemplate>
         </AutoSuggestBox>
-       
-                    <Button Content="&#xE71C;" Background="White" RelativePanel.RightOf="searchbar" FontFamily="Segoe MDL2 Assets" Margin="0,53,20,30" FontWeight="Bold" Name="filter"  Foreground="DarkCyan" FontSize="22" Height="35" Grid.Row="0">
+
+            <Button Content="&#xE71C;" Background="{ThemeResource SystemControlBaseLowAcrylicElementBrush}" RelativePanel.RightOf="searchbar" FontFamily="Segoe MDL2 Assets" Margin="0,53,20,30" FontWeight="Bold" Name="filter"  Foreground="DarkCyan" FontSize="22" Height="35" Grid.Row="0">
                         <Button.Flyout >
                 
                             <MenuFlyout Placement="BottomEdgeAlignedLeft" >
@@ -89,18 +92,18 @@
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300"></ColumnDefinition>
+                <ColumnDefinition Width="300" ></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <ListView Name="allemplist" Margin="0,-10,20,20"  ScrollViewer.VerticalScrollBarVisibility="Visible"
+            <ListView Name="allemplist" Margin="0,-10,0,0" Background="{ThemeResource SystemControlBaseLowAcrylicElementBrush}"  ScrollViewer.VerticalScrollBarVisibility="Visible"
                       ScrollViewer.IsVerticalRailEnabled="True"
                       ScrollViewer.VerticalScrollMode="Enabled" Grid.Column="0" BorderBrush="LightGray" BorderThickness="0,0,1,0" ItemContainerStyle="{StaticResource ListViewItemContainerStyle1}" ItemClick="favemplist_ItemClick" SelectionMode="Single" IsItemClickEnabled="True">
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="data:Employee">
                     <ListViewItem>
-                            
-                                <StackPanel Orientation="Horizontal" Margin="0,2,2,0" Tag="{Binding empid}" PointerEntered="empname_PointerEntered">
+
+                            <StackPanel Orientation="Horizontal"  Margin="0,2,2,0" Tag="{Binding empid}" PointerEntered="empname_PointerEntered">
                         <PersonPicture CacheMode="BitmapCache" 
                                            
                                            ProfilePicture="{Binding imagesource}"
@@ -120,14 +123,14 @@
     </ListView>
            
             <!--detailed emp view-->
-            <TextBlock Text="&#xF0B0;" FontWeight="Bold" FontSize="17" Margin="30,0,0,0" Foreground="DarkCyan" Visibility="Collapsed" Name="adaptivearrow" Tapped="adaptivearrow_Tapped" FontFamily="Segoe MDL2 Assets" ></TextBlock>
-            <ListView Name="detailedemplist" Grid.Column="1"  SelectionMode="None" Margin="60,5,0,0">
+            
+            <ListView Name="detailedemplist" Grid.Column="1"  SelectionMode="None" Margin="10,5,0,0">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="data:Employee">
                     <ListViewItem >
                             <StackPanel  BorderBrush="DarkCyan" BorderThickness="2"  Padding="30" CornerRadius="2" Orientation="Vertical">
 
-                                <StackPanel  Background="White"  BorderThickness="2" CornerRadius="2" Padding="15">
+                                <StackPanel  Background="{ThemeResource SystemControlBaseLowAcrylicElementBrush}"  BorderThickness="2" CornerRadius="2" Padding="15">
                                     
                                     <PersonPicture CacheMode="BitmapCache" 
                                            HorizontalAlignment="Center"
@@ -139,7 +142,7 @@
                                     </TextBlock>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <StackPanel Orientation="Vertical" BorderThickness="2" Name="innersp" Padding="15"  Height="auto" Margin="0,20,0,0" CornerRadius="5" >
+                                    <StackPanel Orientation="Vertical" Background="{ThemeResource SystemControlBaseLowAcrylicElementBrush}" BorderThickness="2" Name="innersp" Padding="15"  Height="auto" Margin="0,20,0,0" CornerRadius="5" >
                                         <TextBlock Text="About Me" Foreground="DarkCyan"  TextDecorations="Underline" FontSize="17" Margin="10,10,10,10"></TextBlock>
                                     <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="&#xE13D;" Margin="10,11,10,10" FontFamily="Segoe MDL2 Assets"></TextBlock>
@@ -165,8 +168,8 @@
                                             <TextBlock Margin="0,5,10,10" Text="{Binding Phoneno}"></TextBlock>
                                         </StackPanel>
                                     </StackPanel>
-                                
-                                <StackPanel Background="White" Padding="20"  BorderThickness="2" Height="auto" Margin="20,20,0,0" CornerRadius="5">
+
+                                    <StackPanel  Padding="20" Background="{ThemeResource SystemControlBaseLowAcrylicElementBrush}"  BorderThickness="2" Height="auto" Margin="20,20,0,0" CornerRadius="5">
                                     
                                     <TextBlock Text="Reporting To" Foreground="DarkCyan" TextDecorations="Underline"  FontSize="17">
                                     </TextBlock>
@@ -182,7 +185,7 @@
                                         <TextBlock Text="Member Leadership Staff" Margin="6,5,10,10"></TextBlock>
                                     </StackPanel>
                                 </StackPanel>
-                                <StackPanel Background="White" Padding="20"  BorderThickness="2" Height="auto" Margin="20,20,0,0" CornerRadius="5">
+                                    <StackPanel Background="{ThemeResource SystemControlBaseLowAcrylicElementBrush}" Padding="20"  BorderThickness="2" Height="auto" Margin="20,20,0,0" CornerRadius="5">
                                         <TextBlock Text="Other Details" FontSize="17" TextDecorations="Underline"  Foreground="DarkCyan"></TextBlock>
                                         
                                         <StackPanel Orientation="Horizontal" Margin="6,15,10,10">

@@ -6,8 +6,12 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Taskuwp.ViewModels;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -23,10 +27,9 @@ namespace Taskuwp
     /// </summary>
     sealed partial class App : Application
     {
-        /// <summary>
-        /// Initializes the singleton application object.  This is the first line of authored code
-        /// executed, and as such is the logical equivalent of main() or WinMain().
-        /// </summary>
+        internal static string CurrentUser;
+        public static ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+        Object value = App.localSettings.Values["IsAppFirstTimeLaunch"];
         public App()
         {
             this.InitializeComponent();
@@ -72,9 +75,16 @@ namespace Taskuwp
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
+                ExtendAcrylicIntoTitleBar();
             }
         }
-
+        private void ExtendAcrylicIntoTitleBar()
+        {
+            CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+            ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
+            titleBar.ButtonBackgroundColor = Colors.Transparent;
+            titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+        }
         /// <summary>
         /// Invoked when Navigation to a certain page fails
         /// </summary>

@@ -115,3 +115,8 @@ C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Selfservic
 C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Selfservicecontrol.xaml
 C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Selfservicecontrol.xbf
 C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Selfservicecontrol.xbf
+C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\bin\x86\Debug\Views\Detailedview.xbf
+C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Detailedview.g.i.cs
+C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Detailedview.g.cs
+C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Detailedview.xaml
+C:\Users\hema-pt3672\source\repos\Taskuwp\Taskuwp\obj\x86\Debug\Views\Detailedview.xbf

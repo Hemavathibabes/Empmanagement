@@ -33,14 +33,23 @@ namespace Taskuwp.Views
         public Selfservice()
         {
             this.InitializeComponent();
-
-                     
+         
         }
         string mailid;
+       
         protected  override void OnNavigatedTo(NavigationEventArgs e)
         {
+           
             mailid = e.Parameter as string;
-
+            if(mailid!=App.CurrentUser)
+            {
+              
+                //firstrow.Visibility = Visibility.Collapsed;
+            }
+             else
+            {
+                firstrow.Visibility = Visibility.Visible;
+            }
             Emp = ViewModels.Selfservice.getdetails(mailid,Emp);
             ss.ItemsSource = Emp;
         }

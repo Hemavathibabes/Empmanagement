@@ -1,0 +1,164 @@
+﻿<UserControl
+    x:Class="Taskuwp.Views.Selfservicecontrol"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Taskuwp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <ScrollViewer  VerticalScrollBarVisibility="Visible"  HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,55" Height="550">
+    
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"></AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="mainsp.Orientation"  Value="Vertical"></Setter>
+                        <Setter Target="personaldetails.Width" Value="355"/>
+                        <Setter Target="personaldetails.Margin" Value="20,20,0,0"></Setter>
+                        <Setter Target="e_no.Width" Value="150"></Setter>
+                        <Setter Target="gender.Margin" Value="-80,0,0,0"></Setter>
+                        <Setter Target="eno.Margin" Value="20,0,0,0"></Setter>
+                        <Setter Target="mstatus.Margin" Value="-80,0,0,0"></Setter>
+                        <Setter Target="dob.Margin" Value="-80,0,0,0"></Setter>
+                        <Setter Target="fname.Margin" Value="-80,0,0,0"></Setter>
+                        <Setter Target="mtongue.Margin" Value="-80,0,0,0"></Setter>
+                        <Setter Target="saccno.Margin" Value="-80,0,0,0"></Setter>
+                        <Setter Target="bgroup.Margin" Value="-80,0,0,0"></Setter>
+                        <Setter Target="pradd.Margin" Value="-80,0,0,0"></Setter>
+                        <Setter Target="peadd.Margin" Value="-80,0,0,0"></Setter>
+                        <Setter Target="pradd.Width" Value="100"></Setter>
+                        <Setter Target="peadd.Width" Value="100"></Setter>
+                       
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800">
+
+                        </AdaptiveTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="mainsp.Orientation" Value="Horizontal"></Setter>
+                        <Setter Target="personaldetails.Width" Value="700"/>
+                        <Setter Target="e_no.Width" Value="250"></Setter>
+                        <Setter Target="gender.Margin" Value="0,0,0,0"></Setter>
+                        <Setter Target="eno.Margin" Value="0,0,0,0"></Setter>
+                        <Setter Target="mstatus.Margin" Value="0,0,0,0"></Setter>
+                        <Setter Target="dob.Margin" Value="0,0,0,0"></Setter>
+                        <Setter Target="fname.Margin" Value="0,0,0,0"></Setter>
+                        <Setter Target="mtongue.Margin" Value="0,0,0,0"></Setter>
+                        <Setter Target="saccno.Margin" Value="0,0,0,0"></Setter>
+                        <Setter Target="bgroup.Margin" Value="0,0,0,0"></Setter>
+                        <Setter Target="pradd.Margin" Value="0,0,0,0"></Setter>
+                        <Setter Target="peadd.Margin" Value="0,0,0,0"></Setter>
+                        <Setter Target="pradd.Width" Value="250"></Setter>
+                        <Setter Target="peadd.Width" Value="250"></Setter>
+                       
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+
+
+        <Grid Name="grid1" Height="auto" >
+            <StackPanel Orientation="Horizontal" Name="mainsp">
+            <StackPanel   Orientation="Vertical">
+                <StackPanel Width="330" BorderBrush="LightGray" CornerRadius="2" BorderThickness="2" Padding="20" Height="auto" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top">
+                    <TextBlock Text="About Me" Margin="0,0,0,10" FontWeight="Bold" FontSize="25"></TextBlock>
+                    <StackPanel Orientation="Horizontal" Margin="7,20,20,10">
+                        <TextBlock FontSize="16" Text="&#xEA8C;" Margin="0,2,0,0" FontFamily="Segoe MDL2 Assets"></TextBlock>
+                        <TextBlock FontSize="16"  Margin="7,0,0,0">
+                            <Run  Text="{Binding Firstname}"></Run>
+                            <Run  Text="{Binding Lastname}"></Run>
+
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="7,20,20,10">
+                        <TextBlock Text="&#xF003;" FontSize="16" Margin="0,4,0,0" FontFamily="Segoe MDL2 Assets"></TextBlock>
+                        <TextBlock FontSize="16" Name="team"  Text="{Binding Teamname}" Margin="7,0,0,0"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="7,20,20,10">
+                        <TextBlock Text="&#xE716;" FontSize="16" Margin="0,3,0,0" FontFamily="Segoe MDL2 Assets" ></TextBlock>
+                        <TextBlock Text="{Binding Designation}" FontSize="16" Margin="7,0,0,0"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="7,20,20,10">
+                        <TextBlock Text="&#xE119;" FontSize="16" FontFamily="Segoe MDL2 Assets" Margin="0,3,0,0"></TextBlock>
+                        <TextBlock Margin="7,0,0,0" Name="mailid" FontSize="16" Text="{Binding Emailid}"></TextBlock>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="7,20,20,10">
+                        <TextBlock Text="&#xEE64;" FontSize="16" Margin="0,3,0,0" FontFamily="Segoe MDL2 Assets"></TextBlock>
+                        <TextBlock Margin="7,0,0,0" FontSize="16" Text="{Binding Phoneno}"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel  Width="330" Height="auto" BorderBrush="LightGray" CornerRadius="2" BorderThickness="2" Padding="20"
+                     HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top">
+                    <TextBlock Text="Reporting To" FontWeight="Bold" Margin="0,0,0,10" FontSize="25"></TextBlock>
+                    <StackPanel Orientation="Horizontal"  Margin="7,20,20,10">
+                        <TextBlock Text="&#xEA8C;" FontSize="16" Margin="0,2,0,0" FontFamily="Segoe MDL2 Assets" ></TextBlock>
+                        <TextBlock Margin="7,0,0,0" FontSize="16" Text="{Binding Managername}" ></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="7,20,20,10">
+                        <TextBlock Text="&#xEB4E;" FontFamily="Segoe MDL2 Assets" FontSize="16" Margin="0,3,0,0" ></TextBlock>
+                        <TextBlock Margin="4,0,0,0" FontSize="16" Text="  Member Leadership Staff"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+         
+                
+                <StackPanel HorizontalAlignment="Center" Name="personaldetails"  Width="700" Grid.Column="1" CornerRadius="2" VerticalAlignment="Top"  BorderBrush="LightGray" BorderThickness="2" Padding="20,20,20,20" Height="auto"  Margin="50,10,0,0" >
+                <TextBlock Text="Personal Details"  FontWeight="Bold" FontSize="25" ></TextBlock>
+                <StackPanel Orientation="Horizontal"  Margin="0,20,20,7">
+                        <TextBlock Text="Gender" Width="250" TextWrapping="Wrap" Foreground="DimGray" FontSize="16" Margin="6,0,0,0" ></TextBlock>
+                        <TextBlock  Text="{Binding Gender}"  Name="gender" TextWrapping="Wrap" FontSize="16"></TextBlock>
+                </StackPanel>
+
+                <StackPanel  Orientation="Horizontal" Margin="7,20,20,7">
+                        <TextBlock FontSize="16" Text="Emergency Contact Number" Name="e_no" TextWrapping="Wrap" Foreground="DimGray" Width="250"></TextBlock>
+                        <TextBlock FontSize="16" TextWrapping="Wrap" Name="eno" Text="{Binding Emergencyno}"></TextBlock>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Margin="7,20,20,7">
+                    <TextBlock  FontSize="16" Text="Maritial Status"  Foreground="DimGray" Width="250"></TextBlock>
+                    <TextBlock Text="{Binding Maritialstatus}" Name="mstatus" FontSize="16"></TextBlock>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Margin="7,20,20,7">
+                    <TextBlock Text="Date of Birth" Width="250"  Foreground="DimGray" FontSize="16"></TextBlock>
+                    <TextBlock Text="{Binding Dob}" Name="dob" FontSize="16"></TextBlock>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Margin="7,20,20,7">
+                    <TextBlock Text="Father Name" Width="250"  Foreground="DimGray" FontSize="16"></TextBlock>
+                    <TextBlock Text="{Binding Fathername}" Name="fname" FontSize="16"></TextBlock>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Margin="7,20,20,7">
+                    <TextBlock Text="Mother Tongue" Width="250"  Foreground="DimGray" FontSize="16"></TextBlock>
+                    <TextBlock Text="{Binding Mothertongue}" Name="mtongue" FontSize="16"></TextBlock>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Margin="7,20,20,7">
+                    <TextBlock Text="Salary Account No" Width="250" TextWrapping="Wrap"  Foreground="DimGray" FontSize="16"></TextBlock>
+                    <TextBlock Text="{Binding Salaryaccno}"  Name="saccno" FontSize="16"></TextBlock>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Margin="7,20,20,7">
+                    <TextBlock Text="Blood Group" Width="250"  Foreground="DimGray" FontSize="16"></TextBlock>
+                    <TextBlock Text="{Binding Bloodgroup}" Name="bgroup" FontSize="16"></TextBlock>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Margin="7,20,20,8">
+                        <TextBlock Text="Present Address" Width="250" TextWrapping="Wrap" Foreground="DimGray" FontSize="16"></TextBlock>
+                        <TextBlock Text="{Binding Presentaddr}"  Name="pradd" TextWrapping="Wrap" FontSize="16"></TextBlock>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Margin="7,20,20,8">
+                        <TextBlock Text="Permanent Address" Width="250" TextWrapping="Wrap"  Foreground="DimGray" FontSize="16"></TextBlock>
+                        <TextBlock Text="{Binding Permnentaddr}"   Name="peadd" TextWrapping="Wrap" FontSize="16"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

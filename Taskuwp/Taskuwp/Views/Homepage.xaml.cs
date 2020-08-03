@@ -48,6 +48,7 @@ namespace Taskuwp.Views
             }*/
 
         }
+        
         private void hamburgerbutton_Click(object sender, RoutedEventArgs e)
         {
             mysplitview.IsPaneOpen = ! mysplitview.IsPaneOpen;
@@ -70,7 +71,8 @@ namespace Taskuwp.Views
             }
            if(allempitem.IsSelected==true)
             {
-                mframe.Navigate(typeof(FavEmployees), "hemavathibabes@gmail.com", new SuppressNavigationTransitionInfo());
+                
+                mframe.Navigate(typeof(FavEmployees),"hemavathibabes@gmail.com", new SuppressNavigationTransitionInfo());
             }
            if(logoutitem.IsSelected==true)
             {

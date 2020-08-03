@@ -34,7 +34,8 @@
                         <Setter Target="peadd.Margin" Value="-80,0,0,0"></Setter>
                         <Setter Target="pradd.Width" Value="100"></Setter>
                         <Setter Target="peadd.Width" Value="100"></Setter>
-                       
+                        <Setter Target="pradd.TextWrapping" Value="Wrap"></Setter>
+                        <Setter Target="peadd.TextWrapping" Value="Wrap"></Setter>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState>
@@ -57,9 +58,10 @@
                         <Setter Target="bgroup.Margin" Value="0,0,0,0"></Setter>
                         <Setter Target="pradd.Margin" Value="0,0,0,0"></Setter>
                         <Setter Target="peadd.Margin" Value="0,0,0,0"></Setter>
-                        <Setter Target="pradd.Width" Value="250"></Setter>
-                        <Setter Target="peadd.Width" Value="250"></Setter>
-                       
+                        <Setter Target="pradd.Width" Value="auto"></Setter>
+                        <Setter Target="peadd.Width" Value="auto"></Setter>
+                        <Setter Target="pradd.TextWrapping" Value="NoWrap"></Setter>
+                        <Setter Target="peadd.TextWrapping" Value="NoWrap"></Setter>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -68,17 +70,22 @@
 
 
         <Grid x:ConnectionId='2' Name="grid1" Height="auto" >
+            <Grid.Background>
+                <ImageBrush ImageSource="ms-appx:///Assets/choice13.jpg" Stretch="UniformToFill" Opacity="0.8" ></ImageBrush>
+            </Grid.Background>
             <StackPanel x:ConnectionId='3' Orientation="Horizontal" Name="mainsp">
-            <StackPanel   Orientation="Vertical">
-                <StackPanel Width="330" BorderBrush="LightGray" CornerRadius="2" BorderThickness="2" Padding="20" Height="auto" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top">
+            <StackPanel   Orientation="Vertical" >
+                    <StackPanel Width="330" BorderBrush="LightGray" Background="{ThemeResource SystemControlBaseLowAcrylicElementBrush}" CornerRadius="2" BorderThickness="2" Padding="20" Height="auto" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top">
                     <TextBlock Text="About Me" Margin="0,0,0,10" FontWeight="Bold" FontSize="25"></TextBlock>
                     <StackPanel Orientation="Horizontal" Margin="7,20,20,10">
                         <TextBlock FontSize="16" Text="&#xEA8C;" Margin="0,2,0,0" FontFamily="Segoe MDL2 Assets"></TextBlock>
                         <TextBlock FontSize="16"  Margin="7,0,0,0">
-                            <Run  Text="{Binding Firstname}"></Run>
-                            <Run  Text="{Binding Lastname}"></Run>
-
-                        </TextBlock>
+                            <Run x:ConnectionId='18'  x:Name="finame" Text="{Binding Firstname}"></Run>
+                            <Run x:ConnectionId='19'  x:Name="laname" Text="{Binding Lastname}"></Run>
+                             <Run Text="-"/>
+                            <Run x:ConnectionId='20' x:Name="empid" Text="{Binding empid}"></Run>
+                           
+                            </TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="7,20,20,10">
                         <TextBlock Text="&#xF003;" FontSize="16" Margin="0,4,0,0" FontFamily="Segoe MDL2 Assets"></TextBlock>
@@ -99,7 +106,7 @@
                         <TextBlock Margin="7,0,0,0" FontSize="16" Text="{Binding Phoneno}"></TextBlock>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel  Width="330" Height="auto" BorderBrush="LightGray" CornerRadius="2" BorderThickness="2" Padding="20"
+                    <StackPanel  Width="330" Height="auto" BorderBrush="LightGray" CornerRadius="2" Background="{ThemeResource SystemControlBaseLowAcrylicElementBrush}" BorderThickness="2" Padding="20"
                      HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top">
                     <TextBlock Text="Reporting To" FontWeight="Bold" Margin="0,0,0,10" FontSize="25"></TextBlock>
                     <StackPanel Orientation="Horizontal"  Margin="7,20,20,10">
@@ -112,9 +119,9 @@
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
-         
-                
-                <StackPanel x:ConnectionId='4' HorizontalAlignment="Center" Name="personaldetails"  Width="700" Grid.Column="1" CornerRadius="2" VerticalAlignment="Top"  BorderBrush="LightGray" BorderThickness="2" Padding="20,20,20,20" Height="auto"  Margin="50,10,0,0" >
+
+
+                <StackPanel x:ConnectionId='4' HorizontalAlignment="Center" Name="personaldetails" Background="{ThemeResource SystemControlBaseLowAcrylicElementBrush}" Width="700" Grid.Column="1" CornerRadius="2" VerticalAlignment="Top"  BorderBrush="LightGray" BorderThickness="2" Padding="20,20,20,20" Height="auto"  Margin="50,10,0,0" >
                 <TextBlock Text="Personal Details"  FontWeight="Bold" FontSize="25" ></TextBlock>
                 <StackPanel Orientation="Horizontal"  Margin="0,20,20,7">
                         <TextBlock Text="Gender" Width="250" TextWrapping="Wrap" Foreground="DimGray" FontSize="16" Margin="6,0,0,0" ></TextBlock>
@@ -151,11 +158,11 @@
                 </StackPanel>
                 <StackPanel  Orientation="Horizontal" Margin="7,20,20,8">
                         <TextBlock Text="Present Address" Width="250" TextWrapping="Wrap" Foreground="DimGray" FontSize="16"></TextBlock>
-                        <TextBlock x:ConnectionId='6' Text="{Binding Presentaddr}"  Name="pradd" TextWrapping="Wrap" FontSize="16"></TextBlock>
+                        <TextBlock x:ConnectionId='6' Text="{Binding Presentaddr}"  Name="pradd"  FontSize="16"></TextBlock>
                 </StackPanel>
                 <StackPanel  Orientation="Horizontal" Margin="7,20,20,8">
                         <TextBlock Text="Permanent Address" Width="250" TextWrapping="Wrap"  Foreground="DimGray" FontSize="16"></TextBlock>
-                        <TextBlock x:ConnectionId='5' Text="{Binding Permnentaddr}"   Name="peadd" TextWrapping="Wrap" FontSize="16"></TextBlock>
+                        <TextBlock x:ConnectionId='5' Text="{Binding Permnentaddr}"   Name="peadd"  FontSize="16"></TextBlock>
                 </StackPanel>
             </StackPanel>
             </StackPanel>

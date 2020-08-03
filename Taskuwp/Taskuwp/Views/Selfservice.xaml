@@ -10,7 +10,7 @@
     mc:Ignorable="d"
     Background="White">
   
-    <Grid  Name="grid1"  Background="White">
+    <Grid  Name="grid1"  >
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState>
@@ -35,12 +35,15 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" >
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Assets/choice13.jpg" Stretch="UniformToFill" Opacity="0.8" ></ImageBrush>
+        </Grid.Background>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Name="firstrow" >
             <TextBlock Text="Self-service" FontSize="22" Margin="20,10,0,10" Foreground="DarkCyan" FontWeight="Bold" HorizontalAlignment="Left"></TextBlock>
             <Button Content="&#xE70F;" Name="edit"  Margin="930,0,0,0" Click="edit_Click" Foreground="White" Background="DarkCyan" BorderThickness="0,0,0,0" FontFamily="Segoe MDL2 Assets" Height="35"></Button>
             <!-- <Button Content="&#xE713;" FontFamily="Segoe MDL2 Assets" Margin="10,0,0,0" Foreground="White" Background="DarkCyan" Height="35" BorderThickness="0,0,0,0" HorizontalContentAlignment="Left"  ></Button>-->
         </StackPanel>
-        <ListView Grid.Row="1" ItemContainerStyle="{StaticResource ListViewItemContainerStyle2}" Style="{StaticResource ListViewStyle1}"   Name="ss"  Grid.ColumnSpan="3"   >
+        <ListView Grid.Row="1"  ItemContainerStyle="{StaticResource ListViewItemContainerStyle2}" Style="{StaticResource ListViewStyle1}"   Name="ss"  Grid.ColumnSpan="3"   >
             <ListView.ItemTemplate >
                 <DataTemplate   x:DataType="data1:Employee" >
                     <local:Selfservicecontrol/>
